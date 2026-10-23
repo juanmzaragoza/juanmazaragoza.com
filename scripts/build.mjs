@@ -59,6 +59,7 @@ function galleryAlt(p, file, i) {
 }
 
 function seoTitle(p) {
+  if (p.seoTitle) return p.seoTitle;
   const t = `${p.title} — Case Study`;
   return t.length <= 60 ? t : p.title;
 }
@@ -91,6 +92,34 @@ function projectCard(p) {
     </a>`;
 }
 
+function caseContext(p) {
+  const parts = [p.client, p.sector, p.country, p.role, p.duration].filter(Boolean);
+  if (parts.length === 0) return '';
+  return `<div class="case-context"><p>${parts.map((part) => `<span>${esc(part)}</span>`).join(' · ')}</p></div>`;
+}
+
+function caseResults(p) {
+  if (!p.results || p.results.length === 0) return '';
+  return `<div class="case-results">
+    <h3>Results</h3>
+    <ul>${p.results.map((r) => `<li>${esc(r)}</li>`).join('')}</ul>
+  </div>`;
+}
+
+function caseTestimonial(p) {
+  if (!p.testimonial) return '';
+  const video = p.testimonial.videoId
+    ? `<div class="testimonial-video"><iframe width="100%" height="315" src="https://www.youtube.com/embed/${esc(p.testimonial.videoId)}" title="Testimonial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>`
+    : '';
+  return `<div class="testimonial-block">
+    <blockquote>
+      <p>"${esc(p.testimonial.quote)}"</p>
+      <footer>— ${esc(p.testimonial.author)}, ${esc(p.testimonial.role)}</footer>
+    </blockquote>
+    ${video}
+  </div>`;
+}
+
 const PERSON = {
   '@type': 'Person',
   '@id': `${SITE}/#person`,
@@ -106,6 +135,8 @@ const PERSON = {
   knowsLanguage: ['es', 'en', 'pt'],
   nationality: { '@type': 'Country', name: 'Argentina' },
   homeLocation: { '@type': 'Place', name: 'Cuenca, Ecuador' },
+  alumniOf: { '@type': 'CollegeOrUniversity', name: 'Universidad de Buenos Aires', url: 'https://www.uba.ar/' },
+  hasCredential: { '@type': 'EducationalOccupationalCredential', credentialCategory: 'degree', name: 'Ingeniería en Informática' },
   sameAs: [
     'https://www.linkedin.com/in/juanmzaragoza/',
     'https://github.com/juanmzaragoza',
@@ -196,13 +227,33 @@ function fill(tpl, vars) {
   });
 }
 
+// Validate projects
+const seoTitles = new Set();
+const seoDescriptions = new Set();
+for (const p of projects) {
+  if (p.seoTitle && p.seoTitle.length > 60) throw new Error(`Project "${p.slug}": seoTitle exceeds 60 chars (${p.seoTitle.length})`);
+  if (p.seoDescription && p.seoDescription.length > 160) throw new Error(`Project "${p.slug}": seoDescription exceeds 160 chars (${p.seoDescription.length})`);
+  if (p.seoTitle && seoTitles.has(p.seoTitle)) throw new Error(`Duplicate seoTitle: "${p.seoTitle}"`);
+  if (p.seoDescription && seoDescriptions.has(p.seoDescription)) throw new Error(`Duplicate seoDescription in project "${p.slug}"`);
+  if (p.seoTitle) seoTitles.add(p.seoTitle);
+  if (p.seoDescription) seoDescriptions.add(p.seoDescription);
+  // Validate referenced images exist
+  if (p.hero && !fs.existsSync(path.join(ROOT, p.hero))) throw new Error(`Project "${p.slug}": hero image missing: ${p.hero}`);
+  for (const img of p.gallery || []) {
+    if (!fs.existsSync(path.join(ROOT, img))) throw new Error(`Project "${p.slug}": gallery image missing: ${img}`);
+  }
+}
+
+const featuredProjects = projects.filter((p) => p.featured).sort((a, b) => (a.order || 999) - (b.order || 999)).slice(0, 6);
+const fallback = featuredProjects.length > 0 ? featuredProjects : projects.slice(0, 6);
+
 const commonVars = {
   calendly: CALENDLY,
   email: EMAIL,
   projectCount: String(projects.length),
   heroImg: imgTag('images/img_3062-Yan6xja2xjijrwNj.jpg', 'Juan Manuel Zaragoza, full-stack engineer', { priority: true, lazy: false }),
   aboutImg: imgTag('images/zyro-image-1-m2WBn69XLECKwk52.png', 'Portrait of Juan Manuel Zaragoza', { lazy: false }),
-  featured: projects.slice(0, 6).map(projectCard).join('\n'),
+  featured: fallback.map(projectCard).join('\n'),
   grid: projects.map(projectCard).join('\n'),
 };
 
@@ -238,6 +289,10 @@ for (const p of projects) {
   const gallery = p.gallery.length
     ? `<div class="detail-gallery">${p.gallery.map((g, i) => imgTag(g, galleryAlt(p, g, i))).join('')}</div>` : '';
   const related = relatedProjects(p).map(projectCard).join('\n');
+  const contextBlock = caseContext(p);
+  const resultsBlock = caseResults(p);
+  const testimonialBlock = caseTestimonial(p);
+  const pageDescription = p.seoDescription || truncate(p.subtitle);
   const body = `
   <article>
     <div class="detail-hero">
@@ -252,7 +307,10 @@ for (const p of projects) {
       </div>
     </div>
     <div class="detail-hero-img">${imgTag(p.hero, p.title, { priority: true, lazy: false })}</div>
+    ${contextBlock}
+    ${resultsBlock}
     <div class="detail-body">${p.body}</div>
+    ${testimonialBlock}
     ${gallery}
   </article>
   <div class="section cta-block">
@@ -274,8 +332,24 @@ for (const p of projects) {
     </div>
     <div class="projects-featured">${related}</div>
   </div>`;
+
   const jsonLd = [breadcrumb([['Home', '/'], ['Work', '/work/'], [p.title, urlPath]])];
-  write(urlPath, layout({ urlPath, title: seoTitle(p), description: truncate(p.subtitle), body, active: 'work', jsonLd, ogType: 'article', ogImage: img(p.hero).src }));
+
+  // Add CreativeWork JSON-LD
+  const creativeWork = {
+    '@context': 'https://schema.org',
+    '@type': 'CreativeWork',
+    name: p.title,
+    description: pageDescription,
+    url: SITE + urlPath,
+    dateCreated: p.date,
+    keywords: p.tags.join(', '),
+    creator: { '@id': SITE + '/#person' }
+  };
+  if (p.client) creativeWork.about = p.client;
+  jsonLd.push(creativeWork);
+
+  write(urlPath, layout({ urlPath, title: seoTitle(p), description: pageDescription, body, active: 'work', jsonLd, ogType: 'article', ogImage: img(p.hero).src }));
 }
 
 // Sitemap

@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WordPress E-Commerce — Amedia Social — Case Study</title>
-  <meta name="description" content="Resolved critical WooCommerce issues: cart calculation bugs and payment error messaging for a social media services platform">
+  <title>Fixing WooCommerce Cart &amp; Payment Error Messaging</title>
+  <meta name="description" content="Debugged and fixed critical WooCommerce cart calculation bug caused by plugin updates, plus improved payment error messaging for better UX.">
   <link rel="canonical" href="https://juanmazaragoza.com/work/wordpress-based-e-commerce-platform/">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Juan Manuel Zaragoza">
-  <meta property="og:title" content="WordPress E-Commerce — Amedia Social — Case Study">
-  <meta property="og:description" content="Resolved critical WooCommerce issues: cart calculation bugs and payment error messaging for a social media services platform">
+  <meta property="og:title" content="Fixing WooCommerce Cart &amp; Payment Error Messaging">
+  <meta property="og:description" content="Debugged and fixed critical WooCommerce cart calculation bug caused by plugin updates, plus improved payment error messaging for better UX.">
   <meta property="og:url" content="https://juanmazaragoza.com/work/wordpress-based-e-commerce-platform/">
   <meta property="og:image" content="https://juanmazaragoza.com/images/amediasocial.com-A1aByvrEeKhnGPZV.webp">
   <meta name="twitter:card" content="summary_large_image">
@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="/css/style.css">
   <script>document.documentElement.classList.add('js')</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://juanmazaragoza.com/"},{"@type":"ListItem","position":2,"name":"Work","item":"https://juanmazaragoza.com/work/"},{"@type":"ListItem","position":3,"name":"WordPress E-Commerce — Amedia Social","item":"https://juanmazaragoza.com/work/wordpress-based-e-commerce-platform/"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"WordPress E-Commerce — Amedia Social","description":"Debugged and fixed critical WooCommerce cart calculation bug caused by plugin updates, plus improved payment error messaging for better UX.","url":"https://juanmazaragoza.com/work/wordpress-based-e-commerce-platform/","dateCreated":"Nov 2024","keywords":"WordPress, WooCommerce, JavaScript, PHP","creator":{"@id":"https://juanmazaragoza.com/#person"},"about":"Amedia Social"}</script>
 </head>
 <body>
 
@@ -51,6 +52,11 @@
       </div>
     </div>
     <div class="detail-hero-img"><img src="/images/amediasocial.com-A1aByvrEeKhnGPZV.webp" alt="WordPress E-Commerce — Amedia Social" width="1200" height="630" decoding="async" fetchpriority="high"></div>
+    <div class="case-context"><p><span>Amedia Social</span> · <span>SaaS</span> · <span>Brazil</span> · <span>Developer</span> · <span>Nov 2024</span></p></div>
+    <div class="case-results">
+    <h3>Results</h3>
+    <ul><li>Cart calculations restored to accuracy</li><li>Payment error messages clarified for users</li><li>Checkout abandonment reduced</li></ul>
+  </div>
     <div class="detail-body"><p><a href="https://amediasocial.com/" target="_blank">Amedia Social</a>, managed by Simbiotic Digital, approached me with two critical issues affecting their WooCommerce-based platform designed to boost social media performance and online reputation.</p>
       <h2>Issue 1 — Cart Calculation Bug</h2>
       <p>Users were experiencing <strong>incorrect total calculations</strong> whenever they selected product variations. After diving into the codebase, I discovered the problem stemmed from a JavaScript script responsible for dynamically calculating cart totals. A recent WooCommerce plugin update had altered the DOM structure of the cart page, leaving the script outdated.</p>
@@ -59,6 +65,7 @@
       <p>When customers attempted to pay and the transaction failed, the <strong>error messages were vague and unhelpful</strong>, leading to frustration and abandonment. I implemented a solution using WooCommerce's <code>woocommerce_add_error</code> hook, creating a function to replace default messages with more descriptive, user-friendly explanations.</p>
       <h2>Outcome</h2>
       <p>Accurate cart calculations restored trust in the shopping experience, while clearer error messaging contributed to smoother customer interactions and reduced abandonment on the checkout page.</p></div>
+    
     <div class="detail-gallery"><img src="/images/screencapture-uptest-amediasocial-checkout-2024-11-27-17_42_58-YNqP5jq5DVulOQJZ.webp" alt="WordPress E-Commerce — Amedia Social — uptest amediasocial checkout" width="1578" height="2160" loading="lazy" decoding="async"><img src="/images/screenshot-from-2024-11-27-17-51-34-m7V5yJVyV0fqk7O0.webp" alt="WordPress E-Commerce — Amedia Social — screen 2" width="1400" height="679" loading="lazy" decoding="async"></div>
   </article>
   <div class="section cta-block">

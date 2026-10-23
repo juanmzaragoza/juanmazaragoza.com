@@ -1,18 +1,34 @@
 [
   {
     "slug": "qa-automation-for-laravel",
-    "title": "Vivetix: QA Automation for Laravel",
-    "subtitle": "Cypress E2E tests, Pest integration tests, and Superset dashboards — improving stability, performance, and scalability",
+    "title": "Vivetix: From Manual Testing to a 91-Test E2E Suite",
+    "subtitle": "Playwright E2E tests, Pest integration tests, and Superset dashboards — eliminating manual regression, improving stability and scalability",
     "date": "Jan 2025",
     "status": "running",
     "tags": [
       "Laravel PHP",
-      "Cypress",
+      "Playwright",
       "Pest",
       "Superset",
       "Docker",
       "PostgreSQL"
     ],
+    "seoTitle": "Building a 91-Test E2E Suite for a Ticketing Platform",
+    "seoDescription": "Architect and owner of Playwright E2E suite for checkout flows with 3 payment gateways, plus Pest integration tests and Superset embedding.",
+    "client": "Vivetix",
+    "sector": "Ticketing & Events",
+    "country": "Spain, Latin America",
+    "role": "QA Engineer",
+    "duration": "Jan 2025 – Present",
+    "results": [
+      "E2E suite grew from 20 to 91 tests (4.5×) between Jun and Oct 2025",
+      "616 backend integration test cases across critical flows",
+      "3 browsers covered (Chromium, Firefox, WebKit)",
+      "3 payment gateways end-to-end tested including 3D Secure",
+      "Roughly 15–20 hours of manual regression per release replaced"
+    ],
+    "featured": true,
+    "order": 3,
     "hero": "images/whatsapp-image-2024-02-06-at-18.53.16-mjE7KlPB0KTqoJVr.jpeg",
     "gallery": [
       "images/whatsapp-image-2024-02-06-at-18.53.29-1024x490-A3Q2VvjvkRfJnvKO.jpeg",
@@ -20,7 +36,7 @@
       "images/screenshot-from-2025-04-25-11-00-07-YX4lgvEMlpSDlg6G.png",
       "images/screenshot-from-2025-04-28-20-32-26-mv0WKOwGKOCBEXxQ.png"
     ],
-    "body": "<p>Vivetix is a growing online ticketing platform with complex needs around scalability, software quality, and real-time analytics. Their tech stack was based on Laravel, but they were heavily reliant on manual processes for functional validation, reporting, and quality control.</p>\n      <h2>The Challenge</h2>\n      <ul>\n        <li>Manual testing became unsustainable as the platform expanded</li>\n        <li>Critical flows — event creation, ticketing, check-ins, discount codes — lacked automation</li>\n        <li>Business stakeholders lacked visibility into real-time performance data</li>\n        <li>Tools like Superset and Cypress weren't fully integrated into their Dockerized architecture</li>\n      </ul>\n      <h2>QA & Test Automation</h2>\n      <p>Designed the <strong>entire testing strategy from scratch</strong> — the application had no existing test coverage. Built a robust suite of <strong>integration tests using PHPUnit and Pest</strong>, ensuring critical endpoints and business logic were consistently validated.</p>\n      <p>Implemented <strong>Cypress</strong> for end-to-end testing of key flows: event and session creation, discount code validation, ticket resending via email and WhatsApp, admin actions (coupons, check-ins, access control). Standardized HTML attributes (data-testid, id) to improve selector reliability.</p>\n      <h2>Backend Development</h2>\n      <p>Refactored critical endpoints to improve testability and scalability. Wrote API tests using Pest for <code>/check</code>, <code>/resend</code>, <code>/me</code>, and <code>/sessions</code>. Implemented fine-grained permission checks for seller, admin, and whitebrand roles.</p>\n      <h2>Superset & Business Intelligence</h2>\n      <p>Deployed and configured Superset inside Docker. Integrated Google OAuth authentication and token-based secure dashboard embedding. Automated dashboard filtering by <code>seller_id</code> based on the user's session.</p>\n      <h2>Infrastructure & DevOps</h2>\n      <p>Improved GitHub Actions pipelines for Laravel and Superset deployments. Solved persistent Docker errors and standardized PR templates, internal documentation, and development workflows.</p>\n      <h3>Impact</h3>\n      <ul>\n        <li>Release validation times reduced <strong>from days to minutes</strong></li>\n        <li>Fewer bugs in production thanks to automated testing</li>\n        <li>Business dashboards enabling actionable insights on ticket sales, session activity, and user behavior</li>\n        <li>A more professional development process allowing the platform to scale with confidence</li>\n      </ul>"
+    "body": "<h2>The Challenge</h2>\n      <p>Vivetix is a white-label ticketing and event management platform (Laravel monolith since 2017) handling high-volume checkout flows across Spain and Latin America. Revenue flows — event creation, ticket delivery, payments through 3 gateways — had no end-to-end test coverage. Releases relied entirely on manual regression.</p>\n      <ul>\n        <li>No existing E2E test suite; manual testing was unsustainable</li>\n        <li>Critical flows (checkout, discount codes, ticket resend via email/WhatsApp) lacked automation</li>\n        <li>Multiple payment gateways including 3D Secure flows were untested</li>\n        <li>Business stakeholders lacked real-time visibility into platform performance</li>\n      </ul>\n      <h2>What I Built</h2>\n      <h3>Playwright E2E Test Suite</h3>\n      <p>Designed the entire testing strategy from scratch as owner of the E2E suite (251 of 263 commits). Built a comprehensive <strong>Playwright + TypeScript suite</strong> that runs after every deploy to sandbox and staging: a critical gate of 6 @critical tests first, then full coverage on Chromium, Firefox and WebKit. Tested checkout end-to-end with all 3 payment gateways including 3D Secure flows. Seeded test users instead of relying on email registration to ensure deterministic, fast tests.</p>\n      <h3>Pest Integration Tests</h3>\n      <p>Wrote robust integration tests covering API endpoints and critical business logic: <code>/check</code>, <code>/resend</code>, <code>/me</code>, <code>/sessions</code> endpoints; role-based permission checks (seller, admin, whitebrand); discount code validation and coupon management.</p>\n      <h3>Superset Fork & Embedding</h3>\n      <p>Introduced <strong>Apache Superset</strong> (fork) inside Docker; integrated Google OAuth and token-based secure embedding in Laravel with per-organizer row-level filtering. Enabled real-time dashboards on ticket sales, session activity, and user behavior.</p>\n      <h3>Test Observability & CI/CD</h3>\n      <p>Built an internal metrics tool (Node, Prisma, PostgreSQL, Chart.js) to track flaky tests and test duration per commit. Improved GitLab CI pipelines; standardized PR templates and internal documentation.</p>\n      <h2>Stack</h2>\n      <p>Laravel 12, PHP 8.4, Playwright, TypeScript, Pest, React 19, Apache Superset, GitLab CI, PostgreSQL.</p>"
   },
   {
     "slug": "real-estate-chatbot-development-casa-domo-peru",
@@ -33,6 +49,19 @@
       "Manychat",
       "Google Sheets"
     ],
+    "seoTitle": "Real Estate Chatbot Scheduling Site Visits via Manychat",
+    "seoDescription": "Automated lead scheduling and follow-up for a Peruvian real estate agency using Manychat, Google Sheets, and deterministic conversation flows.",
+    "client": "Casa Domo",
+    "sector": "Real Estate",
+    "country": "Peru",
+    "role": "Developer",
+    "duration": "Jan 2025",
+    "results": [
+      "Automated significant portion of client interaction process",
+      "Lead management and scheduling streamlined",
+      "Team engaged more effectively with potential buyers"
+    ],
+    "featured": false,
     "hero": "images/289168780_102138895885338_9005776411265129643_n-YbNqwpEvKLUwoZJ7.png",
     "gallery": [
       "images/chat-example-AR0MavwNe8Hj8wxR.png",
@@ -55,6 +84,19 @@
       "Looker Studio",
       "GMB API"
     ],
+    "seoTitle": "Automating Google My Business Data to Looker Studio",
+    "seoDescription": "Custom Apps Script connector extracting GMB data (reviews, ratings, visibility) and delivering visually engaging Looker Studio dashboards.",
+    "client": "New Condal",
+    "sector": "Digital Marketing",
+    "country": "Spain",
+    "role": "Developer",
+    "duration": "Dec 2024",
+    "results": [
+      "Eliminated manual reporting labor",
+      "Seamless data flow from multiple GMB accounts",
+      "Visually engaging dashboards for client communication"
+    ],
+    "featured": false,
     "hero": "images/images-YBgeqnP22afQKWn5.png",
     "gallery": [
       "images/download-AoPq0pgRj7h4pv2V.png",
@@ -74,6 +116,19 @@
       "JavaScript",
       "PHP"
     ],
+    "seoTitle": "Fixing WooCommerce Cart & Payment Error Messaging",
+    "seoDescription": "Debugged and fixed critical WooCommerce cart calculation bug caused by plugin updates, plus improved payment error messaging for better UX.",
+    "client": "Amedia Social",
+    "sector": "SaaS",
+    "country": "Brazil",
+    "role": "Developer",
+    "duration": "Nov 2024",
+    "results": [
+      "Cart calculations restored to accuracy",
+      "Payment error messages clarified for users",
+      "Checkout abandonment reduced"
+    ],
+    "featured": false,
     "hero": "images/amediasocial.com-A1aByvrEeKhnGPZV.jpg",
     "gallery": [
       "images/screencapture-uptest-amediasocial-checkout-2024-11-27-17_42_58-YNqP5jq5DVulOQJZ.png",
@@ -83,8 +138,8 @@
   },
   {
     "slug": "real-estate-listing-platform-listing-los-cabos",
-    "title": "Real Estate Platform — Listing Los Cabos",
-    "subtitle": "Revitalized a React + Firebase platform: improved design, security, responsiveness, and integrated Stripe subscriptions",
+    "title": "Real Estate Platform — Listing Los Cabos: From Inherited to Profitable",
+    "subtitle": "Rescued a half-built React + Firebase platform, added Stripe subscriptions and security, now serving two cities from one codebase",
     "date": "Apr 2024",
     "status": "completed",
     "tags": [
@@ -93,19 +148,40 @@
       "Firebase",
       "Stripe"
     ],
+    "seoTitle": "Rescuing a React + Firebase Real Estate Platform",
+    "seoDescription": "Took over a half-built portal, added Stripe subscriptions and security, serving Los Cabos and Mexico City. Now live with agent property management.",
+    "client": "Listing Los Cabos",
+    "sector": "Real Estate",
+    "country": "Mexico",
+    "role": "Lead Developer & Project Owner",
+    "duration": "Apr 2024 – Jul 2025",
+    "results": [
+      "2 cities/brands (Los Cabos, Mexico City) from one codebase",
+      "3 paid subscription plans (10/30/50 listings) with 60-day free trial",
+      "~10 agents managing their listings on the platform",
+      "From paper and Excel to live portal with full property visibility and development promotion"
+    ],
+    "featured": true,
+    "order": 1,
+    "testimonial": {
+      "quote": "Juan took our real estate project from an idea to production. He delivered ownership, control, and a platform that works. We're live, profitable, and expanding.",
+      "author": "Julio César Pérez",
+      "role": "Project Leader",
+      "videoId": "cTap4d1NMDY"
+    },
     "hero": "images/screenshot-from-2024-09-03-19-03-23-A854J684oRUvPoel.png",
     "gallery": [
       "images/screenshot-from-2024-09-03-19-04-31-m7VKnE7qevf3R8D8.png",
       "images/screencapture-listing-mu-vercel-app-2024-09-03-19_24_25-ALpoaBvjoOU3yrZJ.png",
       "images/whatsapp-image-2024-09-03-at-19.25.54-YZ9bJaLezlfGv32w.jpeg"
     ],
-    "body": "<p>My client Julio approached me with an urgent need to overhaul a real estate platform that was initially developed using React for the frontend and Firebase as the database. The platform faced numerous challenges: poor design, usability issues, non-functional core features like listing creation and map integration. Additionally, the client lacked ownership of the source code and the Vercel account where the application was hosted.</p>\n      <h2>What Was Done</h2>\n      <ol>\n        <li><strong>React Code Overhaul:</strong> Developed a service layer to decouple business logic from UI components, improving maintainability.</li>\n        <li><strong>Responsive Design:</strong> Made substantial improvements ensuring full responsiveness across all devices.</li>\n        <li><strong>Security:</strong> Replaced hardcoded keys and sensitive information with environment variables.</li>\n        <li><strong>Backend Control:</strong> Set up a new Vercel environment with the updated frontend and minimal backend — Julio now has exclusive control over the entire system.</li>\n        <li><strong>User Authentication:</strong> Integrated a robust authentication system to secure the platform and restrict unauthorized access.</li>\n        <li><strong>Stripe Subscriptions:</strong> Developed three distinct subscription plans, each unlocking different features, creating a new revenue stream.</li>\n      </ol>\n      <h2>Outcome</h2>\n      <p>Julio now has a fully functional, secure, and responsive real estate platform under his control. The integration of Stripe for subscription services added a new revenue stream, while improvements in design and usability significantly enhanced the user experience.</p>"
+    "body": "<h2>The Situation</h2>\n      <p>A real estate portal for Los Cabos and Mexico City — half-built by previous developers in 2023, no unified property view, one person held all knowledge, property promotion was manual. The client lacked ownership of code and hosting.</p>\n      <h2>The Challenge</h2>\n      <ul>\n        <li>Inherited codebase with incomplete features and no test coverage</li>\n        <li>No integration with Google Maps; property creation broken</li>\n        <li>Manual property promotion and activation</li>\n        <li>No subscription model or payment processing</li>\n        <li>Security issues: hardcoded keys, unvalidated Firebase access</li>\n        <li>Client unable to scale to a second city without external help</li>\n      </ul>\n      <h2>What I Built</h2>\n      <h3>Search & Discovery</h3>\n      <p>Built a searchable property listing with filters (price, bedrooms, amenities) and an interactive Google Maps view. Integrated Google Maps for address autocomplete and geocoding.</p>\n      <h3>Property Management</h3>\n      <p>Property creation and editing workflows with image/video upload to Firebase Storage, status tracking (draft/active/sold), and agent profile assignment. Responsive design across devices.</p>\n      <h3>Stripe Subscription System</h3>\n      <p>Integrated <strong>Stripe payments</strong> end-to-end: checkout flow, webhooks for subscription lifecycle (creation, renewal, cancellation), plan limits (10/30/50 active listings per tier), 60-day free trial, discount codes. Each subscription tier unlocks different capabilities.</p>\n      <h3>Security & Backend</h3>\n      <p>Replaced hardcoded Firebase keys with environment variables. Added Firebase token validation on Node.js Express serverless backend (Vercel). Implemented reCAPTCHA on contact forms.</p>\n      <h3>Multi-Brand Setup</h3>\n      <p>Architected one codebase serving two cities: separate hero images, branding, and agent pools. Staging and production on Vercel with automated GitHub deployments.</p>\n      <h3>External Security Review</h3>\n      <p>Commissioned a professional security audit before scaling to the second city, ensuring platform readiness.</p>\n      <h2>Stack</h2>\n      <p>React 18, Tailwind CSS, Firebase (Auth, Firestore, Storage), Node.js/Express (Vercel Serverless), Stripe, Google Maps API.</p>"
   },
   {
     "slug": "information-connection-and-visualization-platform-datakimia",
-    "title": "Data Platform — Datakimia",
-    "subtitle": "Full-stack data platform with Next.js, NestJS, Superset embedded reports, and per-client dynamic filtering",
-    "date": "Feb 2024",
+    "title": "Data Platform — Datakimia: Multi-Tenant BI SaaS",
+    "subtitle": "Full-stack data platform with Next.js, NestJS, Superset embedded reports, per-customer isolation, and conversational AI agents",
+    "date": "May 2024",
     "status": "running",
     "tags": [
       "Next.js",
@@ -115,6 +191,23 @@
       "BigQuery",
       "Python"
     ],
+    "seoTitle": "Building a Multi-Tenant BI SaaS with Embedded Superset",
+    "seoDescription": "Founded NestJS backend (37 endpoints), executed Superset 4.1→6.1 migration in 30 days, built AI data agents over BigQuery with zero production impact.",
+    "client": "Datakimia",
+    "sector": "Analytics SaaS",
+    "country": "US",
+    "role": "Head of Software Development",
+    "duration": "May 2024 – Present",
+    "results": [
+      "3 production customers isolated per deployment",
+      "Backend in production 2+ years without customer-facing outages",
+      "3 major Superset versions migrated in 30 days (Sep 8 – Oct 7)",
+      "Apache Superset fork with ~430 custom commits kept in sync with upstream",
+      "Superset 4.1 → 6.1 migration: 6 upstream merges, ~4,400 files in final merge, 23 automated wiring checks caught 3 silent regressions before production",
+      "5-phase / 17-step smoke test covering local → ephemeral → pilot → preprod → production"
+    ],
+    "featured": true,
+    "order": 2,
     "hero": "images/datakimia_logo-03-Aq2NWxDVDwhKB1nz.png",
     "gallery": [
       "images/screenshot-from-2025-02-16-09-57-54-YanqpWylBzF1WqaB.png",
@@ -122,7 +215,7 @@
       "images/screenshot-from-2025-02-16-09-59-34-ALp7xVn1oztje0OX.png",
       "images/screenshot-from-2025-02-16-10-00-13-AQED70yLn9F5VkKM.png"
     ],
-    "body": "<p>To meet Datakimia's needs, I developed a platform that seamlessly connects information and provides efficient data visualization, ensuring a smooth user experience and quick report delivery. The stack: Next.js (frontend), NestJS (backend), PostgreSQL, and Superset.</p>\n      <h2>Key Features</h2>\n      <ul>\n        <li><strong>Superset API integration</strong> to embed reports with per-client dynamic filtering</li>\n        <li><strong>Redis</strong> implementation for fast data store and enhanced performance</li>\n        <li>Frontend hosted on <strong>Vercel</strong> with GitHub Actions for automated deployments</li>\n        <li>Superset customizations in both <strong>Python backend and React frontend components</strong></li>\n        <li>Role-based <strong>user authentication and authorization</strong> for secure data access</li>\n      </ul>\n      <h2>Ongoing Development</h2>\n      <p>This project remains an ongoing effort, with continuous improvements to ensure scalability and adaptability to Datakimia's long-term growth. Working in parallel on other initiatives, I've demonstrated the ability to effectively manage priorities and deliver results in a complex data-driven environment.</p>"
+    "body": "<h2>The Challenge</h2>\n      <p>Datakimia is a multi-tenant white-label analytics SaaS (US): each customer is isolated in its own deployment. The challenge: deliver embedded BI and conversational AI data agents securely per customer, and keep the BI layer (Apache Superset fork with ~430 custom commits) up to date without breaking production.</p>\n      <h2>What I Built</h2>\n      <h3>NestJS Backend (37 Endpoints)</h3>\n      <p>Founded and authored the production backend (first commit May 2024): Google/Microsoft Entra/Auth0 login, JWT tokens, role-based access control derived from Superset permissions, CASL-based authorization, per-customer data isolation. Production-grade for 2+ years without customer-facing downtime.</p>\n      <h3>Superset Embedding & RBAC</h3>\n      <p>Guest token generation for embedded dashboards with row-level security filters applied per customer. Dynamic dashboard filtering by customer context. Secure iframe embedding in the Next.js frontend.</p>\n      <h3>Conversational AI Data Agents</h3>\n      <p>Built chat-based data exploration over BigQuery using <strong>Google Gemini Data Analytics API</strong> (streaming SSE responses). Implemented voice agent with <strong>Gemini Live API</strong> for spoken data queries. Users ask questions in natural language; the agent translates to BigQuery SQL and returns insights.</p>\n      <h3>Apache Superset 4.1 → 6.1 Migration</h3>\n      <p>Migrated Datakimia's heavily customized Superset fork across 3 major versions (Sep 8 – Oct 7, 2024, ~30 calendar days). Process:</p>\n      <ul>\n        <li>Inventory of ~430 custom commits classified into carry/replace/drop</li>\n        <li>6 upstream merges with AI-assisted conflict resolution (Cursor) inside deterministic checks</li>\n        <li>Final merge touched ~4,400 files</li>\n        <li>23 automated wiring checks; caught 3 features that had silently broken</li>\n        <li>5-phase, 17-step smoke test (local → ephemeral → pilot → preprod → prod)</li>\n        <li>Effort: ~100 hours over 30 days</li>\n      </ul>\n      <h2>Stack</h2>\n      <p>Next.js 14 (frontend), NestJS 10 (backend), Prisma ORM, PostgreSQL, Apache Superset, BigQuery, Google Gemini, GKE, Helm.</p>"
   },
   {
     "slug": "latin-america-professionals-marketplace",
@@ -136,6 +229,19 @@
       "PostgreSQL",
       "Agora"
     ],
+    "seoTitle": "Live Streaming Integration for a Freelance Marketplace",
+    "seoDescription": "Implemented role-based menus and Agora live streaming for a Latin American professionals platform, improving UX and enabling real-time knowledge sharing.",
+    "client": "Guruxy",
+    "sector": "Freelance Marketplace",
+    "country": "Latin America",
+    "role": "Developer",
+    "duration": "Mar 2024",
+    "results": [
+      "User-role-based menu customization",
+      "Live streaming feature for real-time knowledge sharing",
+      "Improved navigation and security"
+    ],
+    "featured": false,
     "hero": "images/1652191275505-YrDXVzGQJ7ueXvWP.jpeg",
     "gallery": [
       "images/screenshot-from-2024-03-15-21-02-37-Yyv2VqWng4FG29o0.png"
@@ -155,6 +261,19 @@
       "PostgreSQL",
       "MariaDB"
     ],
+    "seoTitle": "Scaling Spanish CRM Platforms with Laravel & WordPress",
+    "seoDescription": "Customized two CRM platforms (Cloudin, Omnisauto) with Laravel, integrated WordPress seamlessly via REST API, improved billing and dashboard UX.",
+    "client": "Cloudin, Omnisauto",
+    "sector": "Business Software",
+    "country": "Spain",
+    "role": "Full-Stack Developer",
+    "duration": "Feb 2024",
+    "results": [
+      "Two CRM platforms enhanced and customized",
+      "WordPress integration via custom API endpoints",
+      "Improved data synchronization and performance"
+    ],
+    "featured": false,
     "hero": "images/gold-630x630-YZ92NBR6N2HMO46p.jpg",
     "gallery": [
       "images/screenshot-from-2024-04-18-12-29-18-mk3Dnz466rt10X8l.png",
@@ -179,6 +298,19 @@
       "SiteMinder",
       "WPML"
     ],
+    "seoTitle": "Hotel Website Built on WordPress with SiteMinder PMS",
+    "seoDescription": "Custom WordPress site for a Spanish hotel: theme customization, WPML multilingual, SiteMinder booking integration, WhatsApp and cookie modules.",
+    "client": "Posada Estela de Barros",
+    "sector": "Hospitality",
+    "country": "Spain",
+    "role": "WordPress Developer",
+    "duration": "Feb 2024",
+    "results": [
+      "Complete WordPress site built from scratch",
+      "Multilingual setup for international guests",
+      "Seamless booking integration with SiteMinder"
+    ],
+    "featured": false,
     "hero": "images/digitalice_su_pyme_cover-m2W4gKLb7rTrW9lj.jpeg",
     "gallery": [
       "images/screencapture-posadalaesteladebarros-es-2024-04-14-22_54_47-m6LvKNkoNOSr2zWQ.png",
@@ -201,6 +333,19 @@
       "Python",
       "Flask"
     ],
+    "seoTitle": "Real-World Assets Data Platform on BigQuery",
+    "seoDescription": "Next.js frontend integrated with BigQuery warehouse via Python Flask backend, replicating complex Figma designs for data-driven decision making.",
+    "client": "RWA Insights",
+    "sector": "Fintech / Data Analytics",
+    "country": "US",
+    "role": "Full-Stack Developer",
+    "duration": "Feb 2024",
+    "results": [
+      "Complex Figma designs accurately replicated",
+      "Real-time data querying via Flask API",
+      "Actionable insights from BigQuery warehouse"
+    ],
+    "featured": false,
     "hero": "images/nd_587846285-m7V5JygpZ6FLDGbj.jpg",
     "gallery": [
       "images/screencapture-rwa-insights-vercel-app-coming-soon-2024-04-23-19_57_35-YbNaaOrg03Cqxqbn.png",
@@ -212,8 +357,8 @@
   },
   {
     "slug": "takeda-covid-vaccine-platform",
-    "title": "Takeda COVID Vaccine Platform",
-    "subtitle": "Angular + .NET pharmaceutical reporting platform deployed on Azure — enabling fast, customizable report delivery for the COVID vaccine program",
+    "title": "COVID Vaccine Platform — Takeda",
+    "subtitle": "Angular + .NET pharmaceutical reporting platform deployed on Azure — enabling fast, customizable report delivery",
     "date": "Oct 2022",
     "status": "completed",
     "tags": [
@@ -222,6 +367,20 @@
       "Azure",
       "CosmosDB"
     ],
+    "seoTitle": "COVID Vaccine Reporting Platform: Angular & .NET on Azure",
+    "seoDescription": "Built as part of a subcontracted team for a platform delivered to Takeda: fast, customizable pharmaceutical reporting with Azure hosting.",
+    "client": "Takeda (subcontracted)",
+    "sector": "Pharmaceutical",
+    "country": "Global",
+    "role": "Full-Stack Developer",
+    "duration": "Oct 2022",
+    "results": [
+      "Substantial increase in report delivery productivity",
+      "Fast, customizable reporting platform",
+      "Enterprise-grade security and scalability on Azure"
+    ],
+    "featured": true,
+    "order": 6,
     "hero": "images/landing-and-login-640x1470-m6LP9G0X3nujGZDK.png",
     "gallery": [
       "images/report-keyevents-A8529G1k71Uzx5Ld.png",
@@ -231,7 +390,7 @@
       "images/data-entry-1-YNqOb3lZq7hMvL2X.png",
       "images/report-news-A0xe9GPgZlH8RjDZ.png"
     ],
-    "body": "<p>The client had specific requirements: a seamless user experience, lightning-fast report delivery, and the adaptability to stay ahead in a dynamic pharmaceutical market. We leveraged Angular and .NET, hosted on Azure.</p>\n      <h2>Stack</h2>\n      <ul>\n        <li><strong>Angular</strong> for an aesthetically pleasing and intuitive frontend interface</li>\n        <li><strong>.NET</strong> for rapid development of custom features and flexible business logic</li>\n        <li><strong>Microsoft Azure</strong> for optimal performance, scalability, and security</li>\n      </ul>\n      <h2>Outcome</h2>\n      <p>The client experienced a substantial increase in productivity, achieving faster report delivery times than ever before. They also gained the agility to pivot swiftly in response to market changes — a crucial asset in the pharmaceutical landscape.</p>"
+    "body": "<p>Built as part of a subcontracted team, this platform was delivered to Takeda for COVID vaccine program reporting. The client's requirements were clear: seamless user experience, lightning-fast report delivery, and the agility to adapt to a dynamic pharmaceutical market.</p>\n      <h2>Stack</h2>\n      <ul>\n        <li><strong>Angular</strong> for an intuitive, responsive frontend interface</li>\n        <li><strong>.NET</strong> for rapid feature development and flexible business logic</li>\n        <li><strong>Microsoft Azure</strong> for optimal performance, scalability, and enterprise-grade security</li>\n      </ul>\n      <h2>Outcome</h2>\n      <p>The platform achieved substantial improvements in report delivery speed and enabled rapid adaptation to changing requirements — a critical capability in pharmaceutical operations. Users gained the agility needed to respond swiftly to real-world demands.</p>"
   },
   {
     "slug": "veterinarian-software",
@@ -246,6 +405,19 @@
       "GCP",
       "Squarespace"
     ],
+    "seoTitle": "Veterinary SaaS Platform: React, Firebase, Dashboards",
+    "seoDescription": "Two-year engagement: built React scripts for Squarespace, then full React platform with dashboards, user management, and GCP infrastructure.",
+    "client": "IVEE",
+    "sector": "Veterinary Tech",
+    "country": "US",
+    "role": "Full-Stack Developer",
+    "duration": "Apr 2022 – Feb 2024",
+    "results": [
+      "React scripts embedded into Squarespace",
+      "Full React platform with dashboards",
+      "User management and role-based access"
+    ],
+    "featured": false,
     "hero": "images/screencapture-ivee-platform-buildout-staging-web-app-login-2023-02-13-12_09_42-AE02nxyP2OcKq0jz.png",
     "gallery": [
       "images/screencapture-ivee-platform-buildout-staging-web-app-dashboard-2023-02-13-12_08_05-AR02NzBMP8SBVJ8K.png",
@@ -267,6 +439,19 @@
       "React Native",
       "Node.js"
     ],
+    "seoTitle": "Serverless Backend for a React Native Lifestyle App",
+    "seoDescription": "Architected AWS Lambda functions to consolidate React Native backend logic, optimized performance, and established team documentation standards.",
+    "client": "Indigo",
+    "sector": "Health & Wellness",
+    "country": "US",
+    "role": "Full-Stack Developer",
+    "duration": "Feb 2022",
+    "results": [
+      "Modular Lambda function architecture",
+      "Performance improvements for React Native app",
+      "Comprehensive team documentation"
+    ],
+    "featured": false,
     "hero": "images/screenshot-from-2023-03-23-14-39-26-640x479-Yan6Qg9vPJtoBB3k.png",
     "gallery": [],
     "body": "<p>Indigo was confronted with the complex task of developing a versatile backend capable of managing the intricate business logic of their lifestyle application — nutrition, workout, and meditation — which was previously integrated within their React Native platform.</p>\n      <h2>Backend Architecture</h2>\n      <p>Crafted a sophisticated backend architecture by implementing a series of <strong>Lambda functions</strong>. These were strategically designed to consolidate and optimize the application logic, resulting in a robust and scalable backend infrastructure. By modularizing the codebase, ensured that Indigo's backend was not only efficient but also highly adaptable to future modifications.</p>\n      <h2>Performance & Documentation</h2>\n      <p>Provided ongoing support for the React Native app, conducting in-depth performance analyses and implementing targeted enhancements. Organized and documented the web application and development team — establishing clear guidelines, documentation protocols, and communication channels to streamline collaboration.</p>"
@@ -283,6 +468,19 @@
       "MariaDB",
       "SSO"
     ],
+    "seoTitle": "Enterprise CRM/ERP with React Frontend and SSO",
+    "seoDescription": "Built React ERP frontend and Java backend for Spanish client, plus SSO system for multi-app access management with MariaDB.",
+    "client": "Enterprise Client (Spain)",
+    "sector": "Enterprise Software",
+    "country": "Spain",
+    "role": "Full-Stack Developer",
+    "duration": "Nov 2021",
+    "results": [
+      "Adaptive ERP frontend with rich UX",
+      "Centralized SSO for multiple applications",
+      "Efficient resource tracking across projects"
+    ],
+    "featured": false,
     "hero": "images/1608112191210-1-m2WBn6nwR1f5EXZE.jpeg",
     "gallery": [
       "images/image-2021-12-16-07-22-44-210-mk38GrVbrXiza2XV.png",
@@ -304,6 +502,19 @@
       "GCP",
       "MongoDB"
     ],
+    "seoTitle": "Pharmaceutical Sector Platform: React & GCP Firebase",
+    "seoDescription": "React platform with Node.js cloud functions for pharma entity management, news aggregation by client base, and role-based permissions.",
+    "client": "Atacana Group",
+    "sector": "Pharmaceutical",
+    "country": "Chile",
+    "role": "Full-Stack Developer",
+    "duration": "Sep 2021",
+    "results": [
+      "Core entity management (clients, compounds, keywords)",
+      "News aggregation and client segmentation",
+      "Comprehensive user permissions system"
+    ],
+    "featured": false,
     "hero": "images/screenshot-from-2023-09-15-09-01-42-A852zQ024gCvvJN1.png",
     "gallery": [
       "images/1add_client-AMqaEQB8o0UMWEgD.png",
@@ -326,15 +537,28 @@
       "BigQuery",
       "Cloud Functions"
     ],
+    "seoTitle": "PDF Data Extraction for Veterinary Analytics",
+    "seoDescription": "GCP Cloud Functions extracting medical data from PDF files, storing in BigQuery for interactive veterinary dashboards and patient insights.",
+    "client": "IVEE",
+    "sector": "Veterinary Tech",
+    "country": "US",
+    "role": "Backend Developer",
+    "duration": "Jan 2021 – Jan 2022",
+    "results": [
+      "Automated PDF data extraction at scale",
+      "Modular scraper design for multiple PDF formats",
+      "BigQuery analytics enabling veterinary insights"
+    ],
+    "featured": false,
     "hero": "images/allgradientgreen-m2WrkrV4aOFVr0on.png",
     "gallery": [],
-    "body": "<p>For IVEEE, a veterinary company dedicated to comprehensive animal care, I developed sophisticated scripts to streamline the extraction of vital medical information from PDF files containing canine patient medical histories.</p>\n      <h2>Architecture</h2>\n      <ul>\n        <li><strong>Google Storage bucket</strong> as the repository for PDFs uploaded by veterinarians</li>\n        <li><strong>Cloud Function</strong> automatically triggered upon each file reception</li>\n        <li>The function reads and scrapes PDF contents based on the associated scraper for each system format</li>\n        <li><strong>Modular design:</strong> new PDF formats accommodated by adding new scraping functions</li>\n        <li>Extracted data persisted in <strong>BigQuery</strong> for cross-department analysis</li>\n        <li>Interactive dashboards providing veterinarians insights into patient health and treatment history</li>\n      </ul>\n      <p>The project spanned over a year and exemplified the dedication required to address complex challenges in veterinary healthcare through technology.</p>"
+    "body": "<p>For IVEE, a veterinary company dedicated to comprehensive animal care, I developed sophisticated scripts to streamline the extraction of vital medical information from PDF files containing canine patient medical histories.</p>\n      <h2>Architecture</h2>\n      <ul>\n        <li><strong>Google Storage bucket</strong> as the repository for PDFs uploaded by veterinarians</li>\n        <li><strong>Cloud Function</strong> automatically triggered upon each file reception</li>\n        <li>The function reads and scrapes PDF contents based on the associated scraper for each system format</li>\n        <li><strong>Modular design:</strong> new PDF formats accommodated by adding new scraping functions</li>\n        <li>Extracted data persisted in <strong>BigQuery</strong> for cross-department analysis</li>\n        <li>Interactive dashboards providing veterinarians insights into patient health and treatment history</li>\n      </ul>\n      <p>The project spanned over a year and exemplified the dedication required to address complex challenges in veterinary healthcare through technology.</p>"
   },
   {
     "slug": "medical-units-attention-platform",
-    "title": "Medical Attention Platform — Buenos Aires Gov",
-    "subtitle": "Technical Director for a pharmacy tracking system for the City of Buenos Aires — Angular + Java, agile methodology, end-to-end delivery",
-    "date": "Dec 2020",
+    "title": "Pharmacy Tracking System — Buenos Aires Gov: AUM",
+    "subtitle": "Technical Director and main frontend developer for a city-wide medication dispensing system — Angular, Java, MariaDB, agile delivery",
+    "date": "Aug 2019",
     "status": "completed",
     "tags": [
       "Angular",
@@ -342,6 +566,20 @@
       "MariaDB",
       "Agile"
     ],
+    "seoTitle": "Pharmacy Medication Tracking for a Capital City",
+    "seoDescription": "Technical lead and frontend developer for Buenos Aires' AUM system: Angular frontend, Spring Boot backend, managing medication dispensing at pharmacies.",
+    "client": "Buenos Aires City Government",
+    "sector": "Government, Healthcare",
+    "country": "Argentina",
+    "role": "Technical Lead & Frontend Developer",
+    "duration": "Aug 2019 – May 2020",
+    "results": [
+      "Monitors medication dispensing across affiliated pharmacies",
+      "Pre-settlement and settlement payment tracking for pharmacies",
+      "Full traceability of government medicine distribution"
+    ],
+    "featured": true,
+    "order": 5,
     "hero": "images/screencapture-atencionmedicamentos-hml-gcba-gob-ar-home-2020-03-16-11_20_12-A852QEbDxKS9gMgl.png",
     "gallery": [
       "images/screencapture-atencionmedicamentos-hml-gcba-gob-ar-solicitud-entrega-nueva-2020-03-16-11_21_12-mP4Pl2yX5QFD0GPz.png",
@@ -349,13 +587,13 @@
       "images/screencapture-atencionmedicamentos-hml-gcba-gob-ar-farmacias-2020-03-16-11_26_17-A852QEb632SVEkNa.png",
       "images/screenshot-from-2020-03-16-11-15-46-AQE8PDK3kacZ07P2.png"
     ],
-    "body": "<p>Served as <strong>Technical Director</strong> for a comprehensive tracking system for pharmacies dispensing medicines on behalf of the Government of the City of Buenos Aires, ensuring full traceability of medicine distribution operations.</p>\n      <h2>System Objectives</h2>\n      <ul>\n        <li>Monitor pharmacies dispensing government-subsidized medicines</li>\n        <li>Manage subsidies and analyze statistics on most needed medicine types</li>\n        <li>Implement preventive measures for supply chain continuity</li>\n        <li>Ensure full traceability of all distribution operations</li>\n      </ul>\n      <h2>Technical Leadership</h2>\n      <p>Selected and implemented the technology stack: <strong>Angular</strong> (frontend), <strong>Java</strong> (backend), <strong>MariaDB</strong> (database). Collaborated closely with analysts and the Product Owner to define business rules. Led the team using <strong>agile development methodologies</strong>, ensuring adherence to deadlines while delivering a high-quality product. Instituted robust code delivery practices for independent QA testing.</p>"
+    "body": "<h2>The Challenge</h2>\n      <p>Manage medication dispensing at affiliated pharmacies on behalf of Buenos Aires City Government. Requirements: monitor dispensing operations, manage subsidies, analyze medicine demand trends, ensure full traceability, and implement preventive measures for supply chain continuity.</p>\n      <h2>Technical Leadership</h2>\n      <p>Selected the technology stack: <strong>Angular</strong> (frontend), <strong>Java Spring Boot 2</strong> (backend), <strong>MariaDB</strong> (database). Collaborated closely with analysts and Product Owner to define business rules. Led the team using <strong>agile development methodologies</strong>, ensuring adherence to deadlines while delivering a high-quality product. Instituted robust code delivery practices enabling the government's QA team to work independently.</p>\n      <h2>System Objectives</h2>\n      <ul>\n        <li>Monitor pharmacies dispensing government-subsidized medicines</li>\n        <li>Manage subsidies and analyze statistics on most needed medicine types</li>\n        <li>Implement preventive measures for supply chain continuity</li>\n        <li>Ensure full traceability of all distribution operations</li>\n      </ul>\n      <h2>Stack</h2>\n      <p>Angular, Java Spring Boot 2, JPA, QueryDSL, OpenAPI, MariaDB.</p>"
   },
   {
     "slug": "performance-evaluation-platform-for-a-public-organization",
-    "title": "Performance Evaluation Platform — Buenos Aires Gov",
-    "subtitle": "Technical Lead for a city-wide employee performance evaluation system — Angular, Java Spring Boot, PostgreSQL, with agile methodology",
-    "date": "Jan 2020",
+    "title": "City-Wide Performance Evaluation System — Buenos Aires Gov",
+    "subtitle": "Technical Lead for annual employee evaluation across all city ministries — Angular, Java Spring Boot, PostgreSQL, agile delivery at government scale",
+    "date": "Jan 2019",
     "status": "completed",
     "tags": [
       "Angular",
@@ -363,6 +601,21 @@
       "PostgreSQL",
       "Agile"
     ],
+    "seoTitle": "Leading 3 Generations of a City-Wide Evaluation System",
+    "seoDescription": "Technical lead for Buenos Aires City's employee performance evaluation system: selected Angular + Java + PostgreSQL, managed 5 stacks, 1,733 commits.",
+    "client": "Buenos Aires City Government",
+    "sector": "Government",
+    "country": "Argentina",
+    "role": "Technical Lead",
+    "duration": "Jan 2019 – Jun 2020",
+    "results": [
+      "Platform evaluates employees across all city ministries annually",
+      "Three technology generations delivered on the same domain",
+      "1,733 commits authored across 26 repositories",
+      "5 different technology stacks managed over 7 years (2014–2020)"
+    ],
+    "featured": true,
+    "order": 4,
     "hero": "images/screenshot-from-2020-03-16-10-49-49-AVL38g00L2iExlwM.png",
     "gallery": [
       "images/screencapture-evaluacion-qa-gcba-gob-ar-administrador-evaluaciones-2020-03-16-10_52_17-AoPZ2Kyyg3uoVx1W.png",
@@ -370,6 +623,6 @@
       "images/screencapture-evaluacion-qa-gcba-gob-ar-gestion-competencias-2020-03-16-11_00_35-m7V8vXggLgsev4bq.png",
       "images/screencapture-evaluacion-qa-gcba-gob-ar-administrador-evaluaciones-2020-03-16-10_56_10-Yle2lKkkzPUEQ4Mx.png"
     ],
-    "body": "<p>Served as <strong>Technical Lead</strong> for a performance evaluation system commissioned by the Buenos Aires City Government — designed to systematically, continuously, and objectively assess employee performance across city departments.</p>\n      <h2>System Goals</h2>\n      <ul>\n        <li>Systematically evaluate employee performance against role requirements</li>\n        <li>Identify training needs and devise short-term improvement plans</li>\n        <li>Enhance communication to achieve predefined organizational objectives</li>\n        <li>Promote transparency, objectivity, equity, and impartiality</li>\n      </ul>\n      <h2>Technical Leadership</h2>\n      <p>Selected the technology stack: <strong>Angular</strong> (frontend), <strong>Java Spring Boot</strong> (backend), <strong>PostgreSQL</strong> (database). Defined business rules with the analyst and Product Owner. Introduced agile development methodology and devised an efficient code delivery process enabling the QA team to work independently.</p>\n      <p>The evaluation process involved representatives from labor associations to ensure fairness. The platform is live at <a href=\"https://evaluaciongcaba.buenosaires.gob.ar/login\" target=\"_blank\">evaluaciongcaba.buenosaires.gob.ar</a>.</p>"
+    "body": "<h2>The Challenge</h2>\n      <p>Systematically, continuously, and objectively assess employee performance across all Buenos Aires City departments. Requirements: define role-based performance criteria, identify training needs, promote fairness and transparency, and enable agile adaptation as organizational goals evolved.</p>\n      <h2>Technical Leadership (3 Generations)</h2>\n      <p>I worked on all three generations of this system:</p>\n      <ul>\n        <li><strong>Generation 1 (Symfony 2):</strong> 2014–2015, 200 of 356 commits — the initial platform</li>\n        <li><strong>Generation 2 (LoopBack):</strong> 2018 — integration API layer</li>\n        <li><strong>Generation 3 (Angular + Java Spring Boot):</strong> 2019–2020, technical lead of frontend — the current version</li>\n      </ul>\n      <h2>Gen 3: Technical Leadership</h2>\n      <p>Selected stack: <strong>Angular</strong> (frontend), <strong>Java Spring Boot</strong> (backend), <strong>PostgreSQL</strong> (database). Defined business rules with analyst and Product Owner. Introduced agile methodology and established an efficient delivery process enabling the government QA team to work independently. Collaborated with labor union representatives to ensure fairness and transparency in evaluation criteria.</p>\n      <h2>System Goals</h2>\n      <ul>\n        <li>Systematically evaluate employee performance against role requirements</li>\n        <li>Identify training needs and devise short-term improvement plans</li>\n        <li>Enhance communication to achieve predefined organizational objectives</li>\n        <li>Promote transparency, objectivity, equity, and impartiality</li>\n      </ul>\n      <h2>Live Platform</h2>\n      <p>The evaluation system is live at <a href=\"https://evaluaciongcaba.buenosaires.gob.ar/login\" target=\"_blank\">evaluaciongcaba.buenosaires.gob.ar</a>.</p>\n      <h2>Broader Context</h2>\n      <p>Over ~7 years (2014–2020) at Buenos Aires City, I served as technical lead on nearly all systems developed, authoring <strong>1,733 commits across 26 repositories</strong> and managing <strong>5 different technology stacks</strong> (Symfony 2, Angular, Java Spring Boot, React, Azure/.NET).</p>\n      <h2>Stack</h2>\n      <p>Angular, Java Spring Boot, PostgreSQL, OpenAPI, Agile.</p>"
   }
 ]
