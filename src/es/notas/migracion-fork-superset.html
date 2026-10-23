@@ -1,0 +1,104 @@
+<!--
+  Draft article body for /es/notas/migracion-fork-superset/
+  meta:
+    lang: es
+    title: Cómo migré un fork de Apache Superset de 4.1 a 6.1
+    seoTitle: Migrar un fork de Superset de 4.1 a 6.1: playbook
+    description: Cómo migré un fork de Apache Superset con unos 430 commits propios a lo largo de tres versiones mayores en 30 días, con IA para los merges y chequeos automáticos.
+    datePublished: 2026-10-23
+    tags: Apache Superset, migración, analítica embebida, multi-tenant, desarrollo con IA
+    translationOf: /notes/superset-fork-migration/
+    related case: /work/information-connection-and-visualization-platform-datakimia/
+-->
+<p class="lead">En septiembre de 2026 migré el fork de Apache Superset que usa la plataforma de analítica embebida de <a href="/work/information-connection-and-visualization-platform-datakimia/">Datakimia</a> de la versión 4.1 a la 6.1: tres versiones mayores, seis merges de upstream y unos 4.400 archivos tocados en el último, en 30 días corridos. Un agente de IA resolvió la mayoría de los conflictos. Lo que hizo segura la migración no fue la IA: fue un conjunto de chequeos aburridos y deterministas que detectaron tres funcionalidades que el merge había roto sin avisar.</p>
+
+<p>Este es el playbook, incluido lo que salió mal.</p>
+
+<h2>El punto de partida</h2>
+<p>La plataforma le da analítica a varios clientes. Cada cliente tiene su propia instancia de Superset, embebida en un portal Next.js con guest tokens y seguridad a nivel de fila (RLS). En dos años, el fork había acumulado unos 430 commits propios (alrededor de 80 archivos y 6.000 líneas de código de producto): SSO propio, sets de filtros guardados, un selector de fechas con calendario, manejo de caché para invitados embebidos, logs estructurados para Google Cloud y varios parches de seguridad.</p>
+<p>Quedarse en 4.1 ya no era opción:</p>
+<ul>
+  <li>El soporte de upstream ya estaba en la línea 6.x, y 4.1.1 tenía CVEs conocidos.</li>
+  <li>En modo embebido, 4.1.1 devolvía a los usuarios invitados el SQL generado.</li>
+  <li>6.1 trae soporte de MCP (Model Context Protocol), que el roadmap del producto necesitaba para sumar IA sobre el BI.</li>
+</ul>
+<p>Y las restricciones lo hacían riesgoso:</p>
+<ul>
+  <li><strong>Un Superset por cliente.</strong> Cada paso de la migración se multiplica por la cantidad de clientes: upgrades de metadata, diferencias de configuración y ventanas de corte.</li>
+  <li><strong>La base de metadata no admite downgrade.</strong> Volver atrás significa restaurar un snapshot.</li>
+  <li><strong>El embebido tiene que seguir funcionando</strong> en cada paso: guest tokens, RLS y SSO.</li>
+</ul>
+
+<h2>Paso 1: inventariar el fork antes de tocarlo</h2>
+<p>El primer entregable no fue código. Fue una lista de cada cambio propio respecto del tag 4.1.1 (<code>git diff 4.1.1...fork</code>), clasificado en tres grupos:</p>
+<ul>
+  <li><strong>Portar:</strong> se lleva tal cual.</li>
+  <li><strong>Reemplazar:</strong> upstream ya ofrece configuración, theming o un punto de extensión que hace lo mismo.</li>
+  <li><strong>Eliminar:</strong> se borra o se toma una decisión de producto explícita.</li>
+</ul>
+<p>En paralelo, leí los changelogs de upstream de todo el rango y marqué los cambios que rompen compatibilidad por área del producto. Dos de ellos definieron el plan: 6.0 reemplaza el parser de SQL por SQLGlot, lo que puede cambiar el SQL que se genera bajo RLS, y 6.0 pasa el frontend a un nuevo sistema de theming que rompe los tokens de tema anteriores.</p>
+
+<h2>Paso 2: una puerta de seguridad antes de migrar</h2>
+<p>Antes de cualquier salto mayor, cerré los riesgos conocidos en la línea actual:</p>
+<ul>
+  <li>Integré los parches 4.1.2, 4.1.3 y 4.1.4, un merge por tag.</li>
+  <li>Actualicé <code>jspdf</code> a una versión sin los CVEs publicados.</li>
+  <li>Escribí tests automáticos de aislamiento de caché entre invitados embebidos: la clave de caché ahora incluye el usuario, los recursos y las reglas de RLS del guest token, así dos clientes nunca pueden compartir un gráfico cacheado.</li>
+</ul>
+<p>La idea de esta puerta: la invariante más importante de un producto de BI multi-cliente (que no se filtren datos entre clientes) tiene un test <em>antes</em> del cambio riesgoso, no después.</p>
+
+<h2>Paso 3: un merge por tag de upstream, con una escala intermedia</h2>
+<p>En lugar de saltar de 4.1 a 6.1 en un solo merge, pasé por 5.0 como escala intermedia en un entorno no productivo, después 6.0 y después 6.1. Seis merges de upstream en total. Cada merge mantuvo los conflictos lo bastante chicos como para entenderlos y saber de dónde venían.</p>
+<p>Antes de cada merge escribí la regla para resolverlo. Para 6.1 fue: conservar nuestra configuración, los filtros solo de fecha para usuarios públicos, la caché de datos de gráficos y la captura de miniaturas; tomar el árbol de 6.1 en todo lo demás. Esa frase quedó en el mensaje del commit de merge, así cualquiera que lea el historial sabe qué fue intencional.</p>
+
+<h2>Paso 4: que la IA haga el merge, y verificar lo que no puede ver</h2>
+<p>Usé Cursor para resolver la mayor parte de los conflictos y adaptar el código a las APIs nuevas. Ahí la IA brilla: miles de cambios mecánicos en una base de código grande. También es donde falla sin hacer ruido.</p>
+<p>Después del merge a 5.0 todo compilaba, la aplicación levantaba y tres funcionalidades habían desaparecido:</p>
+<ul>
+  <li>La API de sets de filtros guardados devolvía 404, porque se había perdido su registro.</li>
+  <li>Los botones de "guardar filtros" ya no aparecían, porque se había perdido un feature flag.</li>
+  <li>Los request IDs dejaron de aparecer en los logs de Google Cloud, porque el hook de tracking ya no se instalaba.</li>
+</ul>
+<p>Los archivos seguían ahí. Nadie los llamaba. Es el resultado típico de resolver un archivo compartido con "quedarse con lo de ellos": el módulo sobrevive, pero su conexión no.</p>
+<p>Así que escribí un chequeo de conexiones: un script de shell con 23 verificaciones de que cada funcionalidad propia sigue <em>usada</em>, no solo presente. También lista los archivos que nunca se resuelven con "quedarse con lo de ellos" (la barra de filtros, el plugin de filtro de tiempo, el punto de entrada de la app, los feature flags, la configuración de Superset). Si alguna vez aparece una desconexión nueva, su verificación se agrega en el mismo cambio.</p>
+<p>Un segundo script busca patrones de 4.x que se rompen en 6.x: tokens de tema viejos, componentes eliminados, íconos renombrados y props obsoletas.</p>
+<p>Los dos scripts, más un build igual al de producción, corren antes de cada push. Esa regla está en las instrucciones del propio agente, así que la IA tiene que pasar los chequeos antes de poder subir nada. La IA hace el trabajo; los chequeos deterministas deciden si está terminado.</p>
+
+<h2>Paso 5: smoke tests por fases, con regla de corte</h2>
+<p>Cada entorno corre el mismo smoke test: 5 fases y 17 pasos, en orden, frenando en la primera falla crítica.</p>
+<ol>
+  <li><strong>Infraestructura:</strong> build de la imagen, arranque, migraciones de base de datos y health check.</li>
+  <li><strong>Autenticación y embebido (crítica):</strong> OAuth con cada proveedor de identidad, dashboard cargado con guest token y hit de caché.</li>
+  <li><strong>Producto (crítica):</strong> filtros de tiempo, sets de filtros guardados, filtros nativos y filtrado cruzado.</li>
+  <li><strong>Exportación y miniaturas:</strong> exportación a PDF y miniaturas de dashboards.</li>
+  <li><strong>SQL y datos:</strong> SQL Lab asincrónico y exploración sobre BigQuery.</li>
+</ol>
+<p>Los entornos forman una escalera: Docker local, después un entorno efímero por rama en Kubernetes, después un cliente piloto, después preproducción con una copia de la metadata de producción y, por último, producción cliente por cliente. El rollback es una restauración de snapshot ensayada, porque bajar de versión la metadata no es una opción.</p>
+
+<h2>Resultados</h2>
+<ul>
+  <li>Tres versiones mayores (4.1 → 5.0 → 6.0 → 6.1) y seis merges de upstream en 30 días corridos.</li>
+  <li>Unas 100 horas de trabajo.</li>
+  <li>Tres regresiones silenciosas detectadas por chequeos automáticos antes de llegar a cualquier cliente.</li>
+  <li>La deuda de seguridad, cerrada primero, con el aislamiento entre clientes cubierto por tests.</li>
+  <li>MCP disponible en la versión nueva para las funcionalidades de IA del producto.</li>
+</ul>
+<p>A octubre de 2026, la versión 6.1 corre en los entornos efímeros y de preproducción, y los clientes productivos pasan a ella de a uno, empezando por un piloto.</p>
+
+<h2>El playbook</h2>
+<p>Si mantenés un fork de un proyecto open source y necesitás ponerte al día con upstream:</p>
+<ol>
+  <li>Inventariá el fork contra su tag base y clasificá cada cambio en portar, reemplazar o eliminar.</li>
+  <li>Leé los changelogs de upstream de todo el rango y marcá los cambios que rompen compatibilidad por área.</li>
+  <li>Cerrá primero los parches de seguridad de tu línea actual y testeá las invariantes críticas (seguridad y aislamiento entre clientes) antes del salto.</li>
+  <li>Hacé un merge por tag de upstream. Escribí la regla de resolución en el commit de merge.</li>
+  <li>Mantené una lista de archivos que siempre se mergean a mano.</li>
+  <li>Escribí un script que verifique que cada funcionalidad propia sigue conectada, no solo presente.</li>
+  <li>Buscá automáticamente los patrones que la versión nueva eliminó.</li>
+  <li>Corré en local el mismo build que CI antes de cada push.</li>
+  <li>Subí por una escalera de entornos con smoke tests por fases y regla de corte; desplegá cliente por cliente.</li>
+  <li>Si un agente de IA hace los merges, poné todo lo anterior en sus instrucciones, para que trabaje dentro de los chequeos y no alrededor de ellos.</li>
+</ol>
+
+<h2>¿Tenés que actualizar tu propio fork?</h2>
+<p>Si usás un Superset personalizado (o cualquier fork open source) y la actualización se viene postergando, te puedo ayudar a inventariar el fork, planificar el camino y ejecutarlo. <a href="https://calendly.com/juanmanuelzaragoza/30min" target="_blank" rel="noopener">Agendá una llamada de 30 minutos</a>.</p>

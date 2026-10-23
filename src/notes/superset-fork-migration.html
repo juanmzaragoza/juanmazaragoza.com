@@ -1,0 +1,102 @@
+<!--
+  Draft article body for /notes/superset-fork-migration/
+  meta:
+    title: Upgrading a Customized Apache Superset Fork from 4.1 to 6.1
+    seoTitle: Upgrading a Superset Fork from 4.1 to 6.1: A Playbook
+    description: How I migrated an Apache Superset fork with ~430 custom commits across three major versions in 30 days, using AI for merges and deterministic checks to catch what it broke.
+    datePublished: 2026-10-23
+    tags: Apache Superset, migration, embedded analytics, multi-tenant, AI-assisted development
+    related case: /work/information-connection-and-visualization-platform-datakimia/
+-->
+<p class="lead">In September 2026 I migrated the Apache Superset fork behind <a href="/work/information-connection-and-visualization-platform-datakimia/">Datakimia</a>'s embedded analytics platform from 4.1 to 6.1: three major versions, six upstream merges and about 4,400 files touched in the last one, in 30 calendar days. An AI agent resolved most of the merge conflicts. What kept the upgrade safe was not the AI. It was a set of boring, deterministic checks that caught three features the merge had silently broken.</p>
+
+<p>This is the playbook, including what went wrong.</p>
+
+<h2>The starting point</h2>
+<p>The platform serves analytics to several customers. Each customer runs its own Superset instance, embedded in a Next.js portal with guest tokens and row-level security. Over two years the fork had accumulated around 430 custom commits (roughly 80 files and 6,000 lines of product code): custom SSO, saved filter sets, a calendar date picker, cache handling for embedded guests, structured logging for Google Cloud, and several security patches.</p>
+<p>Staying on 4.1 was no longer an option:</p>
+<ul>
+  <li>Upstream support had moved to the 6.x line, and 4.1.1 had known CVEs.</li>
+  <li>In embedded mode, 4.1.1 returned generated SQL to guest users.</li>
+  <li>6.1 ships MCP (Model Context Protocol) support, which the product roadmap needed for AI over BI.</li>
+</ul>
+<p>And the constraints made it risky:</p>
+<ul>
+  <li><strong>One Superset per customer.</strong> Every upgrade step multiplies by the number of tenants: metadata upgrades, config diffs and cut-over windows.</li>
+  <li><strong>The metadata database cannot be downgraded.</strong> Rollback means restoring a snapshot.</li>
+  <li><strong>Embedding has to keep working</strong> at every step: guest tokens, RLS, SSO.</li>
+</ul>
+
+<h2>Step 1: Inventory the fork before touching it</h2>
+<p>The first deliverable was not code. It was a list of every custom change against the 4.1.1 tag (<code>git diff 4.1.1...fork</code>), each one classified as:</p>
+<ul>
+  <li><strong>Carry</strong> — port it as is.</li>
+  <li><strong>Replace</strong> — upstream now offers config, theming or an extension point that does the same job.</li>
+  <li><strong>Drop</strong> — remove it, or make an explicit product decision.</li>
+</ul>
+<p>Next to it, I read the upstream changelogs for the whole range and flagged breaking changes by product area. Two of them shaped the plan: 6.0 replaces the SQL parser with SQLGlot, which can change the SQL generated under RLS, and 6.0 moves the frontend to a new theming system that breaks old theme tokens.</p>
+
+<h2>Step 2: A security gate before the migration</h2>
+<p>Before any major jump, I closed the known risks on the current line:</p>
+<ul>
+  <li>Merged the 4.1.2, 4.1.3 and 4.1.4 patch releases, one merge per tag.</li>
+  <li>Upgraded <code>jspdf</code> to a version without the published CVEs.</li>
+  <li>Wrote automated tests for cache isolation between embedded guests: the cache key now includes the user, the resources and the RLS rules from the guest token, so two customers can never share a cached chart.</li>
+</ul>
+<p>The point of this gate: the most important invariant of a multi-tenant BI product (no data leaking between customers) gets a test <em>before</em> the risky change, not after.</p>
+
+<h2>Step 3: One merge per upstream tag, with a waypoint</h2>
+<p>Instead of jumping from 4.1 to 6.1 in one merge, I went through 5.0 as a waypoint in a non-production environment, then 6.0, then 6.1. Six upstream merges in total. Each merge kept the conflicts small enough to understand and attribute.</p>
+<p>Before each merge I wrote down the rule for resolving it. For 6.1 it was: keep our configuration, the date-only filters for public users, the chart-data cache and the thumbnail capture; take the 6.1 tree for everything else. That sentence went into the merge commit message, so anyone reading the history knows what was intentional.</p>
+
+<h2>Step 4: Let the AI merge, and verify what it cannot see</h2>
+<p>I used Cursor to resolve the bulk of the conflicts and adapt code to the new APIs. That is where AI shines: thousands of mechanical changes across a large codebase. It is also where it fails silently.</p>
+<p>After the 5.0 merge everything built, the app started, and three features were gone:</p>
+<ul>
+  <li>The saved filter sets API returned 404, because its registration had been dropped.</li>
+  <li>The "save filters" buttons disappeared, because a feature flag was lost.</li>
+  <li>Request IDs stopped appearing in the Google Cloud logs, because the tracking hook was no longer installed.</li>
+</ul>
+<p>The files were all still there. Nobody was calling them. This is the typical result of resolving a shared file with "take theirs": the module survives, its wiring does not.</p>
+<p>So I wrote a wiring check: a shell script with 23 assertions that each custom feature is still <em>used</em>, not just present. It also lists the files that must never be resolved with "take theirs" (the filter bar, the time filter plugin, the app entry point, the feature flags, the Superset config). If a new silent disconnection is ever found, its assertion is added in the same change.</p>
+<p>A second script scans for 4.x patterns that break in 6.x: old theme tokens, removed component shims, renamed icons, deprecated props.</p>
+<p>Both scripts, plus a production-equivalent build, run before every push. That rule lives in the agent's own instructions, so the AI has to pass the checks before it can push anything. The AI does the work; deterministic checks decide if it is done.</p>
+
+<h2>Step 5: Smoke tests in phases, with a stop rule</h2>
+<p>Every environment runs the same smoke test: 5 phases and 17 steps, in order, stopping at the first critical failure.</p>
+<ol>
+  <li><strong>Infrastructure</strong> — image build, startup, database migrations, health check.</li>
+  <li><strong>Auth and embedding (critical)</strong> — OAuth with each identity provider, dashboard loaded with a guest token, cache hit.</li>
+  <li><strong>Product (critical)</strong> — time filters, saved filter sets, native filters, cross-filtering.</li>
+  <li><strong>Export and thumbnails</strong> — PDF export, dashboard thumbnails.</li>
+  <li><strong>SQL and data</strong> — async SQL Lab, BigQuery exploration.</li>
+</ol>
+<p>The environments form a ladder: local Docker, then an ephemeral environment per branch on Kubernetes, then a pilot customer, then pre-production with a copy of production metadata, then production customer by customer. Rollback is a rehearsed snapshot restore, because a metadata downgrade is not an option.</p>
+
+<h2>Results</h2>
+<ul>
+  <li>Three major versions (4.1 → 5.0 → 6.0 → 6.1) and six upstream merges in 30 calendar days.</li>
+  <li>About 100 hours of work.</li>
+  <li>Three silent regressions caught by automated checks before reaching any customer.</li>
+  <li>Security debt closed first, with tenant isolation covered by tests.</li>
+  <li>MCP available on the new version for the product's AI features.</li>
+</ul>
+<p>As of October 2026, 6.1 runs in the ephemeral and pre-production environments, and production customers move to it one at a time, pilot first.</p>
+
+<h2>The playbook</h2>
+<p>If you maintain a fork of an open source project and need to catch up with upstream:</p>
+<ol>
+  <li>Inventory the fork against its base tag and classify every change as carry, replace or drop.</li>
+  <li>Read the upstream changelogs for the whole range and flag breaking changes by area.</li>
+  <li>Close security patches on your current line first, and test your critical invariants (security, tenancy) before the jump.</li>
+  <li>Merge one upstream tag at a time. Write the resolution rule in the merge commit.</li>
+  <li>Keep a list of files that are always merged by hand.</li>
+  <li>Write a script that verifies each custom feature is still wired in, not just present.</li>
+  <li>Scan automatically for patterns the new version removed.</li>
+  <li>Run the same build as CI locally before every push.</li>
+  <li>Climb an environment ladder with phased smoke tests and a stop rule; roll out tenant by tenant.</li>
+  <li>If an AI agent does the merging, put all of the above in its instructions, so it works inside the checks instead of around them.</li>
+</ol>
+
+<h2>Need to upgrade your own fork?</h2>
+<p>If you run a customized Superset (or any open source fork) and the upgrade keeps getting postponed, I can help you inventory the fork, plan the path and execute it. <a href="https://calendly.com/juanmanuelzaragoza/30min" target="_blank" rel="noopener">Book a 30-minute call</a>.</p>
