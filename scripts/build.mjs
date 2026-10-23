@@ -163,6 +163,7 @@ function layout({ urlPath, title, description, body, active, jsonLd = [], ogType
   const nav = NAV.map(([href, label, key]) =>
     `<a href="${href}"${key === active ? ' class="active" aria-current="page"' : ''}>${label}</a>`).join('\n    ');
   const ld = jsonLd.map((o) => `<script type="application/ld+json">${JSON.stringify(o)}</script>`).join('\n  ');
+  const heroPreload = urlPath === '/' ? '<link rel="preload" as="image" href="/images/img_3062-Yan6xja2xjijrwNj.webp" type="image/webp">' : '';
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -181,6 +182,8 @@ function layout({ urlPath, title, description, body, active, jsonLd = [], ogType
   <link rel="icon" href="/images/favicon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  ${heroPreload}
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="/css/style.css">
   <script>document.documentElement.classList.add('js')</script>
   ${ld}
