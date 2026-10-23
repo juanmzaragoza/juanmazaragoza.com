@@ -1,0 +1,22 @@
+  <div class="portfolio-hero">
+    <div class="section-label">All Work</div>
+    <h1 class="section-title">Case studies</h1>
+    <p class="portfolio-intro">
+      {{projectCount}} projects across ticketing, real estate, pharma, government, fintech, and more. Full-stack development, QA automation, data platforms, and chatbots.
+    </p>
+  </div>
+
+  <div class="portfolio-filters" hidden>
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="running">Running</button>
+    <button class="filter-btn" data-filter="react">React / Next.js</button>
+    <button class="filter-btn" data-filter="laravel">Laravel / PHP</button>
+    <button class="filter-btn" data-filter="angular">Angular</button>
+    <button class="filter-btn" data-filter="node">Node.js</button>
+    <button class="filter-btn" data-filter="python">Python</button>
+    <button class="filter-btn" data-filter="wordpress">WordPress</button>
+  </div>
+
+  <div class="projects-grid" id="all-projects-grid">
+{{grid}}
+  </div>

@@ -1,0 +1,44 @@
+{
+  "home": {
+    "path": "/",
+    "src": "home.html",
+    "crumb": "Home",
+    "title": "Juan Manuel Zaragoza — Full-Stack Engineer & Fractional CTO",
+    "description": "Full-stack engineer with 10+ years building custom software, automations and BI, and rescuing unstable platforms for companies in the US, Spain and LATAM."
+  },
+  "work": {
+    "path": "/work/",
+    "src": "work.html",
+    "crumb": "Work",
+    "title": "Case Studies — Juan Manuel Zaragoza",
+    "description": "18 software projects across ticketing, real estate, pharma, government and fintech: full-stack platforms, QA automation, data platforms and chatbots."
+  },
+  "services": {
+    "path": "/services/",
+    "src": "services.html",
+    "crumb": "Services",
+    "title": "Software Development, Automation & Fractional CTO",
+    "description": "Custom software, process automation, chatbots, BI dashboards, project rescue, technical debt audits and fractional CTO leadership for growing companies."
+  },
+  "about": {
+    "path": "/about/",
+    "src": "about.html",
+    "crumb": "About",
+    "title": "About Juan Manuel Zaragoza — 10+ Years in Software",
+    "description": "Computer engineer from Argentina based in Cuenca, Ecuador. 10+ years, from QA specialist to tech lead, building platforms for government, pharma and SaaS."
+  },
+  "contact": {
+    "path": "/contact/",
+    "src": "contact.html",
+    "crumb": "Contact",
+    "title": "Contact & Book a 30-min Call — Juan Manuel Zaragoza",
+    "description": "Tell me about your project or the system that is holding you back. Book a free 30-minute call or email hola@juanmazaragoza.com."
+  },
+  "notFound": {
+    "path": "/404.html",
+    "src": "404.html",
+    "crumb": "Not found",
+    "title": "Page not found — Juan Manuel Zaragoza",
+    "description": "This page does not exist. Browse case studies or get in touch."
+  }
+}

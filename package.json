@@ -1,0 +1,10 @@
+{
+  "name": "juanmazaragoza.com",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "images": "./scripts/optimize-images.sh",
+    "build": "node scripts/build.mjs",
+    "serve": "python3 -m http.server 8000"
+  }
+}

@@ -895,3 +895,41 @@ footer {
   .detail-title { font-size: 28px; }
   .detail-meta { gap: 20px; }
 }
+
+/* ─── Multi-page additions ──────────────────────────────────── */
+/* width/height attributes reserve space; CSS aspect-ratio still decides the box */
+img[width][height] { height: auto; }
+/* Without JS, animated elements stay visible */
+html:not(.js) .fade-in { opacity: 1; transform: none; }
+.project-card[hidden] { display: none; }
+a.project-card { display: block; color: inherit; }
+h3.faq-q, h3.project-card-title { font-weight: inherit; }
+.portfolio-intro { color: var(--text-2); font-size: 15px; margin-top: 16px; max-width: 560px; line-height: 1.8; }
+.portfolio-hero .hero-actions { margin-top: 32px; }
+
+.breadcrumb { font-size: 12px; letter-spacing: 0.05em; color: var(--text-3); margin-bottom: 32px; }
+.breadcrumb a { color: var(--text-2); }
+.breadcrumb a:hover { color: var(--accent); }
+
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1px; margin-top: 40px; }
+.service-item { background: var(--bg); box-shadow: 0 0 0 1px var(--border); padding: 32px; display: block; color: inherit; scroll-margin-top: calc(var(--nav-h) + 24px); }
+a.service-item:hover h3 { color: var(--accent); }
+.service-item h3 { font-family: var(--font-display); font-size: 18px; font-weight: 600; margin-bottom: 12px; transition: color 0.2s; }
+.service-item p { color: var(--text-2); font-size: 13px; line-height: 1.8; }
+.service-item .service-cases { margin-top: 16px; font-size: 12px; color: var(--text-3); }
+.service-cases a { color: var(--accent); }
+
+.cta-block { border-top: 1px solid var(--border); }
+.cta-block .hero-actions { margin-top: 24px; }
+
+.testimonial-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+.yt-facade, .yt-frame { position: relative; display: block; width: 100%; aspect-ratio: 16 / 9; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: #000; padding: 0; }
+.yt-facade img { width: 100%; height: 100%; object-fit: cover; opacity: 0.85; transition: opacity 0.2s; }
+.yt-facade:hover img { opacity: 1; }
+.yt-play { position: absolute; inset: 0; margin: auto; width: 68px; height: 48px; display: flex; align-items: center; justify-content: center; background: var(--accent); color: var(--bg); border-radius: 12px; font-size: 20px; }
+.yt-frame iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+@media (max-width: 900px) {
+  .testimonial-grid { grid-template-columns: 1fr; gap: 32px; }
+  .service-item { padding: 24px; }
+}
