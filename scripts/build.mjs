@@ -352,7 +352,12 @@ for (const p of projects) {
   if (p.client) creativeWork.about = p.client;
   jsonLd.push(creativeWork);
 
-  write(urlPath, layout({ urlPath, title: seoTitle(p), description: pageDescription, body, active: 'work', jsonLd, ogType: 'article', ogImage: img(p.hero).src }));
+  // Use OG image if it exists, otherwise fall back to hero
+  const ogImagePath = `/images/og/${p.slug}.jpg`;
+  const ogImageExists = fs.existsSync(path.join(ROOT, 'images/og', `${p.slug}.jpg`));
+  const ogImage = ogImageExists ? ogImagePath : img(p.hero).src;
+
+  write(urlPath, layout({ urlPath, title: seoTitle(p), description: pageDescription, body, active: 'work', jsonLd, ogType: 'article', ogImage }));
 }
 
 // Sitemap
