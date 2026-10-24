@@ -41,6 +41,13 @@
     "title": "QA Automation for Laravel — 600+ Tests, Zero Manual Regression",
     "description": "Pest for backend, Playwright for E2E. Automated test suites that catch bugs before production and let your team ship with confidence."
   },
+  "serviceEcuador": {
+    "path": "/services/ecuador/",
+    "src": "service-ecuador.html",
+    "crumb": "Ecuador",
+    "title": "Software Development, CTO & Technical Services — Ecuador",
+    "description": "Based in Cuenca, Ecuador (UTC-5). Custom software, project rescue, technical audits, QA automation, and fractional CTO for companies in Ecuador and LATAM."
+  },
   "about": {
     "path": "/about/",
     "src": "about.html",
