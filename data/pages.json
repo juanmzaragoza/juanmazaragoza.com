@@ -32,7 +32,7 @@
     "src": "service-technical-audit.html",
     "crumb": "Technical Audit",
     "title": "Technical Debt Audit for Startups — Know Your Real Risks",
-    "description": "Two-week audit: risk map, security findings, scalability assessment, and a prioritized roadmap to fix technical debt. Fixed scope, $3,500."
+    "description": "Two-week technical audit: risk map, security findings, scalability assessment, and prioritized roadmap to fix technical debt for startups."
   },
   "serviceQA": {
     "path": "/services/qa-automation-laravel/",
