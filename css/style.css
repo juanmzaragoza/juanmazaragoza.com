@@ -720,7 +720,8 @@ nav.scrolled {
 .detail-gallery img {
   width: 100%;
   aspect-ratio: 4/3;
-  object-fit: cover;
+  object-fit: contain;
+  background: var(--bg-2);
   border-radius: var(--radius);
   border: 1px solid var(--border);
   transition: border-color 0.2s;
