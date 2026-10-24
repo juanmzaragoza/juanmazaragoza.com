@@ -30,24 +30,9 @@ function img(src) {
 
 function imgTag(src, alt, { lazy = true, cls = '', priority = false } = {}) {
   const { src: s, size } = img(src);
-
-  // Generate srcset for responsive images
-  let srcset = '';
-  if (size && (size[0] > 800 || size[1] > 800)) {
-    const srcset50 = s.replace(/\.webp$/, '-50.webp');
-    const srcset75 = s.replace(/\.webp$/, '-75.webp');
-    const has50 = fs.existsSync(path.join(ROOT, srcset50.replace(/^\//, '')));
-    const has75 = fs.existsSync(path.join(ROOT, srcset75.replace(/^\//, '')));
-
-    if (has50 && has75) {
-      srcset = `srcset="${srcset50} 50w, ${srcset75} 75w, ${s} 100w"`;
-    }
-  }
-
   const attrs = [
     cls && `class="${cls}"`,
     `src="${s}"`,
-    srcset,
     `alt="${esc(alt)}"`,
     size && `width="${size[0]}" height="${size[1]}"`,
     lazy && !priority && 'loading="lazy"',
