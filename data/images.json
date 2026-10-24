@@ -1,84 +1,922 @@
 {
-  "images/1608112191210-1-m2WBn6nwR1f5EXZE.webp": [800, 800],
-  "images/1652191275505-YrDXVzGQJ7ueXvWP.webp": [400, 400],
-  "images/1add_client-AMqaEQB8o0UMWEgD.webp": [1600, 810],
-  "images/1listing_clients-A1a1xqn525sE4JQP.webp": [1600, 811],
-  "images/1paginated_and_options-mv05BrnJ8bFL41V4.webp": [1600, 783],
-  "images/289168780_102138895885338_9005776411265129643_n-YbNqwpEvKLUwoZJ7.webp": [500, 500],
-  "images/2diseases-YNqO7Qa21nf5gXJV.webp": [1600, 586],
-  "images/allgradientgreen-m2WrkrV4aOFVr0on.webp": [1600, 560],
-  "images/amediasocial.com-A1aByvrEeKhnGPZV.webp": [1200, 630],
-  "images/buenaventura_flow-AwvDwzO0awhlyLPP.webp": [1600, 358],
-  "images/chat-example-AR0MavwNe8Hj8wxR.webp": [1056, 923],
-  "images/client_says_hi_flow-mePbw8yWEVH9qNBz.webp": [1480, 610],
-  "images/data-entry-1-YNqOb3lZq7hMvL2X.webp": [1600, 766],
-  "images/datakimia_logo-03-Aq2NWxDVDwhKB1nz.webp": [1600, 1600],
-  "images/digitalice_su_pyme_cover-m2W4gKLb7rTrW9lj.webp": [1600, 1131],
-  "images/download-AoPq0pgRj7h4pv2V.webp": [949, 707],
-  "images/generic_flow-mjEqw3zjB1c94NxL.webp": [1600, 524],
-  "images/gold-630x630-YZ92NBR6N2HMO46p.webp": [630, 630],
-  "images/image-2021-12-16-07-22-44-210-mk38GrVbrXiza2XV.webp": [886, 498],
-  "images/images-YBgeqnP22afQKWn5.webp": [225, 225],
-  "images/img_3062-Yan6xja2xjijrwNj.webp": [1600, 1200],
-  "images/landing-and-login-640x1470-m6LP9G0X3nujGZDK.webp": [640, 1470],
-  "images/nd_587846285-m7V5JygpZ6FLDGbj.webp": [695, 695],
-  "images/report-competitivelandscape-YZ9aQvOlX4ukaNJv.webp": [1600, 786],
-  "images/report-keyevents-A8529G1k71Uzx5Ld.webp": [1600, 735],
-  "images/report-news-A0xe9GPgZlH8RjDZ.webp": [1600, 832],
-  "images/report-timelinechart-2-A8529G1kZMhWrql8.webp": [1600, 863],
-  "images/report-timelinechart-3-A3Qa9GDZP4sVXkby.webp": [1600, 864],
-  "images/screencapture-atencionmedicamentos-hml-gcba-gob-ar-farmacias-2020-03-16-11_26_17-A852QEb632SVEkNa.webp": [1600, 799],
-  "images/screencapture-atencionmedicamentos-hml-gcba-gob-ar-home-2020-03-16-11_20_12-A852QEbDxKS9gMgl.webp": [1600, 840],
-  "images/screencapture-atencionmedicamentos-hml-gcba-gob-ar-solicitud-entrega-2020-03-16-11_23_59-A852QEb6jvUWDw9M.webp": [1600, 799],
-  "images/screencapture-atencionmedicamentos-hml-gcba-gob-ar-solicitud-entrega-nueva-2020-03-16-11_21_12-mP4Pl2yX5QFD0GPz.webp": [1600, 799],
-  "images/screencapture-crmdev-notiapp-dev-app-settings-general-2024-04-23-10_21_41-mP4pvnM683U3N8LL.webp": [1600, 1215],
-  "images/screencapture-crmdev-notiapp-dev-app-settings-tasks-statuses-2024-04-23-10_22_15-A1aKLw5VpyFzgLDj.webp": [1600, 903],
-  "images/screencapture-crmdev-notiapp-dev-clients-2024-04-23-10_20_33-YKbJw6lVnVIQ46Wk.webp": [1600, 856],
-  "images/screencapture-crmdev-notiapp-dev-home-2024-04-23-10_20_01-mp8nGvJBj8cqGk8q.webp": [1600, 1090],
-  "images/screencapture-crmdev-notiapp-dev-invoices-1-2024-04-23-10_28_05-Aq2ByvM829fRBE3J.webp": [1600, 1092],
-  "images/screencapture-crmdev-notiapp-dev-tasks-2024-04-23-10_21_12-YNqJVy2z3Lt0oV6a.webp": [1600, 849],
-  "images/screencapture-evaluacion-qa-gcba-gob-ar-administrador-evaluaciones-2020-03-16-10_52_17-AoPZ2Kyyg3uoVx1W.webp": [1429, 2160],
-  "images/screencapture-evaluacion-qa-gcba-gob-ar-administrador-evaluaciones-2020-03-16-10_56_10-Yle2lKkkzPUEQ4Mx.webp": [1600, 1600],
-  "images/screencapture-evaluacion-qa-gcba-gob-ar-formularios-2020-03-16-11_01_51-AwvjaK11yptG6PJw.webp": [1600, 1123],
-  "images/screencapture-evaluacion-qa-gcba-gob-ar-gestion-competencias-2020-03-16-11_00_35-m7V8vXggLgsev4bq.webp": [1600, 889],
-  "images/screencapture-ivee-platform-buildout-staging-web-app-admin-2023-02-13-12_09_20-m7V8vjZ56VuLwkDp.webp": [1600, 735],
-  "images/screencapture-ivee-platform-buildout-staging-web-app-dashboard-2023-02-13-12_08_05-AR02NzBMP8SBVJ8K.webp": [1600, 1232],
-  "images/screencapture-ivee-platform-buildout-staging-web-app-dashboard-tableau-2023-02-13-12_08_59-AMqaEzwlerSMD3NL.webp": [1600, 1302],
-  "images/screencapture-ivee-platform-buildout-staging-web-app-login-2023-02-13-12_09_42-AE02nxyP2OcKq0jz.webp": [1600, 735],
-  "images/screencapture-ivee-squarespace-public-dashboard-2023-02-13-12_25_02-m7V8vjZ2XVCxnZWb.webp": [1600, 711],
-  "images/screencapture-listing-mu-vercel-app-2024-09-03-19_24_25-ALpoaBvjoOU3yrZJ.webp": [1600, 1756],
-  "images/screencapture-localhost-3124-es-coupons-imv6tmsux8fl-maraton-internacional-42km-ujjv-2025-04-25-09_48_35-m5KMQqGBGwf27483.webp": [1600, 1354],
-  "images/screencapture-posadalaesteladebarros-es-2024-04-14-22_54_47-m6LvKNkoNOSr2zWQ.webp": [775, 2160],
-  "images/screencapture-posadalaesteladebarros-es-contacto-2024-04-14-23_15_48-A1aKyOKLPBfb2e8j.webp": [1484, 2160],
-  "images/screencapture-posadalaesteladebarros-es-es-accommodation-habitacion-2-2024-04-14-23_02_59-AMqnrJVJ5OhaVoEw.webp": [903, 2160],
-  "images/screencapture-posadalaesteladebarros-es-es-la-posada-2-2024-04-14-23_03_41-YbNa3WOWJViXzo58.webp": [1025, 2160],
-  "images/screencapture-pupeeze-telehealth-staging-web-app-2023-02-13-12_35_34-mp83DNoM3DUV368e.webp": [1600, 863],
-  "images/screencapture-rwa-insights-vercel-app-2024-04-23-19_56_10-ALpJJ092Nzce9ynD.webp": [1402, 2160],
-  "images/screencapture-rwa-insights-vercel-app-coming-soon-2024-04-23-19_57_35-YbNaaOrg03Cqxqbn.webp": [1600, 823],
-  "images/screencapture-rwa-insights-vercel-app-stablecoins-2024-04-23-19_57_10-YleMMDr4MaTeDvzB.webp": [1501, 2160],
-  "images/screencapture-rwa-insights-vercel-app-treasuries-2024-04-23-19_56_55-YD0ppyNEOBT3RgjR.webp": [1600, 1527],
-  "images/screencapture-uptest-amediasocial-checkout-2024-11-27-17_42_58-YNqP5jq5DVulOQJZ.webp": [1578, 2160],
-  "images/screenshot-1-1-AoPZbrV9VRT7XQ6k.webp": [886, 498],
-  "images/screenshot-1-d95D9aVk2QU87RWw.webp": [886, 498],
-  "images/screenshot-from-2020-03-16-10-49-49-AVL38g00L2iExlwM.webp": [1600, 651],
-  "images/screenshot-from-2020-03-16-11-15-46-AQE8PDK3kacZ07P2.webp": [1600, 517],
-  "images/screenshot-from-2023-03-23-14-39-26-640x479-Yan6Qg9vPJtoBB3k.webp": [640, 479],
-  "images/screenshot-from-2023-09-15-09-01-42-A852zQ024gCvvJN1.webp": [1600, 550],
-  "images/screenshot-from-2024-03-15-21-02-37-Yyv2VqWng4FG29o0.webp": [1600, 831],
-  "images/screenshot-from-2024-04-18-12-29-18-mk3Dnz466rt10X8l.webp": [1600, 618],
-  "images/screenshot-from-2024-09-03-19-03-23-A854J684oRUvPoel.webp": [1218, 760],
-  "images/screenshot-from-2024-09-03-19-04-31-m7VKnE7qevf3R8D8.webp": [1600, 772],
-  "images/screenshot-from-2024-11-27-17-51-34-m7V5yJVyV0fqk7O0.webp": [1400, 679],
-  "images/screenshot-from-2024-12-22-12-05-20-YanqWpoOwOi74D8B.webp": [518, 319],
-  "images/screenshot-from-2025-02-16-09-57-54-YanqpWylBzF1WqaB.webp": [1600, 797],
-  "images/screenshot-from-2025-02-16-09-58-57-AzG3pReJZRFyEZ3y.webp": [1600, 801],
-  "images/screenshot-from-2025-02-16-09-59-34-ALp7xVn1oztje0OX.webp": [1600, 805],
-  "images/screenshot-from-2025-02-16-10-00-13-AQED70yLn9F5VkKM.webp": [1600, 800],
-  "images/screenshot-from-2025-04-25-11-00-07-YX4lgvEMlpSDlg6G.webp": [1600, 436],
-  "images/screenshot-from-2025-04-28-20-32-26-mv0WKOwGKOCBEXxQ.webp": [1600, 371],
-  "images/valledorado_flow-YX4aE620JDc8LN8o.webp": [1242, 315],
-  "images/whatsapp-image-2024-02-06-at-18.53.16-mjE7KlPB0KTqoJVr.webp": [958, 638],
-  "images/whatsapp-image-2024-02-06-at-18.53.29-1024x490-A3Q2VvjvkRfJnvKO.webp": [1024, 490],
-  "images/whatsapp-image-2024-09-03-at-19.25.54-YZ9bJaLezlfGv32w.webp": [881, 1600],
-  "images/zyro-image-1-m2WBn69XLECKwk52.webp": [1600, 1354]
+  "images/1608112191210-1-m2WBn6nwR1f5EXZE.webp": [
+    800,
+    800
+  ],
+  "images/1652191275505-YrDXVzGQJ7ueXvWP.webp": [
+    400,
+    400
+  ],
+  "images/1add_client-AMqaEQB8o0UMWEgD.webp": [
+    1600,
+    810
+  ],
+  "images/1listing_clients-A1a1xqn525sE4JQP.webp": [
+    1600,
+    811
+  ],
+  "images/1paginated_and_options-mv05BrnJ8bFL41V4.webp": [
+    1600,
+    783
+  ],
+  "images/289168780_102138895885338_9005776411265129643_n-YbNqwpEvKLUwoZJ7.webp": [
+    500,
+    500
+  ],
+  "images/2diseases-YNqO7Qa21nf5gXJV.webp": [
+    1600,
+    586
+  ],
+  "images/allgradientgreen-m2WrkrV4aOFVr0on.webp": [
+    1600,
+    560
+  ],
+  "images/amediasocial.com-A1aByvrEeKhnGPZV.webp": [
+    1200,
+    630
+  ],
+  "images/buenaventura_flow-AwvDwzO0awhlyLPP.webp": [
+    1600,
+    358
+  ],
+  "images/chat-example-AR0MavwNe8Hj8wxR.webp": [
+    1056,
+    923
+  ],
+  "images/client_says_hi_flow-mePbw8yWEVH9qNBz.webp": [
+    1480,
+    610
+  ],
+  "images/data-entry-1-YNqOb3lZq7hMvL2X.webp": [
+    1600,
+    766
+  ],
+  "images/datakimia_logo-03-Aq2NWxDVDwhKB1nz.webp": [
+    1600,
+    1600
+  ],
+  "images/digitalice_su_pyme_cover-m2W4gKLb7rTrW9lj.webp": [
+    1600,
+    1131
+  ],
+  "images/download-AoPq0pgRj7h4pv2V.webp": [
+    949,
+    707
+  ],
+  "images/generic_flow-mjEqw3zjB1c94NxL.webp": [
+    1600,
+    524
+  ],
+  "images/gold-630x630-YZ92NBR6N2HMO46p.webp": [
+    630,
+    630
+  ],
+  "images/image-2021-12-16-07-22-44-210-mk38GrVbrXiza2XV.webp": [
+    886,
+    498
+  ],
+  "images/images-YBgeqnP22afQKWn5.webp": [
+    225,
+    225
+  ],
+  "images/img_3062-Yan6xja2xjijrwNj.webp": [
+    1600,
+    1200
+  ],
+  "images/landing-and-login-640x1470-m6LP9G0X3nujGZDK.webp": [
+    640,
+    1470
+  ],
+  "images/nd_587846285-m7V5JygpZ6FLDGbj.webp": [
+    695,
+    695
+  ],
+  "images/report-competitivelandscape-YZ9aQvOlX4ukaNJv.webp": [
+    1600,
+    786
+  ],
+  "images/report-keyevents-A8529G1k71Uzx5Ld.webp": [
+    1600,
+    735
+  ],
+  "images/report-news-A0xe9GPgZlH8RjDZ.webp": [
+    1600,
+    832
+  ],
+  "images/report-timelinechart-2-A8529G1kZMhWrql8.webp": [
+    1600,
+    863
+  ],
+  "images/report-timelinechart-3-A3Qa9GDZP4sVXkby.webp": [
+    1600,
+    864
+  ],
+  "images/screencapture-atencionmedicamentos-hml-gcba-gob-ar-farmacias-2020-03-16-11_26_17-A852QEb632SVEkNa.webp": [
+    1600,
+    799
+  ],
+  "images/screencapture-atencionmedicamentos-hml-gcba-gob-ar-home-2020-03-16-11_20_12-A852QEbDxKS9gMgl.webp": [
+    1600,
+    840
+  ],
+  "images/screencapture-atencionmedicamentos-hml-gcba-gob-ar-solicitud-entrega-2020-03-16-11_23_59-A852QEb6jvUWDw9M.webp": [
+    1600,
+    799
+  ],
+  "images/screencapture-atencionmedicamentos-hml-gcba-gob-ar-solicitud-entrega-nueva-2020-03-16-11_21_12-mP4Pl2yX5QFD0GPz.webp": [
+    1600,
+    799
+  ],
+  "images/screencapture-crmdev-notiapp-dev-app-settings-general-2024-04-23-10_21_41-mP4pvnM683U3N8LL.webp": [
+    1600,
+    1215
+  ],
+  "images/screencapture-crmdev-notiapp-dev-app-settings-tasks-statuses-2024-04-23-10_22_15-A1aKLw5VpyFzgLDj.webp": [
+    1600,
+    903
+  ],
+  "images/screencapture-crmdev-notiapp-dev-clients-2024-04-23-10_20_33-YKbJw6lVnVIQ46Wk.webp": [
+    1600,
+    856
+  ],
+  "images/screencapture-crmdev-notiapp-dev-home-2024-04-23-10_20_01-mp8nGvJBj8cqGk8q.webp": [
+    1600,
+    1090
+  ],
+  "images/screencapture-crmdev-notiapp-dev-invoices-1-2024-04-23-10_28_05-Aq2ByvM829fRBE3J.webp": [
+    1600,
+    1092
+  ],
+  "images/screencapture-crmdev-notiapp-dev-tasks-2024-04-23-10_21_12-YNqJVy2z3Lt0oV6a.webp": [
+    1600,
+    849
+  ],
+  "images/screencapture-evaluacion-qa-gcba-gob-ar-administrador-evaluaciones-2020-03-16-10_52_17-AoPZ2Kyyg3uoVx1W.webp": [
+    1429,
+    2160
+  ],
+  "images/screencapture-evaluacion-qa-gcba-gob-ar-administrador-evaluaciones-2020-03-16-10_56_10-Yle2lKkkzPUEQ4Mx.webp": [
+    1600,
+    1600
+  ],
+  "images/screencapture-evaluacion-qa-gcba-gob-ar-formularios-2020-03-16-11_01_51-AwvjaK11yptG6PJw.webp": [
+    1600,
+    1123
+  ],
+  "images/screencapture-evaluacion-qa-gcba-gob-ar-gestion-competencias-2020-03-16-11_00_35-m7V8vXggLgsev4bq.webp": [
+    1600,
+    889
+  ],
+  "images/screencapture-ivee-platform-buildout-staging-web-app-admin-2023-02-13-12_09_20-m7V8vjZ56VuLwkDp.webp": [
+    1600,
+    735
+  ],
+  "images/screencapture-ivee-platform-buildout-staging-web-app-dashboard-2023-02-13-12_08_05-AR02NzBMP8SBVJ8K.webp": [
+    1600,
+    1232
+  ],
+  "images/screencapture-ivee-platform-buildout-staging-web-app-dashboard-tableau-2023-02-13-12_08_59-AMqaEzwlerSMD3NL.webp": [
+    1600,
+    1302
+  ],
+  "images/screencapture-ivee-platform-buildout-staging-web-app-login-2023-02-13-12_09_42-AE02nxyP2OcKq0jz.webp": [
+    1600,
+    735
+  ],
+  "images/screencapture-ivee-squarespace-public-dashboard-2023-02-13-12_25_02-m7V8vjZ2XVCxnZWb.webp": [
+    1600,
+    711
+  ],
+  "images/screencapture-listing-mu-vercel-app-2024-09-03-19_24_25-ALpoaBvjoOU3yrZJ.webp": [
+    1600,
+    1756
+  ],
+  "images/screencapture-localhost-3124-es-coupons-imv6tmsux8fl-maraton-internacional-42km-ujjv-2025-04-25-09_48_35-m5KMQqGBGwf27483.webp": [
+    1600,
+    1354
+  ],
+  "images/screencapture-posadalaesteladebarros-es-2024-04-14-22_54_47-m6LvKNkoNOSr2zWQ.webp": [
+    775,
+    2160
+  ],
+  "images/screencapture-posadalaesteladebarros-es-contacto-2024-04-14-23_15_48-A1aKyOKLPBfb2e8j.webp": [
+    1484,
+    2160
+  ],
+  "images/screencapture-posadalaesteladebarros-es-es-accommodation-habitacion-2-2024-04-14-23_02_59-AMqnrJVJ5OhaVoEw.webp": [
+    903,
+    2160
+  ],
+  "images/screencapture-posadalaesteladebarros-es-es-la-posada-2-2024-04-14-23_03_41-YbNa3WOWJViXzo58.webp": [
+    1025,
+    2160
+  ],
+  "images/screencapture-pupeeze-telehealth-staging-web-app-2023-02-13-12_35_34-mp83DNoM3DUV368e.webp": [
+    1600,
+    863
+  ],
+  "images/screencapture-rwa-insights-vercel-app-2024-04-23-19_56_10-ALpJJ092Nzce9ynD.webp": [
+    1402,
+    2160
+  ],
+  "images/screencapture-rwa-insights-vercel-app-coming-soon-2024-04-23-19_57_35-YbNaaOrg03Cqxqbn.webp": [
+    1600,
+    823
+  ],
+  "images/screencapture-rwa-insights-vercel-app-stablecoins-2024-04-23-19_57_10-YleMMDr4MaTeDvzB.webp": [
+    1501,
+    2160
+  ],
+  "images/screencapture-rwa-insights-vercel-app-treasuries-2024-04-23-19_56_55-YD0ppyNEOBT3RgjR.webp": [
+    1600,
+    1527
+  ],
+  "images/screencapture-uptest-amediasocial-checkout-2024-11-27-17_42_58-YNqP5jq5DVulOQJZ.webp": [
+    1578,
+    2160
+  ],
+  "images/screenshot-1-1-AoPZbrV9VRT7XQ6k.webp": [
+    886,
+    498
+  ],
+  "images/screenshot-1-d95D9aVk2QU87RWw.webp": [
+    886,
+    498
+  ],
+  "images/screenshot-from-2020-03-16-10-49-49-AVL38g00L2iExlwM.webp": [
+    1600,
+    651
+  ],
+  "images/screenshot-from-2020-03-16-11-15-46-AQE8PDK3kacZ07P2.webp": [
+    1600,
+    517
+  ],
+  "images/screenshot-from-2023-03-23-14-39-26-640x479-Yan6Qg9vPJtoBB3k.webp": [
+    640,
+    479
+  ],
+  "images/screenshot-from-2023-09-15-09-01-42-A852zQ024gCvvJN1.webp": [
+    1600,
+    550
+  ],
+  "images/screenshot-from-2024-03-15-21-02-37-Yyv2VqWng4FG29o0.webp": [
+    1600,
+    831
+  ],
+  "images/screenshot-from-2024-04-18-12-29-18-mk3Dnz466rt10X8l.webp": [
+    1600,
+    618
+  ],
+  "images/screenshot-from-2024-09-03-19-03-23-A854J684oRUvPoel.webp": [
+    1218,
+    760
+  ],
+  "images/screenshot-from-2024-09-03-19-04-31-m7VKnE7qevf3R8D8.webp": [
+    1600,
+    772
+  ],
+  "images/screenshot-from-2024-11-27-17-51-34-m7V5yJVyV0fqk7O0.webp": [
+    1400,
+    679
+  ],
+  "images/screenshot-from-2024-12-22-12-05-20-YanqWpoOwOi74D8B.webp": [
+    518,
+    319
+  ],
+  "images/screenshot-from-2025-02-16-09-57-54-YanqpWylBzF1WqaB.webp": [
+    1600,
+    797
+  ],
+  "images/screenshot-from-2025-02-16-09-58-57-AzG3pReJZRFyEZ3y.webp": [
+    1600,
+    801
+  ],
+  "images/screenshot-from-2025-02-16-09-59-34-ALp7xVn1oztje0OX.webp": [
+    1600,
+    805
+  ],
+  "images/screenshot-from-2025-02-16-10-00-13-AQED70yLn9F5VkKM.webp": [
+    1600,
+    800
+  ],
+  "images/screenshot-from-2025-04-25-11-00-07-YX4lgvEMlpSDlg6G.webp": [
+    1600,
+    436
+  ],
+  "images/screenshot-from-2025-04-28-20-32-26-mv0WKOwGKOCBEXxQ.webp": [
+    1600,
+    371
+  ],
+  "images/valledorado_flow-YX4aE620JDc8LN8o.webp": [
+    1242,
+    315
+  ],
+  "images/whatsapp-image-2024-02-06-at-18.53.16-mjE7KlPB0KTqoJVr.webp": [
+    958,
+    638
+  ],
+  "images/whatsapp-image-2024-02-06-at-18.53.29-1024x490-A3Q2VvjvkRfJnvKO.webp": [
+    1024,
+    490
+  ],
+  "images/whatsapp-image-2024-09-03-at-19.25.54-YZ9bJaLezlfGv32w.webp": [
+    881,
+    1600
+  ],
+  "images/zyro-image-1-m2WBn69XLECKwk52.webp": [
+    1600,
+    1354
+  ],
+  "images/1add_client-AMqaEQB8o0UMWEgD-50.webp": [
+    800,
+    405
+  ],
+  "images/1add_client-AMqaEQB8o0UMWEgD-75.webp": [
+    1200,
+    608
+  ],
+  "images/1listing_clients-A1a1xqn525sE4JQP-50.webp": [
+    800,
+    406
+  ],
+  "images/1listing_clients-A1a1xqn525sE4JQP-75.webp": [
+    1200,
+    608
+  ],
+  "images/1paginated_and_options-mv05BrnJ8bFL41V4-50.webp": [
+    800,
+    392
+  ],
+  "images/1paginated_and_options-mv05BrnJ8bFL41V4-75.webp": [
+    1200,
+    587
+  ],
+  "images/2diseases-YNqO7Qa21nf5gXJV-50.webp": [
+    800,
+    293
+  ],
+  "images/2diseases-YNqO7Qa21nf5gXJV-75.webp": [
+    1200,
+    440
+  ],
+  "images/allgradientgreen-m2WrkrV4aOFVr0on-50.webp": [
+    800,
+    280
+  ],
+  "images/allgradientgreen-m2WrkrV4aOFVr0on-75.webp": [
+    1200,
+    420
+  ],
+  "images/amediasocial.com-A1aByvrEeKhnGPZV-50.webp": [
+    600,
+    315
+  ],
+  "images/amediasocial.com-A1aByvrEeKhnGPZV-75.webp": [
+    900,
+    473
+  ],
+  "images/buenaventura_flow-AwvDwzO0awhlyLPP-50.webp": [
+    800,
+    179
+  ],
+  "images/buenaventura_flow-AwvDwzO0awhlyLPP-75.webp": [
+    1200,
+    269
+  ],
+  "images/chat-example-AR0MavwNe8Hj8wxR-50.webp": [
+    528,
+    462
+  ],
+  "images/chat-example-AR0MavwNe8Hj8wxR-75.webp": [
+    792,
+    692
+  ],
+  "images/client_says_hi_flow-mePbw8yWEVH9qNBz-50.webp": [
+    740,
+    305
+  ],
+  "images/client_says_hi_flow-mePbw8yWEVH9qNBz-75.webp": [
+    1110,
+    458
+  ],
+  "images/data-entry-1-YNqOb3lZq7hMvL2X-50.webp": [
+    800,
+    383
+  ],
+  "images/data-entry-1-YNqOb3lZq7hMvL2X-75.webp": [
+    1200,
+    575
+  ],
+  "images/datakimia_logo-03-Aq2NWxDVDwhKB1nz-50.webp": [
+    800,
+    800
+  ],
+  "images/datakimia_logo-03-Aq2NWxDVDwhKB1nz-75.webp": [
+    1200,
+    1200
+  ],
+  "images/digitalice_su_pyme_cover-m2W4gKLb7rTrW9lj-50.webp": [
+    800,
+    566
+  ],
+  "images/digitalice_su_pyme_cover-m2W4gKLb7rTrW9lj-75.webp": [
+    1200,
+    848
+  ],
+  "images/download-AoPq0pgRj7h4pv2V-50.webp": [
+    475,
+    354
+  ],
+  "images/download-AoPq0pgRj7h4pv2V-75.webp": [
+    712,
+    530
+  ],
+  "images/generic_flow-mjEqw3zjB1c94NxL-50.webp": [
+    800,
+    262
+  ],
+  "images/generic_flow-mjEqw3zjB1c94NxL-75.webp": [
+    1200,
+    393
+  ],
+  "images/image-2021-12-16-07-22-44-210-mk38GrVbrXiza2XV-50.webp": [
+    443,
+    249
+  ],
+  "images/image-2021-12-16-07-22-44-210-mk38GrVbrXiza2XV-75.webp": [
+    665,
+    374
+  ],
+  "images/img_3062-Yan6xja2xjijrwNj-50.webp": [
+    800,
+    600
+  ],
+  "images/img_3062-Yan6xja2xjijrwNj-75.webp": [
+    1200,
+    900
+  ],
+  "images/landing-and-login-640x1470-m6LP9G0X3nujGZDK-50.webp": [
+    320,
+    735
+  ],
+  "images/landing-and-login-640x1470-m6LP9G0X3nujGZDK-75.webp": [
+    480,
+    1103
+  ],
+  "images/report-competitivelandscape-YZ9aQvOlX4ukaNJv-50.webp": [
+    800,
+    393
+  ],
+  "images/report-competitivelandscape-YZ9aQvOlX4ukaNJv-75.webp": [
+    1200,
+    590
+  ],
+  "images/report-keyevents-A8529G1k71Uzx5Ld-50.webp": [
+    800,
+    368
+  ],
+  "images/report-keyevents-A8529G1k71Uzx5Ld-75.webp": [
+    1200,
+    551
+  ],
+  "images/report-news-A0xe9GPgZlH8RjDZ-50.webp": [
+    800,
+    416
+  ],
+  "images/report-news-A0xe9GPgZlH8RjDZ-75.webp": [
+    1200,
+    624
+  ],
+  "images/report-timelinechart-2-A8529G1kZMhWrql8-50.webp": [
+    800,
+    432
+  ],
+  "images/report-timelinechart-2-A8529G1kZMhWrql8-75.webp": [
+    1200,
+    647
+  ],
+  "images/report-timelinechart-3-A3Qa9GDZP4sVXkby-50.webp": [
+    800,
+    432
+  ],
+  "images/report-timelinechart-3-A3Qa9GDZP4sVXkby-75.webp": [
+    1200,
+    648
+  ],
+  "images/screencapture-atencionmedicamentos-hml-gcba-gob-ar-farmacias-2020-03-16-11_26_17-A852QEb632SVEkNa-50.webp": [
+    800,
+    400
+  ],
+  "images/screencapture-atencionmedicamentos-hml-gcba-gob-ar-farmacias-2020-03-16-11_26_17-A852QEb632SVEkNa-75.webp": [
+    1200,
+    599
+  ],
+  "images/screencapture-atencionmedicamentos-hml-gcba-gob-ar-home-2020-03-16-11_20_12-A852QEbDxKS9gMgl-50.webp": [
+    800,
+    420
+  ],
+  "images/screencapture-atencionmedicamentos-hml-gcba-gob-ar-home-2020-03-16-11_20_12-A852QEbDxKS9gMgl-75.webp": [
+    1200,
+    630
+  ],
+  "images/screencapture-atencionmedicamentos-hml-gcba-gob-ar-solicitud-entrega-2020-03-16-11_23_59-A852QEb6jvUWDw9M-50.webp": [
+    800,
+    400
+  ],
+  "images/screencapture-atencionmedicamentos-hml-gcba-gob-ar-solicitud-entrega-2020-03-16-11_23_59-A852QEb6jvUWDw9M-75.webp": [
+    1200,
+    599
+  ],
+  "images/screencapture-atencionmedicamentos-hml-gcba-gob-ar-solicitud-entrega-nueva-2020-03-16-11_21_12-mP4Pl2yX5QFD0GPz-50.webp": [
+    800,
+    400
+  ],
+  "images/screencapture-atencionmedicamentos-hml-gcba-gob-ar-solicitud-entrega-nueva-2020-03-16-11_21_12-mP4Pl2yX5QFD0GPz-75.webp": [
+    1200,
+    599
+  ],
+  "images/screencapture-crmdev-notiapp-dev-app-settings-general-2024-04-23-10_21_41-mP4pvnM683U3N8LL-50.webp": [
+    800,
+    608
+  ],
+  "images/screencapture-crmdev-notiapp-dev-app-settings-general-2024-04-23-10_21_41-mP4pvnM683U3N8LL-75.webp": [
+    1200,
+    911
+  ],
+  "images/screencapture-crmdev-notiapp-dev-app-settings-tasks-statuses-2024-04-23-10_22_15-A1aKLw5VpyFzgLDj-50.webp": [
+    800,
+    452
+  ],
+  "images/screencapture-crmdev-notiapp-dev-app-settings-tasks-statuses-2024-04-23-10_22_15-A1aKLw5VpyFzgLDj-75.webp": [
+    1200,
+    677
+  ],
+  "images/screencapture-crmdev-notiapp-dev-clients-2024-04-23-10_20_33-YKbJw6lVnVIQ46Wk-50.webp": [
+    800,
+    428
+  ],
+  "images/screencapture-crmdev-notiapp-dev-clients-2024-04-23-10_20_33-YKbJw6lVnVIQ46Wk-75.webp": [
+    1200,
+    642
+  ],
+  "images/screencapture-crmdev-notiapp-dev-home-2024-04-23-10_20_01-mp8nGvJBj8cqGk8q-50.webp": [
+    800,
+    545
+  ],
+  "images/screencapture-crmdev-notiapp-dev-home-2024-04-23-10_20_01-mp8nGvJBj8cqGk8q-75.webp": [
+    1200,
+    818
+  ],
+  "images/screencapture-crmdev-notiapp-dev-invoices-1-2024-04-23-10_28_05-Aq2ByvM829fRBE3J-50.webp": [
+    800,
+    546
+  ],
+  "images/screencapture-crmdev-notiapp-dev-invoices-1-2024-04-23-10_28_05-Aq2ByvM829fRBE3J-75.webp": [
+    1200,
+    819
+  ],
+  "images/screencapture-crmdev-notiapp-dev-tasks-2024-04-23-10_21_12-YNqJVy2z3Lt0oV6a-50.webp": [
+    800,
+    425
+  ],
+  "images/screencapture-crmdev-notiapp-dev-tasks-2024-04-23-10_21_12-YNqJVy2z3Lt0oV6a-75.webp": [
+    1200,
+    637
+  ],
+  "images/screencapture-evaluacion-qa-gcba-gob-ar-administrador-evaluaciones-2020-03-16-10_52_17-AoPZ2Kyyg3uoVx1W-50.webp": [
+    715,
+    1080
+  ],
+  "images/screencapture-evaluacion-qa-gcba-gob-ar-administrador-evaluaciones-2020-03-16-10_52_17-AoPZ2Kyyg3uoVx1W-75.webp": [
+    1072,
+    1620
+  ],
+  "images/screencapture-evaluacion-qa-gcba-gob-ar-administrador-evaluaciones-2020-03-16-10_56_10-Yle2lKkkzPUEQ4Mx-50.webp": [
+    800,
+    800
+  ],
+  "images/screencapture-evaluacion-qa-gcba-gob-ar-administrador-evaluaciones-2020-03-16-10_56_10-Yle2lKkkzPUEQ4Mx-75.webp": [
+    1200,
+    1200
+  ],
+  "images/screencapture-evaluacion-qa-gcba-gob-ar-formularios-2020-03-16-11_01_51-AwvjaK11yptG6PJw-50.webp": [
+    800,
+    562
+  ],
+  "images/screencapture-evaluacion-qa-gcba-gob-ar-formularios-2020-03-16-11_01_51-AwvjaK11yptG6PJw-75.webp": [
+    1200,
+    842
+  ],
+  "images/screencapture-evaluacion-qa-gcba-gob-ar-gestion-competencias-2020-03-16-11_00_35-m7V8vXggLgsev4bq-50.webp": [
+    800,
+    445
+  ],
+  "images/screencapture-evaluacion-qa-gcba-gob-ar-gestion-competencias-2020-03-16-11_00_35-m7V8vXggLgsev4bq-75.webp": [
+    1200,
+    667
+  ],
+  "images/screencapture-ivee-platform-buildout-staging-web-app-admin-2023-02-13-12_09_20-m7V8vjZ56VuLwkDp-50.webp": [
+    800,
+    368
+  ],
+  "images/screencapture-ivee-platform-buildout-staging-web-app-admin-2023-02-13-12_09_20-m7V8vjZ56VuLwkDp-75.webp": [
+    1200,
+    551
+  ],
+  "images/screencapture-ivee-platform-buildout-staging-web-app-dashboard-2023-02-13-12_08_05-AR02NzBMP8SBVJ8K-50.webp": [
+    800,
+    616
+  ],
+  "images/screencapture-ivee-platform-buildout-staging-web-app-dashboard-2023-02-13-12_08_05-AR02NzBMP8SBVJ8K-75.webp": [
+    1200,
+    924
+  ],
+  "images/screencapture-ivee-platform-buildout-staging-web-app-dashboard-tableau-2023-02-13-12_08_59-AMqaEzwlerSMD3NL-50.webp": [
+    800,
+    651
+  ],
+  "images/screencapture-ivee-platform-buildout-staging-web-app-dashboard-tableau-2023-02-13-12_08_59-AMqaEzwlerSMD3NL-75.webp": [
+    1200,
+    977
+  ],
+  "images/screencapture-ivee-platform-buildout-staging-web-app-login-2023-02-13-12_09_42-AE02nxyP2OcKq0jz-50.webp": [
+    800,
+    368
+  ],
+  "images/screencapture-ivee-platform-buildout-staging-web-app-login-2023-02-13-12_09_42-AE02nxyP2OcKq0jz-75.webp": [
+    1200,
+    551
+  ],
+  "images/screencapture-ivee-squarespace-public-dashboard-2023-02-13-12_25_02-m7V8vjZ2XVCxnZWb-50.webp": [
+    800,
+    356
+  ],
+  "images/screencapture-ivee-squarespace-public-dashboard-2023-02-13-12_25_02-m7V8vjZ2XVCxnZWb-75.webp": [
+    1200,
+    533
+  ],
+  "images/screencapture-listing-mu-vercel-app-2024-09-03-19_24_25-ALpoaBvjoOU3yrZJ-50.webp": [
+    800,
+    878
+  ],
+  "images/screencapture-listing-mu-vercel-app-2024-09-03-19_24_25-ALpoaBvjoOU3yrZJ-75.webp": [
+    1200,
+    1317
+  ],
+  "images/screencapture-localhost-3124-es-coupons-imv6tmsux8fl-maraton-internacional-42km-ujjv-2025-04-25-09_48_35-m5KMQqGBGwf27483-50.webp": [
+    800,
+    677
+  ],
+  "images/screencapture-localhost-3124-es-coupons-imv6tmsux8fl-maraton-internacional-42km-ujjv-2025-04-25-09_48_35-m5KMQqGBGwf27483-75.webp": [
+    1200,
+    1016
+  ],
+  "images/screencapture-posadalaesteladebarros-es-2024-04-14-22_54_47-m6LvKNkoNOSr2zWQ-50.webp": [
+    388,
+    1080
+  ],
+  "images/screencapture-posadalaesteladebarros-es-2024-04-14-22_54_47-m6LvKNkoNOSr2zWQ-75.webp": [
+    581,
+    1620
+  ],
+  "images/screencapture-posadalaesteladebarros-es-contacto-2024-04-14-23_15_48-A1aKyOKLPBfb2e8j-50.webp": [
+    742,
+    1080
+  ],
+  "images/screencapture-posadalaesteladebarros-es-contacto-2024-04-14-23_15_48-A1aKyOKLPBfb2e8j-75.webp": [
+    1113,
+    1620
+  ],
+  "images/screencapture-posadalaesteladebarros-es-es-accommodation-habitacion-2-2024-04-14-23_02_59-AMqnrJVJ5OhaVoEw-50.webp": [
+    452,
+    1080
+  ],
+  "images/screencapture-posadalaesteladebarros-es-es-accommodation-habitacion-2-2024-04-14-23_02_59-AMqnrJVJ5OhaVoEw-75.webp": [
+    677,
+    1620
+  ],
+  "images/screencapture-posadalaesteladebarros-es-es-la-posada-2-2024-04-14-23_03_41-YbNa3WOWJViXzo58-50.webp": [
+    513,
+    1080
+  ],
+  "images/screencapture-posadalaesteladebarros-es-es-la-posada-2-2024-04-14-23_03_41-YbNa3WOWJViXzo58-75.webp": [
+    769,
+    1620
+  ],
+  "images/screencapture-pupeeze-telehealth-staging-web-app-2023-02-13-12_35_34-mp83DNoM3DUV368e-50.webp": [
+    800,
+    432
+  ],
+  "images/screencapture-pupeeze-telehealth-staging-web-app-2023-02-13-12_35_34-mp83DNoM3DUV368e-75.webp": [
+    1200,
+    647
+  ],
+  "images/screencapture-rwa-insights-vercel-app-2024-04-23-19_56_10-ALpJJ092Nzce9ynD-50.webp": [
+    701,
+    1080
+  ],
+  "images/screencapture-rwa-insights-vercel-app-2024-04-23-19_56_10-ALpJJ092Nzce9ynD-75.webp": [
+    1052,
+    1620
+  ],
+  "images/screencapture-rwa-insights-vercel-app-coming-soon-2024-04-23-19_57_35-YbNaaOrg03Cqxqbn-50.webp": [
+    800,
+    412
+  ],
+  "images/screencapture-rwa-insights-vercel-app-coming-soon-2024-04-23-19_57_35-YbNaaOrg03Cqxqbn-75.webp": [
+    1200,
+    617
+  ],
+  "images/screencapture-rwa-insights-vercel-app-stablecoins-2024-04-23-19_57_10-YleMMDr4MaTeDvzB-50.webp": [
+    751,
+    1080
+  ],
+  "images/screencapture-rwa-insights-vercel-app-stablecoins-2024-04-23-19_57_10-YleMMDr4MaTeDvzB-75.webp": [
+    1126,
+    1620
+  ],
+  "images/screencapture-rwa-insights-vercel-app-treasuries-2024-04-23-19_56_55-YD0ppyNEOBT3RgjR-50.webp": [
+    800,
+    764
+  ],
+  "images/screencapture-rwa-insights-vercel-app-treasuries-2024-04-23-19_56_55-YD0ppyNEOBT3RgjR-75.webp": [
+    1200,
+    1145
+  ],
+  "images/screencapture-uptest-amediasocial-checkout-2024-11-27-17_42_58-YNqP5jq5DVulOQJZ-50.webp": [
+    789,
+    1080
+  ],
+  "images/screencapture-uptest-amediasocial-checkout-2024-11-27-17_42_58-YNqP5jq5DVulOQJZ-75.webp": [
+    1184,
+    1620
+  ],
+  "images/screenshot-1-1-AoPZbrV9VRT7XQ6k-50.webp": [
+    443,
+    249
+  ],
+  "images/screenshot-1-1-AoPZbrV9VRT7XQ6k-75.webp": [
+    665,
+    374
+  ],
+  "images/screenshot-1-d95D9aVk2QU87RWw-50.webp": [
+    443,
+    249
+  ],
+  "images/screenshot-1-d95D9aVk2QU87RWw-75.webp": [
+    665,
+    374
+  ],
+  "images/screenshot-from-2020-03-16-10-49-49-AVL38g00L2iExlwM-50.webp": [
+    800,
+    326
+  ],
+  "images/screenshot-from-2020-03-16-10-49-49-AVL38g00L2iExlwM-75.webp": [
+    1200,
+    488
+  ],
+  "images/screenshot-from-2020-03-16-11-15-46-AQE8PDK3kacZ07P2-50.webp": [
+    800,
+    259
+  ],
+  "images/screenshot-from-2020-03-16-11-15-46-AQE8PDK3kacZ07P2-75.webp": [
+    1200,
+    388
+  ],
+  "images/screenshot-from-2023-09-15-09-01-42-A852zQ024gCvvJN1-50.webp": [
+    800,
+    275
+  ],
+  "images/screenshot-from-2023-09-15-09-01-42-A852zQ024gCvvJN1-75.webp": [
+    1200,
+    413
+  ],
+  "images/screenshot-from-2024-03-15-21-02-37-Yyv2VqWng4FG29o0-50.webp": [
+    800,
+    416
+  ],
+  "images/screenshot-from-2024-03-15-21-02-37-Yyv2VqWng4FG29o0-75.webp": [
+    1200,
+    623
+  ],
+  "images/screenshot-from-2024-04-18-12-29-18-mk3Dnz466rt10X8l-50.webp": [
+    800,
+    309
+  ],
+  "images/screenshot-from-2024-04-18-12-29-18-mk3Dnz466rt10X8l-75.webp": [
+    1200,
+    464
+  ],
+  "images/screenshot-from-2024-09-03-19-03-23-A854J684oRUvPoel-50.webp": [
+    609,
+    380
+  ],
+  "images/screenshot-from-2024-09-03-19-03-23-A854J684oRUvPoel-75.webp": [
+    914,
+    570
+  ],
+  "images/screenshot-from-2024-09-03-19-04-31-m7VKnE7qevf3R8D8-50.webp": [
+    800,
+    386
+  ],
+  "images/screenshot-from-2024-09-03-19-04-31-m7VKnE7qevf3R8D8-75.webp": [
+    1200,
+    579
+  ],
+  "images/screenshot-from-2024-11-27-17-51-34-m7V5yJVyV0fqk7O0-50.webp": [
+    700,
+    340
+  ],
+  "images/screenshot-from-2024-11-27-17-51-34-m7V5yJVyV0fqk7O0-75.webp": [
+    1050,
+    509
+  ],
+  "images/screenshot-from-2025-02-16-09-57-54-YanqpWylBzF1WqaB-50.webp": [
+    800,
+    399
+  ],
+  "images/screenshot-from-2025-02-16-09-57-54-YanqpWylBzF1WqaB-75.webp": [
+    1200,
+    598
+  ],
+  "images/screenshot-from-2025-02-16-09-58-57-AzG3pReJZRFyEZ3y-50.webp": [
+    800,
+    401
+  ],
+  "images/screenshot-from-2025-02-16-09-58-57-AzG3pReJZRFyEZ3y-75.webp": [
+    1200,
+    601
+  ],
+  "images/screenshot-from-2025-02-16-09-59-34-ALp7xVn1oztje0OX-50.webp": [
+    800,
+    403
+  ],
+  "images/screenshot-from-2025-02-16-09-59-34-ALp7xVn1oztje0OX-75.webp": [
+    1200,
+    604
+  ],
+  "images/screenshot-from-2025-02-16-10-00-13-AQED70yLn9F5VkKM-50.webp": [
+    800,
+    400
+  ],
+  "images/screenshot-from-2025-02-16-10-00-13-AQED70yLn9F5VkKM-75.webp": [
+    1200,
+    600
+  ],
+  "images/screenshot-from-2025-04-25-11-00-07-YX4lgvEMlpSDlg6G-50.webp": [
+    800,
+    218
+  ],
+  "images/screenshot-from-2025-04-25-11-00-07-YX4lgvEMlpSDlg6G-75.webp": [
+    1200,
+    327
+  ],
+  "images/screenshot-from-2025-04-28-20-32-26-mv0WKOwGKOCBEXxQ-50.webp": [
+    800,
+    186
+  ],
+  "images/screenshot-from-2025-04-28-20-32-26-mv0WKOwGKOCBEXxQ-75.webp": [
+    1200,
+    278
+  ],
+  "images/valledorado_flow-YX4aE620JDc8LN8o-50.webp": [
+    621,
+    158
+  ],
+  "images/valledorado_flow-YX4aE620JDc8LN8o-75.webp": [
+    932,
+    236
+  ],
+  "images/whatsapp-image-2024-02-06-at-18.53.16-mjE7KlPB0KTqoJVr-50.webp": [
+    479,
+    319
+  ],
+  "images/whatsapp-image-2024-02-06-at-18.53.16-mjE7KlPB0KTqoJVr-75.webp": [
+    719,
+    479
+  ],
+  "images/whatsapp-image-2024-02-06-at-18.53.29-1024x490-A3Q2VvjvkRfJnvKO-50.webp": [
+    512,
+    245
+  ],
+  "images/whatsapp-image-2024-02-06-at-18.53.29-1024x490-A3Q2VvjvkRfJnvKO-75.webp": [
+    768,
+    368
+  ],
+  "images/whatsapp-image-2024-09-03-at-19.25.54-YZ9bJaLezlfGv32w-50.webp": [
+    441,
+    800
+  ],
+  "images/whatsapp-image-2024-09-03-at-19.25.54-YZ9bJaLezlfGv32w-75.webp": [
+    661,
+    1200
+  ],
+  "images/zyro-image-1-m2WBn69XLECKwk52-50.webp": [
+    800,
+    677
+  ],
+  "images/zyro-image-1-m2WBn69XLECKwk52-75.webp": [
+    1200,
+    1016
+  ]
 }
