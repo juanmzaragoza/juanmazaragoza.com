@@ -676,7 +676,7 @@ nav.scrolled {
   border: 1px solid var(--border);
 }
 .detail-body {
-  max-width: 800px;
+  max-width: var(--max-w);
   margin: 60px auto;
   padding: 0 40px;
   font-size: 15px;
