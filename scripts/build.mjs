@@ -191,7 +191,7 @@ function layout({ urlPath, title, description, body, active, jsonLd = [], ogType
 <body>
 
 <nav>
-  <a class="nav-logo" href="/" aria-label="Juan Manuel Zaragoza — Home"><img src="/images/favicon.png" alt="JMZ" width="32" height="32"></a>
+  <a class="nav-logo" href="/" aria-label="Juan Manuel Zaragoza — Home"><img src="/images/favicon.png" alt="JMZ" width="64" height="64"></a>
   <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>

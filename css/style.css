@@ -71,6 +71,7 @@ nav.scrolled {
   font-weight: 700;
   font-size: 18px;
   letter-spacing: -0.5px;
+  padding-top: 20px;
 }
 .nav-logo span { color: var(--accent); }
 .nav-links { display: flex; gap: 32px; align-items: center; }
