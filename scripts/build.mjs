@@ -279,6 +279,21 @@ for (const [key, page] of Object.entries(pages)) {
       inLanguage: 'en', publisher: { '@id': `${SITE}/#person` } }] });
   } else if (key === 'about') {
     jsonLd.push({ '@context': 'https://schema.org', '@type': 'ProfilePage', url: `${SITE}/about/`, mainEntity: PERSON });
+  } else if (key === 'serviceRescue') {
+    jsonLd.push(breadcrumb([['Home', '/'], ['Services', '/services/'], [page.crumb, page.path]]));
+    jsonLd.push({ '@context': 'https://schema.org', '@type': 'Service', name: 'Software Project Rescue',
+      description: page.description, provider: { '@id': `${SITE}/#person` }, areaServed: ['US', 'ES', 'MX', 'CO', 'PE', 'CL', 'AR', 'EC'],
+      url: SITE + page.path });
+  } else if (key === 'serviceAudit') {
+    jsonLd.push(breadcrumb([['Home', '/'], ['Services', '/services/'], [page.crumb, page.path]]));
+    jsonLd.push({ '@context': 'https://schema.org', '@type': 'Service', name: 'Technical Debt Audit',
+      description: page.description, provider: { '@id': `${SITE}/#person` }, areaServed: ['US', 'ES', 'MX', 'CO', 'PE', 'CL', 'AR', 'EC'],
+      url: SITE + page.path });
+  } else if (key === 'serviceQA') {
+    jsonLd.push(breadcrumb([['Home', '/'], ['Services', '/services/'], [page.crumb, page.path]]));
+    jsonLd.push({ '@context': 'https://schema.org', '@type': 'Service', name: 'QA Automation for Laravel',
+      description: page.description, provider: { '@id': `${SITE}/#person` }, areaServed: ['US', 'ES', 'MX', 'CO', 'PE', 'CL', 'AR', 'EC'],
+      url: SITE + page.path });
   } else if (key !== 'notFound') {
     jsonLd.push(breadcrumb([['Home', '/'], [page.crumb, page.path]]));
   }
@@ -286,10 +301,18 @@ for (const [key, page] of Object.entries(pages)) {
   write(page.path, layout({ urlPath: page.path, title: page.title, description: page.description, body, active: key, jsonLd, noindex: key === 'notFound' }), { sitemap: key !== 'notFound' });
 }
 
+// Service mappings for internal linking
+const serviceLinks = {
+  'real-estate-listing-platform-listing-los-cabos': { name: 'Software Project Rescue', path: '/services/software-project-rescue/' },
+  'qa-automation-for-laravel': { name: 'QA Automation for Laravel', path: '/services/qa-automation-laravel/' },
+  'performance-evaluation-platform-for-a-public-organization': { name: 'Technical Debt Audit', path: '/services/technical-debt-audit/' },
+};
+
 // Case study pages
 for (const p of projects) {
   const urlPath = `/work/${p.slug}/`;
   const statusLabel = p.status === 'running' ? '● Running' : '✓ Completed';
+  const serviceLink = serviceLinks[p.slug] ? `<div class="section"><div class="section-label">Service</div><h2 class="section-title">Related Service</h2><p class="contact-intro">This case study demonstrates our expertise in <a href="${serviceLinks[p.slug].path}">${serviceLinks[p.slug].name}</a>.</p></div>` : '';
   const gallery = p.gallery.length
     ? `<div class="detail-gallery">${p.gallery.map((g, i) => imgTag(g, galleryAlt(p, g, i))).join('')}</div>` : '';
   const related = relatedProjects(p).map(projectCard).join('\n');
@@ -335,7 +358,8 @@ for (const p of projects) {
       <a href="/work/" class="section-link">View all ${projects.length} projects →</a>
     </div>
     <div class="projects-featured">${related}</div>
-  </div>`;
+  </div>
+  ${serviceLink}`;
 
   const jsonLd = [breadcrumb([['Home', '/'], ['Work', '/work/'], [p.title, urlPath]])];
 
