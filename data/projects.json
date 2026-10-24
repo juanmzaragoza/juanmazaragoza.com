@@ -1,7 +1,7 @@
 [
   {
     "slug": "qa-automation-for-laravel",
-    "title": "Vivetix: From Manual Testing to a 91-Test E2E Suite",
+    "title": "Ticketing Platform: E2E QA Automation",
     "subtitle": "Playwright E2E tests, Pest integration tests, and Superset dashboards — eliminating manual regression, improving stability and scalability",
     "date": "Jan 2025",
     "status": "running",
@@ -13,16 +13,16 @@
       "Docker",
       "PostgreSQL"
     ],
-    "seoTitle": "Building a 91-Test E2E Suite for a Ticketing Platform",
+    "seoTitle": "Building E2E QA Automation for a Ticketing Platform",
     "seoDescription": "Architect and owner of Playwright E2E suite for checkout flows with 3 payment gateways, plus Pest integration tests and Superset embedding.",
-    "client": "Vivetix",
+    "client": "Premium Ticketing Platform",
     "sector": "Ticketing & Events",
     "country": "Spain, Latin America",
     "role": "QA Engineer",
     "duration": "Jan 2025 – Present",
     "results": [
-      "E2E suite grew from 20 to 91 tests (4.5×) between Jun and Oct 2025",
-      "616 backend integration test cases across critical flows",
+      "Comprehensive E2E test suite covering critical checkout flows",
+      "600+ backend integration test cases across critical flows",
       "3 browsers covered (Chromium, Firefox, WebKit)",
       "3 payment gateways end-to-end tested including 3D Secure",
       "Roughly 15–20 hours of manual regression per release replaced"
@@ -36,7 +36,7 @@
       "images/screenshot-from-2025-04-25-11-00-07-YX4lgvEMlpSDlg6G.png",
       "images/screenshot-from-2025-04-28-20-32-26-mv0WKOwGKOCBEXxQ.png"
     ],
-    "body": "<h2>The Challenge</h2>\n      <p>Vivetix is a white-label ticketing and event management platform (Laravel monolith since 2017) handling high-volume checkout flows across Spain and Latin America. Revenue flows — event creation, ticket delivery, payments through 3 gateways — had no end-to-end test coverage. Releases relied entirely on manual regression.</p>\n      <ul>\n        <li>No existing E2E test suite; manual testing was unsustainable</li>\n        <li>Critical flows (checkout, discount codes, ticket resend via email/WhatsApp) lacked automation</li>\n        <li>Multiple payment gateways including 3D Secure flows were untested</li>\n        <li>Business stakeholders lacked real-time visibility into platform performance</li>\n      </ul>\n      <h2>What I Built</h2>\n      <h3>Playwright E2E Test Suite</h3>\n      <p>Designed the entire testing strategy from scratch as owner of the E2E suite (251 of 263 commits). Built a comprehensive <strong>Playwright + TypeScript suite</strong> that runs after every deploy to sandbox and staging: a critical gate of 6 @critical tests first, then full coverage on Chromium, Firefox and WebKit. Tested checkout end-to-end with all 3 payment gateways including 3D Secure flows. Seeded test users instead of relying on email registration to ensure deterministic, fast tests.</p>\n      <h3>Pest Integration Tests</h3>\n      <p>Wrote robust integration tests covering API endpoints and critical business logic: <code>/check</code>, <code>/resend</code>, <code>/me</code>, <code>/sessions</code> endpoints; role-based permission checks (seller, admin, whitebrand); discount code validation and coupon management.</p>\n      <h3>Superset Fork & Embedding</h3>\n      <p>Introduced <strong>Apache Superset</strong> (fork) inside Docker; integrated Google OAuth and token-based secure embedding in Laravel with per-organizer row-level filtering. Enabled real-time dashboards on ticket sales, session activity, and user behavior.</p>\n      <h3>Test Observability & CI/CD</h3>\n      <p>Built an internal metrics tool (Node, Prisma, PostgreSQL, Chart.js) to track flaky tests and test duration per commit. Improved GitLab CI pipelines; standardized PR templates and internal documentation.</p>\n      <h2>Stack</h2>\n      <p>Laravel 12, PHP 8.4, Playwright, TypeScript, Pest, React 19, Apache Superset, GitLab CI, PostgreSQL.</p>"
+    "body": "<h2>The Challenge</h2>\n      <p>A white-label ticketing and event management platform (Laravel monolith since 2017) handling high-volume checkout flows across Spain and Latin America. Revenue flows — event creation, ticket delivery, payments through 3 gateways — had no end-to-end test coverage. Releases relied entirely on manual regression.</p>\n      <ul>\n        <li>No existing E2E test suite; manual testing was unsustainable</li>\n        <li>Critical flows (checkout, discount codes, ticket resend via email/WhatsApp) lacked automation</li>\n        <li>Multiple payment gateways including 3D Secure flows were untested</li>\n        <li>Business stakeholders lacked real-time visibility into platform performance</li>\n      </ul>\n      <h2>What I Built</h2>\n      <h3>Playwright E2E Test Suite</h3>\n      <p>Designed the entire testing strategy from scratch as owner of the E2E suite. Built a comprehensive <strong>Playwright + TypeScript suite</strong> that runs after every deploy to sandbox and staging: a critical gate of @critical tests first, then full coverage on Chromium, Firefox and WebKit. Tested checkout end-to-end with all 3 payment gateways including 3D Secure flows. Seeded test users instead of relying on email registration to ensure deterministic, fast tests.</p>\n      <h3>Pest Integration Tests</h3>\n      <p>Wrote robust integration tests covering API endpoints and critical business logic: <code>/check</code>, <code>/resend</code>, <code>/me</code>, <code>/sessions</code> endpoints; role-based permission checks (seller, admin, whitebrand); discount code validation and coupon management.</p>\n      <h3>Superset Fork & Embedding</h3>\n      <p>Introduced <strong>Apache Superset</strong> (fork) inside Docker; integrated Google OAuth and token-based secure embedding in Laravel with per-organizer row-level filtering. Enabled real-time dashboards on ticket sales, session activity, and user behavior.</p>\n      <h3>Test Observability & CI/CD</h3>\n      <p>Built an internal metrics tool (Node, Prisma, PostgreSQL, Chart.js) to track flaky tests and test duration per commit. Improved GitLab CI pipelines; standardized PR templates and internal documentation.</p>\n      <h2>Stack</h2>\n      <p>Laravel 12, PHP 8.4, Playwright, TypeScript, Pest, React 19, Apache Superset, GitLab CI, PostgreSQL.</p>"
   },
   {
     "slug": "real-estate-chatbot-development-casa-domo-peru",
