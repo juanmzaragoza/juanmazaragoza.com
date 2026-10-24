@@ -17,8 +17,29 @@
     "path": "/services/",
     "src": "services.html",
     "crumb": "Services",
-    "title": "Software Development, Automation & Fractional CTO",
-    "description": "Custom software, process automation, chatbots, BI dashboards, project rescue, technical debt audits and fractional CTO leadership for growing companies."
+    "title": "Software Development, QA Automation, Project Rescue & Fractional CTO",
+    "description": "Custom software development, QA automation with Pest and Playwright, project rescue for broken platforms, technical debt audits, and fractional CTO leadership for growing companies."
+  },
+  "serviceRescue": {
+    "path": "/services/software-project-rescue/",
+    "src": "service-rescue.html",
+    "crumb": "Project Rescue",
+    "title": "Software Project Rescue — Regain Control of Broken Platforms",
+    "description": "Take over half-built platforms, abandoned codebases, and unstable systems. Stabilize, secure, and scale with confidence. Real case: Listing Los Cabos platform rescue."
+  },
+  "serviceAudit": {
+    "path": "/services/technical-debt-audit/",
+    "src": "service-technical-audit.html",
+    "crumb": "Technical Audit",
+    "title": "Technical Debt Audit for Startups — Know Your Real Risks",
+    "description": "Two-week audit: risk map, security findings, scalability assessment, and a prioritized roadmap to fix technical debt. Fixed scope, $3,500."
+  },
+  "serviceQA": {
+    "path": "/services/qa-automation-laravel/",
+    "src": "service-qa-laravel.html",
+    "crumb": "QA Automation",
+    "title": "QA Automation for Laravel — 600+ Tests, Zero Manual Regression",
+    "description": "Pest for backend, Playwright for E2E. Automated test suites that catch bugs before production and let your team ship with confidence."
   },
   "about": {
     "path": "/about/",
