@@ -1,0 +1,181 @@
+  <article>
+    <div class="detail-hero">
+      <div class="breadcrumb" role="navigation" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/services/">Services</a> / <span>Playwright CI/CD</span></div>
+      <div class="detail-header">
+        <div class="section-label">Automation & Deployment</div>
+        <h1 class="detail-title">Playwright CI/CD Integration: Deploy With Confidence, Every Time</h1>
+        <p class="detail-subtitle">Wire Playwright into your pipeline. Tests run automatically on every commit. Failing tests block deployment. No more manual testing before release.</p>
+      </div>
+    </div>
+
+    <div class="detail-body">
+      <h2>The Problem: Manual QA Before Every Release</h2>
+      <p>Right now, before you deploy:</p>
+      <ul>
+        <li>Someone manually tests the app (2-4 hours)</li>
+        <li>They find issues. You fix them. Retest.</li>
+        <li>Finally, you deploy (if everything passes)</li>
+        <li>But they missed something. A bug reaches production.</li>
+      </ul>
+
+      <p>With CI/CD + Playwright:</p>
+      <ul>
+        <li>You push code</li>
+        <li>Tests run automatically (15-30 minutes)</li>
+        <li>If tests fail, deployment blocks</li>
+        <li>If tests pass, deploy automatically (or one click)</li>
+        <li>No manual testing. No surprises in production.</li>
+      </ul>
+
+      <h2>What Playwright CI/CD Looks Like</h2>
+
+      <h3>Trigger</h3>
+      <p>Developer pushes to main (or opens a PR). GitHub Actions / GitLab CI wakes up.</p>
+
+      <h3>Setup</h3>
+      <p>Spin up test environment. Build the app. Start the server.</p>
+
+      <h3>Run Tests</h3>
+      <p>Playwright launches browsers. Tests run in parallel (10+ at once). Takes 15-30 minutes for full suite.</p>
+
+      <h3>Results</h3>
+      <p>If all pass → Deploy automatically (or show "Deploy" button)
+If any fail → Block deployment. Show logs. Developer fixes code.</p>
+
+      <h3>Production Verification</h3>
+      <p>Optional: Run smoke tests against production after deploy. Verify the live site still works.</p>
+
+      <h2>How We Wire It Up</h2>
+
+      <h3>Week 1: Audit & Design</h3>
+      <ul>
+        <li><strong>Understand your current process</strong>: How do you deploy today? What's your pipeline?</li>
+        <li><strong>Design the flow</strong>: When do tests run? On every commit? On PR? Before deploy?</li>
+        <li><strong>Decide scope</strong>: Full E2E suite? Smoke tests only? Performance tests?</li>
+      </ul>
+
+      <h3>Week 2: Implementation</h3>
+      <ul>
+        <li><strong>GitHub Actions / GitLab CI setup</strong>: Create workflow that runs tests</li>
+        <li><strong>Test environment</strong>: Spin up DB, cache, services for testing</li>
+        <li><strong>Reporting</strong>: Slack notifications, PR comments, test reports</li>
+        <li><strong>Debugging</strong>: Video recording, screenshots, detailed logs</li>
+      </ul>
+
+      <h3>Week 3: Optimization</h3>
+      <ul>
+        <li><strong>Parallel execution</strong>: Run tests across multiple runners</li>
+        <li><strong>Caching</strong>: Skip redundant setup (dependencies, fixtures)</li>
+        <li><strong>Performance</strong>: Full suite under 30 minutes</li>
+        <li><strong>Cost optimization</strong>: GitHub Actions is free for public repos. Optimize runners for cost.</li>
+      </ul>
+
+      <h2>Tools & Platforms</h2>
+
+      <h3>GitHub Actions (Recommended for GitHub users)</h3>
+      <ul>
+        <li><strong>Free</strong>: 2,000 minutes/month free for private repos</li>
+        <li><strong>Native</strong>: Built into GitHub. No third-party service.</li>
+        <li><strong>Powerful</strong>: Can do anything. Docker support, matrix builds, caching.</li>
+      </ul>
+
+      <h3>GitLab CI (For GitLab users)</h3>
+      <ul>
+        <li><strong>Also free</strong>: 400 CI minutes/month</li>
+        <li><strong>Simpler syntax</strong>: Easier to read than GitHub Actions</li>
+      </ul>
+
+      <h3>Vercel / Netlify (For frontend-only)</h3>
+      <ul>
+        <li><strong>Built-in preview deploys</strong>: Every PR gets a live preview URL</li>
+        <li><strong>Easy integration</strong>: Tests run on preview before production deploy</li>
+      </ul>
+
+      <h2>Real Case: Vivetix Ticketing Platform - 15-Minute Deployment Pipeline</h2>
+      <p>A ticketing platform (Vivetix). Multiple deployments per week. Manual testing was the bottleneck.</p>
+
+      <h3>Before:</h3>
+      <ul>
+        <li>Push code → Manual QA (3-4 hours) → Deploy → Hope it works</li>
+        <li>Bugs reached production 2-3x per month</li>
+        <li>Slow feedback loops. Hard to iterate.</li>
+      </ul>
+
+      <h3>What we built:</h3>
+      <ul>
+        <li>✓ GitHub Actions workflow for test execution</li>
+        <li>✓ 60+ Playwright E2E tests (critical ticketing flows)</li>
+        <li>✓ Parallel test execution (10 workers, 15 minutes total)</li>
+        <li>✓ Docker containerization for test environment</li>
+        <li>✓ Slack notifications (pass/fail status)</li>
+        <li>✓ Automatic deployment to staging (tests pass)</li>
+        <li>✓ Manual approval button for production deploy</li>
+        <li>✓ Post-deploy smoke tests (verify production still works)</li>
+      </ul>
+
+      <h3>After:</h3>
+      <ul>
+        <li>✓ Push code → Tests run automatically (15 min) → Deploy (click button)</li>
+        <li>✓ Bugs caught before production</li>
+        <li>✓ Deploy multiple times per week with confidence</li>
+        <li>✓ Faster feedback loops. Easier iteration.</li>
+      </ul>
+
+      <p><a href="/work/qa-automation-for-laravel/">See the full case study →</a></p>
+
+      <h2>What Gets Automated</h2>
+
+      <h3>Core Tests (Always run)</h3>
+      <ul>
+        <li>Critical user flows (signup, login, checkout, purchase)</li>
+        <li>API integrations (Stripe, payments, webhooks)</li>
+        <li>Database migrations (schema changes don't break data)</li>
+      </ul>
+
+      <h3>Optional Add-ons</h3>
+      <ul>
+        <li><strong>Performance tests</strong>: Catch slow deployments</li>
+        <li><strong>Security tests</strong>: Check for common vulnerabilities</li>
+        <li><strong>Visual regression</strong>: Detect unintended design changes</li>
+        <li><strong>Load tests</strong>: Verify app handles traffic</li>
+      </ul>
+
+      <h2>Cost</h2>
+      <ul>
+        <li><strong>GitHub Actions</strong>: Free (2,000 min/month). $0.25/min after that.</li>
+        <li><strong>GitLab CI</strong>: Free (400 min/month). €0.30/min after.</li>
+        <li><strong>Typical app</strong>: 30-50 minutes per test run = $0.08-0.20 per deploy</li>
+        <li><strong>If you deploy 10x/day</strong>: ~$2-20/month. Cheaper than manual QA ($500+/mo in labor)</li>
+      </ul>
+
+      <h2>FAQ</h2>
+
+      <h3>What if a test is flaky?</h3>
+      <p>Flaky tests are the biggest pain. We design for stability (explicit waits, no sleeps) but flakiness happens. We build retry logic and clear diagnostics so you can fix the root cause.</p>
+
+      <h3>How long does full setup take?</h3>
+      <p>3 weeks from start to fully automated deployments. Week 1 is planning, Week 2 is CI/CD wiring, Week 3 is optimization and handoff.</p>
+
+      <h3>Can we run tests on PRs before merging?</h3>
+      <p>Yes. This is the ideal setup: tests run on every PR. Only PRs with passing tests can merge. Prevents broken code from reaching main.</p>
+
+      <h3>What about staging vs production tests?</h3>
+      <p>Tests run against staging (a copy of production). After deploy to production, optional smoke tests verify the live site works. Staging is safer—you find bugs before production sees them.</p>
+
+      <h3>How do we debug test failures?</h3>
+      <p>We capture video, screenshots, and detailed logs. CI/CD artifacts keep them for 30 days. You can replay a failure, understand what went wrong, and fix it.</p>
+
+      <h3>Can tests run locally too?</h3>
+      <p>Yes. Developers can run the same test suite locally before pushing. Catch issues early in development, not in CI.</p>
+    </div>
+
+    <div class="section cta-block">
+      <div class="section-label">Deploy without manual testing?</div>
+      <h2 class="section-title">Let's automate your deployment pipeline.</h2>
+      <p class="contact-intro">Book a 30-minute call. Tell me about your current release process and your pain points. I'll tell you what automated testing and deployment could look like.</p>
+      <div class="hero-actions">
+        <a href="{{calendly}}" class="btn-primary" target="_blank" rel="noopener">Book a 30-min call ↗</a>
+        <a href="mailto:{{email}}" class="btn-ghost">{{email}}</a>
+      </div>
+    </div>
+  </article>

@@ -1,0 +1,134 @@
+  <article>
+    <div class="detail-hero">
+      <div class="breadcrumb" role="navigation" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/services/">Services</a> / <span>Pest Testing</span></div>
+      <div class="detail-header">
+        <div class="section-label">Test Automation</div>
+        <h1 class="detail-title">Pest PHP Testing: 600+ Tests in Production, Zero Manual Regression</h1>
+        <p class="detail-subtitle">Migrate from Phpunit or legacy testing. Build a Pest test suite that catches bugs before production. 10-20 hours of work. Your team ships faster.</p>
+      </div>
+    </div>
+
+    <div class="detail-body">
+      <h2>The Problem: Manual Testing Kills Velocity</h2>
+      <p>Every release, someone manually tests the same flows. Takes 8 hours. Catches 40% of bugs. The rest reach production. Your team's velocity is capped by how fast humans can click buttons.</p>
+
+      <p>The cost is real:</p>
+      <ul>
+        <li><strong>Shipping is slow</strong>: You deploy once a week because testing takes days.</li>
+        <li><strong>Bugs reach production</strong>: Manual tests miss edge cases. Customers find them first.</li>
+        <li><strong>Junior developers afraid to refactor</strong>: One change breaks something untested. They don't touch legacy code.</li>
+        <li><strong>Your best engineers do monkey work</strong>: Clicking forms instead of building features.</li>
+      </ul>
+
+      <h2>What Pest Does</h2>
+
+      <h3>Unit Tests (Fast)</h3>
+      <p>Test individual functions: business logic, calculations, validations. Run in seconds. Catch bugs at the source.</p>
+
+      <h3>Integration Tests (Real)</h3>
+      <p>Test your actual database, cache, queues. Verify the whole flow works. Slower than unit tests, but real.</p>
+
+      <h3>End-to-End Tests (Comprehensive)</h3>
+      <p>Test the user flow: login, add to cart, checkout. Catches issues no other test finds. Runs in CI so you catch them before production.</p>
+
+      <h2>How We Build It</h2>
+
+      <h3>Week 1: Audit & Strategy</h3>
+      <ul>
+        <li><strong>Understand your codebase</strong>: What's testable? What needs refactoring first?</li>
+        <li><strong>Decide scope</strong>: Which flows matter most? Checkout, payments, authentication, core business logic.</li>
+        <li><strong>Set up Pest</strong>: Modern test setup, factories for data, helpers for common assertions.</li>
+      </ul>
+
+      <h3>Week 2-3: Build the Suite</h3>
+      <ul>
+        <li><strong>Core flows first</strong>: Payment processing, authentication, critical business logic.</li>
+        <li><strong>Edge cases</strong>: What breaks? Validation errors, expired tokens, race conditions.</li>
+        <li><strong>Coverage target</strong>: 70-85% for critical paths. Diminishing returns beyond that.</li>
+        <li><strong>CI integration</strong>: GitHub Actions or GitLab CI runs tests on every commit. Blocks deploy if tests fail.</li>
+      </ul>
+
+      <h3>Week 4: Handoff & Ownership</h3>
+      <ul>
+        <li><strong>Your team learns</strong>: How to write tests, how to think about edge cases.</li>
+        <li><strong>Maintenance</strong>: Tests fail when code changes. That's the point. Your team fixes it.</li>
+        <li><strong>Ongoing support</strong>: I'm available if tests get stuck.</li>
+      </ul>
+
+      <h2>Real Case: Ticketing Platform - 600+ Pest Tests in Production</h2>
+      <p>A SaaS ticketing platform. Manual testing was killing their release cycle. They needed to deploy faster without breaking production.</p>
+
+      <h3>The problem:</h3>
+      <ul>
+        <li>30-40 hours/month on manual regression testing</li>
+        <li>Bugs reached production 2-3x per month</li>
+        <li>Team afraid to refactor legacy code</li>
+        <li>PHPUnit tests were outdated and unmaintained</li>
+      </ul>
+
+      <h3>What we built:</h3>
+      <ul>
+        <li>✓ Migrated all PHPUnit tests to Pest (cleaner syntax)</li>
+        <li>✓ Added 600+ new Pest tests covering critical flows</li>
+        <li>✓ Integrated into GitHub Actions (tests run on every push)</li>
+        <li>✓ 75% code coverage for core business logic</li>
+        <li>✓ Deployment now takes 15 minutes (automated testing included)</li>
+      </ul>
+
+      <h3>Results:</h3>
+      <ul>
+        <li>✓ Zero manual regression testing</li>
+        <li>✓ Bugs caught before production (not after)</li>
+        <li>✓ Team ships 2x per week instead of 1x per month</li>
+        <li>✓ Junior developers confidently refactor code</li>
+      </ul>
+
+      <p><a href="/work/qa-automation-for-laravel/">See the full case study →</a></p>
+
+      <h2>Why Pest Over PHPUnit?</h2>
+      <ul>
+        <li><strong>Cleaner syntax</strong>: Less boilerplate. Tests are easier to read and write.</li>
+        <li><strong>Better assertions</strong>: More readable. `expect($user->name)->toBe('Juan')` beats `$this->assertEquals($user->name, 'Juan')`</li>
+        <li><strong>Faster to learn</strong>: Your junior developers write tests on day 1.</li>
+        <li><strong>Active community</strong>: Pest is modern and well-maintained. PHPUnit is battle-tested but old.</li>
+      </ul>
+
+      <h2>Why This Matters</h2>
+      <ul>
+        <li><strong>Ship faster</strong>: No more waiting for manual testing. Automated tests run in CI. Deploy multiple times per week.</li>
+        <li><strong>Sleep better</strong>: Tests catch bugs. Not your customers.</li>
+        <li><strong>Hire better juniors</strong>: Confident to refactor. Learn from tests. Don't break production.</li>
+        <li><strong>Technical foundation</strong>: Good tests = good code structure. Tests force you to write testable code.</li>
+      </ul>
+
+      <h2>FAQ</h2>
+
+      <h3>How long does it take to get 600+ tests?</h3>
+      <p>Depends on codebase size and complexity. For a typical SaaS app: 3-6 weeks to get comprehensive coverage. We start with critical flows (payment, auth, core logic) first. Nice-to-have features can wait.</p>
+
+      <h3>What if we already have PHPUnit tests?</h3>
+      <p>We can migrate them to Pest. Syntax is similar enough that migration is straightforward. We'll also update tests to cover more edge cases while we're at it.</p>
+
+      <h3>What if tests are slow?</h3>
+      <p>We optimize. Database transactions for test isolation, factories instead of fixtures, parallel test runs in CI. Most test suites run in under 5 minutes.</p>
+
+      <h3>Do we need to maintain tests after you're done?</h3>
+      <p>Yes. Tests are code. They need maintenance. When you change code, tests might fail. That's by design—it means your tests are working. Your team maintains them like any other code.</p>
+
+      <h3>What about E2E tests? Do we need both?</h3>
+      <p>Yes. Pest tests (unit + integration) are fast and catch most bugs. E2E tests (Playwright) are slower but catch UI bugs and real user flows. Both together = solid coverage.</p>
+
+      <h3>Can you teach my team to write tests?</h3>
+      <p>Yes. I'll pair with your developers while writing tests. They learn by doing, not by reading docs.</p>
+    </div>
+
+    <div class="section cta-block">
+      <div class="section-label">Ready for fast, reliable deploys?</div>
+      <h2 class="section-title">Let's build a test suite that actually protects your code.</h2>
+      <p class="contact-intro">Book a 30-minute call. Tell me about your testing situation and your shipping velocity. I'll give you honest feedback on what a Pest strategy could look like for your app.</p>
+      <div class="hero-actions">
+        <a href="{{calendly}}" class="btn-primary" target="_blank" rel="noopener">Book a 30-min call ↗</a>
+        <a href="mailto:{{email}}" class="btn-ghost">{{email}}</a>
+      </div>
+    </div>
+  </article>

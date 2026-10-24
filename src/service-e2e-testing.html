@@ -1,0 +1,147 @@
+  <article>
+    <div class="detail-hero">
+      <div class="breadcrumb" role="navigation" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/services/">Services</a> / <span>E2E Testing</span></div>
+      <div class="detail-header">
+        <div class="section-label">End-to-End Automation</div>
+        <h1 class="detail-title">E2E Test Suite Development: Test Real User Flows, Not Just Code</h1>
+        <p class="detail-subtitle">Playwright or Cypress. Automate the flows your customers actually use: checkout, payments, signup, critical workflows. Deploy with confidence. 4-8 weeks.</p>
+      </div>
+    </div>
+
+    <div class="detail-body">
+      <h2>The Problem: Unit Tests Don't Catch Everything</h2>
+      <p>Your unit tests pass. Your integration tests pass. You deploy. Then a customer reports: "The checkout button doesn't work." But it works in your tests. Why?</p>
+
+      <p>Because unit tests test code in isolation. They don't test:</p>
+      <ul>
+        <li><strong>Real user flows</strong>: JavaScript not loading, CSS broken, form submission failing silently</li>
+        <li><strong>Cross-browser issues</strong>: Works in Chrome, breaks in Safari</li>
+        <li><strong>Race conditions</strong>: Timing issues between frontend and backend</li>
+        <li><strong>External integrations</strong>: Stripe, payment gateways, third-party APIs</li>
+        <li><strong>Mobile behavior</strong>: Touch events, responsive design, mobile-specific bugs</li>
+      </ul>
+
+      <p>That's what E2E tests are for.</p>
+
+      <h2>What E2E Testing Does</h2>
+
+      <h3>Real Browser Automation</h3>
+      <p>Playwright launches a real browser (Chrome, Firefox, Safari) and simulates a user. Clicks buttons, fills forms, waits for data, checks results. If it breaks in the real browser, the test fails.</p>
+
+      <h3>Multi-browser Coverage</h3>
+      <p>Test Chrome, Firefox, Safari, Edge. Catch cross-browser bugs before customers do.</p>
+
+      <h3>Mobile Testing</h3>
+      <p>Emulate iPhone, Android. Test touch gestures, viewport sizes, mobile-specific bugs.</p>
+
+      <h3>CI Integration</h3>
+      <p>Tests run on every deployment. Slow (15-30 minutes for full suite), but you catch issues before production.</p>
+
+      <h2>How We Build It</h2>
+
+      <h3>Week 1-2: Audit & Strategy</h3>
+      <ul>
+        <li><strong>Identify critical flows</strong>: What breaks your business? Checkout, payments, signup, core features.</li>
+        <li><strong>Decide scope</strong>: Test Chrome only (faster) or multi-browser? Desktop only or mobile too?</li>
+        <li><strong>Set up Playwright</strong>: Modern tooling, page objects, test helpers, visual regression testing.</li>
+      </ul>
+
+      <h3>Week 3-5: Build Tests</h3>
+      <ul>
+        <li><strong>Core flows first</strong>: Signup → Login → Use feature → Checkout → Success</li>
+        <li><strong>Error paths</strong>: Invalid input, network failures, timeouts, user cancels payment</li>
+        <li><strong>Edge cases</strong>: Slow network, expired sessions, concurrent operations</li>
+        <li><strong>Visual regression</strong>: Screenshots of each page. Detects unintended design changes.</li>
+      </ul>
+
+      <h3>Week 6-8: CI Setup & Handoff</h3>
+      <ul>
+        <li><strong>Integrate into CI</strong>: GitHub Actions, GitLab CI, or your pipeline</li>
+        <li><strong>Parallel execution</strong>: Run 10+ tests at once. Full suite in 15-30 minutes.</li>
+        <li><strong>Team training</strong>: How to write tests, debug failures, maintain suite</li>
+      </ul>
+
+      <h2>Playwright vs Cypress</h2>
+
+      <h3>Playwright (Our recommendation)</h3>
+      <ul>
+        <li><strong>Multi-browser</strong>: Chrome, Firefox, Safari, Edge with one codebase</li>
+        <li><strong>Faster</strong>: Parallel execution, better performance</li>
+        <li><strong>Mobile support</strong>: Emulate iOS and Android devices</li>
+        <li><strong>Better debugging</strong>: Video recording, HAR files, detailed traces</li>
+      </ul>
+
+      <h3>Cypress</h3>
+      <ul>
+        <li><strong>Developer experience</strong>: Easier learning curve, great UI for running tests</li>
+        <li><strong>Limitations</strong>: Chrome only (until recently), slower CI</li>
+      </ul>
+
+      <h2>Real Case: E-commerce Platform - 80+ Playwright Tests, Zero Manual QA</h2>
+      <p>An e-commerce platform with 30+ SKUs, complex checkout, payment integrations. Manual QA took 20 hours per release. Bugs still reached production.</p>
+
+      <h3>The problem:</h3>
+      <ul>
+        <li>Manual QA was blocking releases</li>
+        <li>Cross-browser bugs (worked in Chrome, broken in Safari)</li>
+        <li>Payment integration bugs (Stripe webhooks not working)</li>
+        <li>Mobile checkout broken but not tested</li>
+      </ul>
+
+      <h3>What we built:</h3>
+      <ul>
+        <li>✓ 80+ Playwright E2E tests covering all checkout flows</li>
+        <li>✓ Multi-browser testing (Chrome, Firefox, Safari)</li>
+        <li>✓ Mobile testing (iOS + Android emulation)</li>
+        <li>✓ Visual regression testing (detects unintended design changes)</li>
+        <li>✓ Payment gateway testing (Stripe integration)</li>
+        <li>✓ Integrated into GitHub Actions (runs on every PR)</li>
+      </ul>
+
+      <h3>Results:</h3>
+      <ul>
+        <li>✓ Zero manual QA (tests do it all)</li>
+        <li>✓ Catch bugs before production</li>
+        <li>✓ Deploy multiple times per day with confidence</li>
+        <li>✓ Cross-browser issues caught immediately</li>
+      </ul>
+
+      <h2>Why This Matters</h2>
+      <ul>
+        <li><strong>Ship faster</strong>: No more waiting for manual QA sign-off. Tests are your QA.</li>
+        <li><strong>Catch real bugs</strong>: Unit tests pass. E2E tests find the bugs that matter.</li>
+        <li><strong>Cross-browser confidence</strong>: Works in Chrome = works everywhere.</li>
+        <li><strong>Payments are bulletproof</strong>: Test checkout with real data (or test mode). Catch Stripe integration issues before production.</li>
+      </ul>
+
+      <h2>FAQ</h2>
+
+      <h3>How many tests do we need?</h3>
+      <p>For a typical SaaS: 20-50 tests covering critical flows. For e-commerce with checkout: 50-100+ tests. Focus on high-risk flows (payments, signup, core features). Low-risk UI can be tested manually or with visual regression.</p>
+
+      <h3>Are E2E tests slow?</h3>
+      <p>Yes, compared to unit tests. A full suite takes 15-30 minutes. But they run in parallel in CI, so you don't wait. And they run overnight, not during your day.</p>
+
+      <h3>Do E2E tests replace unit tests?</h3>
+      <p>No. Unit tests are fast and catch bugs early. E2E tests catch integration and UI bugs. You need both.</p>
+
+      <h3>What about flaky tests?</h3>
+      <p>Flaky tests (sometimes pass, sometimes fail) are a real problem. We build with explicit waits, avoid sleep(), and design tests to be deterministic. But some flakiness is inevitable—we mitigate with retries and clear logging.</p>
+
+      <h3>Can we test payments without hitting production?</h3>
+      <p>Yes. Stripe, PayPal, and other gateways have test modes. We use test card numbers and test API keys. Real transactions, fake money.</p>
+
+      <h3>What about visual regression?</h3>
+      <p>Playwright can take screenshots after each flow and compare them. Detects unintended CSS changes, design regressions, layout breaks. Useful for catching "oops, I changed the wrong color" bugs.</p>
+    </div>
+
+    <div class="section cta-block">
+      <div class="section-label">Test the flows that matter?</div>
+      <h2 class="section-title">Let's build an E2E suite that catches real bugs.</h2>
+      <p class="contact-intro">Book a 30-minute call. Tell me about your critical flows and your QA challenges. I'll tell you what E2E testing could unlock for your team.</p>
+      <div class="hero-actions">
+        <a href="{{calendly}}" class="btn-primary" target="_blank" rel="noopener">Book a 30-min call ↗</a>
+        <a href="mailto:{{email}}" class="btn-ghost">{{email}}</a>
+      </div>
+    </div>
+  </article>

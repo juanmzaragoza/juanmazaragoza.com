@@ -62,6 +62,27 @@
     "title": "Custom Software Development: Built for Your Business",
     "description": "Web platforms, mobile-first apps, integrations, internal tools, and data systems. From concept to production. 10+ years shipping code that scales."
   },
+  "servicePestTesting": {
+    "path": "/services/pest-testing/",
+    "src": "service-pest-testing.html",
+    "crumb": "Pest Testing",
+    "title": "Pest PHP Testing: 600+ Tests in Production, Zero Manual Regression",
+    "description": "Build a Pest test suite that catches bugs before production. Migrate from PHPUnit. Automated testing, zero manual regression, ship faster."
+  },
+  "serviceE2ETesting": {
+    "path": "/services/e2e-testing/",
+    "src": "service-e2e-testing.html",
+    "crumb": "E2E Testing",
+    "title": "E2E Test Suite Development: Test Real User Flows, Not Just Code",
+    "description": "Playwright or Cypress. Automate checkout, payments, signup, critical workflows. Deploy with confidence. 4-8 weeks."
+  },
+  "servicePlaywrightCICD": {
+    "path": "/services/playwright-cicd/",
+    "src": "service-playwright-cicd.html",
+    "crumb": "Playwright CI/CD",
+    "title": "Playwright CI/CD Integration: Deploy With Confidence, Every Time",
+    "description": "Wire Playwright into your pipeline. Tests run automatically. Failing tests block deployment. Ship fast, no manual QA."
+  },
   "about": {
     "path": "/about/",
     "src": "about.html",
