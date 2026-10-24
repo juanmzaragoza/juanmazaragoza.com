@@ -29,7 +29,8 @@
     ],
     "featured": true,
     "order": 3,
-    "hero": "images/whatsapp-image-2024-02-06-at-18.53.16-mjE7KlPB0KTqoJVr.jpeg",
+    "hero": "images/ticket-platform-hero-hero.webp",
+    "cardImage": "images/ticket-platform-hero-card.webp",
     "gallery": [
       "images/whatsapp-image-2024-02-06-at-18.53.29-1024x490-A3Q2VvjvkRfJnvKO.jpeg",
       "images/screencapture-localhost-3124-es-coupons-imv6tmsux8fl-maraton-internacional-42km-ujjv-2025-04-25-09_48_35-m5KMQqGBGwf27483.png",

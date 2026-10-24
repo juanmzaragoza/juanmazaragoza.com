@@ -80,8 +80,9 @@ function relatedProjects(p, n = 4) {
 function projectCard(p) {
   const tags = p.tags.slice(0, 3).map((t) => `<span class="tag">${esc(t)}</span>`).join('');
   const status = p.status === 'running' ? '<span class="tag running">● Running</span>' : '';
+  const cardImg = p.cardImage || p.hero;
   return `<a class="project-card fade-in" href="/work/${p.slug}/" data-tags="${esc(p.tags.join('|').toLowerCase())}" data-status="${p.status}">
-      ${imgTag(p.hero, p.title, { cls: 'project-card-img' })}
+      ${imgTag(cardImg, p.title, { cls: 'project-card-img' })}
       <div class="project-card-tags">${status}${tags}</div>
       <h3 class="project-card-title">${esc(p.title)}</h3>
       <p class="project-card-desc">${esc(p.subtitle)}</p>
