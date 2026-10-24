@@ -48,6 +48,20 @@
     "title": "Software Development, CTO & Technical Services — Ecuador",
     "description": "Based in Cuenca, Ecuador (UTC-5). Custom software, project rescue, technical audits, QA automation, and fractional CTO for companies in Ecuador and LATAM."
   },
+  "serviceFractionalCTO": {
+    "path": "/services/fractional-cto/",
+    "src": "service-fractional-cto.html",
+    "crumb": "Fractional CTO",
+    "title": "Fractional CTO: Technical Leadership Without the $250K Salary",
+    "description": "Architecture decisions, hiring support, vendor roadmaps, and hands-on problem-solving. 10-20 hours/week. No equity, no long-term commitment required."
+  },
+  "serviceCustomSoftware": {
+    "path": "/services/custom-software/",
+    "src": "service-custom-software.html",
+    "crumb": "Custom Software",
+    "title": "Custom Software Development: Built for Your Business",
+    "description": "Web platforms, mobile-first apps, integrations, internal tools, and data systems. From concept to production. 10+ years shipping code that scales."
+  },
   "about": {
     "path": "/about/",
     "src": "about.html",
