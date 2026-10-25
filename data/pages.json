@@ -83,6 +83,34 @@
     "title": "Playwright CI/CD Integration: Deploy With Confidence, Every Time",
     "description": "Wire Playwright into your pipeline. Tests run automatically. Failing tests block deployment. Ship fast, no manual QA."
   },
+  "serviceCTOFraccionadoES": {
+    "path": "/services/cto-fraccionado/",
+    "src": "service-cto-fraccionado.html",
+    "crumb": "CTO Fraccionado",
+    "title": "CTO Fraccionado para Startups — Liderazgo Técnico Sin el Sueldo de $250K",
+    "description": "Decisiones de arquitectura, soporte en hiring, gestión de proveedores. 10-20 horas/semana. Sin equity, sin compromiso a largo plazo."
+  },
+  "serviceRescateProyectosES": {
+    "path": "/services/rescate-proyectos/",
+    "src": "service-rescate-proyectos.html",
+    "crumb": "Rescate de Proyectos",
+    "title": "Rescate de Proyectos de Software — Recupera Tu Proyecto del Caos Técnico",
+    "description": "Diagnosticamos, refactorizamos, y entregamos un producto que funciona. Sin empezar de cero. 4-8 semanas."
+  },
+  "serviceAuditoriaTecnicaES": {
+    "path": "/services/auditoria-tecnica/",
+    "src": "service-auditoria-tecnica.html",
+    "crumb": "Auditoría Técnica",
+    "title": "Auditoría Técnica de Deuda — Descubre Qué Te Ralentiza y Cuánto Cuesta",
+    "description": "Análisis completo: código, arquitectura, testing, performance, security, deployment. Reporte con prioridades y plan de acción."
+  },
+  "serviceAutomatizacionQAES": {
+    "path": "/services/automatizacion-qa/",
+    "src": "service-automatizacion-qa-laravel.html",
+    "crumb": "Automatización QA",
+    "title": "Automatización QA para Laravel — 600+ Tests, Cero Regresiones Manuales",
+    "description": "Migrá de PHPUnit a Pest. Cobertura completa. Deploys seguros. Tu equipo shipea 2x más rápido. 4-8 semanas."
+  },
   "about": {
     "path": "/about/",
     "src": "about.html",
