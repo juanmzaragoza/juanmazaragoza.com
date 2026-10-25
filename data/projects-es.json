@@ -16,5 +16,9 @@
   "feature-migration-php-legacy-to-laravel": "Migración de código PHP legacy a Laravel moderno — refactoring, tests, documentación",
   "saas-platform-scaling-and-optimization": "Optimización de plataforma SaaS — performance, base de datos, caching, escalabilidad horizontal",
   "mobile-app-development-cross-platform": "App móvil cross-platform en React Native — autenticación, pagos, notificaciones push",
-  "api-gateway-and-microservices-architecture": "Arquitectura de microservicios con API Gateway — Node.js, NestJS, Docker, Kubernetes"
+  "veterinarian-software": "Software de clínica veterinaria en React con Firebase — gestión de pacientes, citas, historiales médicos",
+  "aws-lambdas-and-react-native-app-for-a-lifestyle-startup": "App nativa en React con AWS Lambda — autenticación, pagos, notificaciones push",
+  "crm-erp-software": "Software CRM/ERP en React, Java y MariaDB para gestión empresarial",
+  "pharmaceutical-platform-development": "Plataforma farmacéutica en .NET y Azure con reportes de análisis",
+  "medical-units-attention-platform": "Sistema de atención de unidades médicas con seguimiento de medicamentos"
 }
