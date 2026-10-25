@@ -1,0 +1,20 @@
+{
+  "qa-automation-for-laravel": "Suite de automatización E2E con Playwright, tests de integración con Pest, y dashboards de Superset — eliminando regresiones manuales y mejorando estabilidad y escalabilidad",
+  "real-estate-chatbot-development-casa-domo-peru": "Interacciones automatizadas con clientes, agendamiento de visitas, y gestión de leads usando Manychat y Google Sheets",
+  "information-connection-and-visualization-platform-datakimia": "Plataforma de datos con Apache Superset, BigQuery, NestJS backend, y agentes de IA conversacional — 3+ años en producción",
+  "data-platform-development-rwa-platform": "Plataforma de datos en tiempo real con BigQuery, Apache Superset, y embeddings seguros para clientes — análisis de activos RWA",
+  "automated-google-my-business-integration-data-for-looker-studio": "Integración automatizada GMB → Google Sheets → Looker Studio usando Google Apps Script",
+  "vet-scripts-for-scraping-pdf-files": "Scripts en Node.js para scraping de PDFs con máquinas virtuales en GCP, almacenamiento en Cloud Storage",
+  "wordpress-development-digitalice-su-pyme": "Sitio WordPress en Español para agencia inmobiliaria — optimizado para conversión y SEO",
+  "wordpress-based-e-commerce-platform": "E-commerce basado en WooCommerce con integraciones de pago y customización de tema",
+  "performance-evaluation-platform-for-a-public-organization": "Plataforma de evaluación de desempeño para Gobierno de Buenos Aires — 1,733 commits, 7 años de liderazgo técnico",
+  "spain-crm-development": "Suite de CRM en Laravel para agencias inmobiliarias españolas — módulos de propiedades, clientes, seguimiento",
+  "takeda-covid-vaccine-platform": "Plataforma de reporte farmacéutico en .NET y Azure con dashboards de análisis",
+  "latin-america-professionals-marketplace": "Marketplace de profesionales en React y Firebase — búsqueda, perfiles, mensajería en tiempo real",
+  "real-estate-listing-platform-listing-los-cabos": "Plataforma de listados inmobiliarios en Los Cabos — suscripciones de agentes, integración con Stripe, $3K MRR",
+  "testing-framework-overhaul-and-pest-adoption": "Migración de PHPUnit a Pest, construcción de suite de tests desde cero — cobertura 70%+",
+  "feature-migration-php-legacy-to-laravel": "Migración de código PHP legacy a Laravel moderno — refactoring, tests, documentación",
+  "saas-platform-scaling-and-optimization": "Optimización de plataforma SaaS — performance, base de datos, caching, escalabilidad horizontal",
+  "mobile-app-development-cross-platform": "App móvil cross-platform en React Native — autenticación, pagos, notificaciones push",
+  "api-gateway-and-microservices-architecture": "Arquitectura de microservicios con API Gateway — Node.js, NestJS, Docker, Kubernetes"
+}

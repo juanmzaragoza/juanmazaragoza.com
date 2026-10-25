@@ -16,6 +16,7 @@ const BUILD_DATE = new Date().toISOString().slice(0, 10);
 const read = (p) => fs.readFileSync(path.join(ROOT, p), 'utf8');
 const readJson = (p) => JSON.parse(read(p));
 const projects = readJson('data/projects.json');
+const projectsES = readJson('data/projects-es.json');
 const pages = readJson('data/pages.json');
 const imageSizes = fs.existsSync(path.join(ROOT, 'data/images.json')) ? readJson('data/images.json') : {};
 
@@ -77,15 +78,17 @@ function relatedProjects(p, n = 4) {
     .map((x) => x.q);
 }
 
-function projectCard(p) {
+function projectCard(p, isES = false) {
   const tags = p.tags.slice(0, 3).map((t) => `<span class="tag">${esc(t)}</span>`).join('');
   const status = p.status === 'running' ? '<span class="tag running">● Running</span>' : '';
   const cardImg = p.cardImage || p.hero;
-  return `<a class="project-card fade-in" href="/work/${p.slug}/" data-tags="${esc(p.tags.join('|').toLowerCase())}" data-status="${p.status}">
+  const subtitle = isES ? projectsES[p.slug] : p.subtitle;
+  const workPath = isES ? '/es/work/' : '/work/';
+  return `<a class="project-card fade-in" href="${workPath}${p.slug}/" data-tags="${esc(p.tags.join('|').toLowerCase())}" data-status="${p.status}">
       ${imgTag(cardImg, p.title, { cls: 'project-card-img' })}
       <div class="project-card-tags">${status}${tags}</div>
       <h3 class="project-card-title">${esc(p.title)}</h3>
-      <p class="project-card-desc">${esc(p.subtitle)}</p>
+      <p class="project-card-desc">${esc(subtitle)}</p>
       <div class="project-card-footer">
         <span class="project-card-date">${esc(p.date)}</span>
         <span class="project-card-arrow">↗</span>
@@ -282,8 +285,18 @@ const commonVars = {
   projectCount: String(projects.length),
   heroImg: imgTag('images/img_3062-Yan6xja2xjijrwNj.jpg', 'Juan Manuel Zaragoza, full-stack engineer', { priority: true, lazy: false }),
   aboutImg: imgTag('images/zyro-image-1-m2WBn69XLECKwk52.png', 'Portrait of Juan Manuel Zaragoza', { lazy: false }),
-  featured: fallback.map(projectCard).join('\n'),
-  grid: projects.map(projectCard).join('\n'),
+  featured: fallback.map(p => projectCard(p, false)).join('\n'),
+  grid: projects.map(p => projectCard(p, false)).join('\n'),
+};
+
+const commonVarsES = {
+  calendly: CALENDLY,
+  email: EMAIL,
+  projectCount: String(projects.length),
+  heroImg: imgTag('images/img_3062-Yan6xja2xjijrwNj.jpg', 'Juan Manuel Zaragoza, ingeniero full-stack', { priority: true, lazy: false }),
+  aboutImg: imgTag('images/zyro-image-1-m2WBn69XLECKwk52.png', 'Retrato de Juan Manuel Zaragoza', { lazy: false }),
+  featured: fallback.map(p => projectCard(p, true)).join('\n'),
+  grid: projects.map(p => projectCard(p, true)).join('\n'),
 };
 
 // Map pages to their Spanish equivalents for hreflang tags
@@ -355,7 +368,8 @@ for (const [key, page] of Object.entries(pages)) {
   } else if (key !== 'notFound') {
     jsonLd.push(breadcrumb([['Home', page.path.startsWith('/es/') ? '/es/' : '/'], [page.crumb, page.path]]));
   }
-  let body = fill(read(`src/${page.src}`), commonVars);
+  const vars = isES ? commonVarsES : commonVars;
+  let body = fill(read(`src/${page.src}`), vars);
 
   // Rewrite internal links in Spanish pages
   if (isES) {
