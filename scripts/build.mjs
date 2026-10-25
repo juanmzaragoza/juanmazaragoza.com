@@ -159,6 +159,13 @@ const NAV = [
   ['/about/', 'About', 'about'],
 ];
 
+const NAV_ES = [
+  ['/es/', 'Inicio', 'home'],
+  ['/es/work/', 'Trabajos', 'work'],
+  ['/es/services/', 'Servicios', 'services'],
+  ['/es/about/', 'Acerca de', 'about'],
+];
+
 function layout({ urlPath, title, description, body, active, jsonLd = [], ogType = 'website', ogImage = OG_DEFAULT, noindex = false, lang = 'en', hreflangs = [] }) {
   const canonical = SITE + urlPath;
   const isES = urlPath.startsWith('/es/');
@@ -174,12 +181,8 @@ function layout({ urlPath, title, description, body, active, jsonLd = [], ogType
     langLink = `<a href="${esUrl}" class="nav-lang">ES</a>`;
   }
 
-  // Adjust nav hrefs for Spanish pages
-  let navLinks = NAV;
-  if (isES) {
-    navLinks = NAV.map(([href, label, key]) => ['/es' + href, label, key]);
-  }
-
+  // Use Spanish nav for Spanish pages
+  const navLinks = isES ? NAV_ES : NAV;
   const nav = navLinks.map(([href, label, key]) =>
     `<a href="${href}"${key === active ? ' class="active" aria-current="page"' : ''}>${label}</a>`).join('\n    ');
   const ld = jsonLd.map((o) => `<script type="application/ld+json">${JSON.stringify(o)}</script>`).join('\n  ');
@@ -219,7 +222,7 @@ function layout({ urlPath, title, description, body, active, jsonLd = [], ogType
   </button>
   <div class="nav-links">
     ${nav}
-    <a href="${isES ? '/es/contact/' : '/contact/'}" class="nav-cta${active === 'contact' ? ' active' : ''}">Contact</a>
+    <a href="${isES ? '/es/contact/' : '/contact/'}" class="nav-cta${active === 'contact' ? ' active' : ''}">${isES ? 'Contacto' : 'Contact'}</a>
     ${langLink}
   </div>
 </nav>
