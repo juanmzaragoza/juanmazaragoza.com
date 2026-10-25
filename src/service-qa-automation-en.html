@@ -1,0 +1,208 @@
+  <article>
+    <div class="detail-hero">
+      <div class="breadcrumb" role="navigation" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/services/">Services</a> / <span>QA Automation</span></div>
+      <div class="detail-header">
+        <div class="section-label">Test Automation for Laravel</div>
+        <h1 class="detail-title">QA Automation for Laravel: 600+ Tests in Production, Zero Manual Regression</h1>
+        <p class="detail-subtitle">Migrate from PHPUnit to Pest. Complete coverage with elegant tests. Safe deploys. Your team ships 2x faster. 4-8 weeks.</p>
+      </div>
+    </div>
+
+    <div class="detail-body">
+      <h2>The Problem: Manual Testing Kills Your Productivity</h2>
+      <p>Every release, someone (or several people) do manual testing. Takes 8-20 hours. Finds 40% of bugs. The rest hit production. Your team is blocked by manual QA.</p>
+
+      <p>The cost is real:</p>
+      <ul>
+        <li><strong>Low velocity</strong>: You ship once a month because testing takes weeks.</li>
+        <li><strong>Bugs reach production</strong>: Manual tests miss edge cases. Customers complain.</li>
+        <li><strong>Junior developers frozen</strong>: "I won't touch this code, might break something." No refactoring happens.</li>
+        <li><strong>QA burnout</strong>: Clicking the same form 100 times is soul-crushing.</li>
+        <li><strong>Knowledge silos</strong>: Only Juan knows how to test feature X.</li>
+      </ul>
+
+      <h2>Why Pest for Laravel</h2>
+
+      <h3>Beautiful Syntax</h3>
+      <p>PHPUnit is verbose. Pest is elegant.</p>
+      <p><code>expect($user->name)->toBe('Juan')</code> vs <code>$this->assertEquals($user->name, 'Juan')</code></p>
+      <p>Your team writes tests with joy, not pain.</p>
+
+      <h3>Fast to Learn</h3>
+      <p>Junior developers write tests on day one. Not "learn PHPUnit in 3 months." It's "write your first test in 1 hour."</p>
+
+      <h3>Built for Laravel</h3>
+      <p>Pest understands Laravel. Factories, seeds, middleware, queues. All integrated without boilerplate.</p>
+
+      <h3>Easy Debugging</h3>
+      <p>When a test fails, you see exactly why. Clear assertions. Useful stack traces.</p>
+
+      <h2>What We Cover</h2>
+
+      <h3>Unit Tests (Fast)</h3>
+      <ul>
+        <li>Business logic: calculations, validations, rules</li>
+        <li>Helpers and utilities</li>
+        <li>Timers: < 1 second for full suite</li>
+      </ul>
+
+      <h3>Integration Tests (Real)</h3>
+      <ul>
+        <li>Models and relationships</li>
+        <li>Query builders</li>
+        <li>Database interactions</li>
+        <li>Events and jobs</li>
+        <li>API endpoints</li>
+        <li>Timers: 30-60 seconds for full suite</li>
+      </ul>
+
+      <h3>Feature Tests (Flows)</h3>
+      <ul>
+        <li>User flows: login, create resource, checkout</li>
+        <li>Authentication and authorization</li>
+        <li>Form validation</li>
+        <li>Redirects and correct responses</li>
+        <li>Timers: 1-2 minutes for full suite</li>
+      </ul>
+
+      <h2>How We Do It</h2>
+
+      <h3>Week 1: Audit & Strategy</h3>
+      <ul>
+        <li>Evaluate current codebase</li>
+        <li>Decide what to migrate (PHPUnit → Pest) vs rewrite</li>
+        <li>Create test factories and helpers for reuse</li>
+        <li>Set up CI/CD to run tests on every commit</li>
+      </ul>
+
+      <h3>Week 2-5: Write Tests</h3>
+      <ul>
+        <li>Tests for critical flows first (auth, payments, core features)</li>
+        <li>Coverage target: 70-85% for critical paths</li>
+        <li>Avoid over-testing: trivial tests don't pay off</li>
+        <li>Pair program with your team so they learn</li>
+      </ul>
+
+      <h3>Week 6-8: Integration & Handoff</h3>
+      <ul>
+        <li>Tests are in CI/CD. Every PR runs tests automatically</li>
+        <li>Your team learns to write and maintain tests</li>
+        <li>Documentation on how to write new tests</li>
+      </ul>
+
+      <h2>Real Case: Ticketing SaaS — 0 to 600+ Tests in 6 Weeks</h2>
+      <p>A Laravel ticketing platform. Zero tests. Manual QA took 30-40 hours/month and bugs still hit production.</p>
+
+      <h3>The situation:</h3>
+      <ul>
+        <li>5 years of Laravel code</li>
+        <li>0 tests (literally none)</li>
+        <li>PHPUnit install but never used</li>
+        <li>30-40 hours/month on manual regression</li>
+        <li>2-3 critical bugs in production per month</li>
+      </ul>
+
+      <h3>What we built:</h3>
+      <ul>
+        <li>✓ Complete migration to Pest (modern setup, factories, helpers)</li>
+        <li>✓ 600+ tests covering all critical flows</li>
+        <li>✓ Integration with GitHub Actions (tests run on every PR)</li>
+        <li>✓ 75% coverage on business logic</li>
+        <li>✓ Full suite runs in 2 minutes (fast feedback)</li>
+      </ul>
+
+      <h3>Results:</h3>
+      <ul>
+        <li>✓ Zero manual regression (tests do it all)</li>
+        <li>✓ Bugs to production dropped 95%</li>
+        <li>✓ Team ships 1x per week instead of 1x per month</li>
+        <li>✓ Junior developers refactor code with confidence</li>
+        <li>✓ ROI: 40 hours/month saved on manual QA = 5 hours/month maintaining tests</li>
+      </ul>
+
+      <p><a href="/work/qa-automation-for-laravel/">See the full case study →</a></p>
+
+      <h2>What We Test vs Skip</h2>
+
+      <h3>ALWAYS (Core Business Logic)</h3>
+      <ul>
+        <li>✓ Authentication & authorization</li>
+        <li>✓ Payments & billing</li>
+        <li>✓ Core workflows (signup, purchase, critical features)</li>
+        <li>✓ Validations and rules</li>
+        <li>✓ API endpoints other systems depend on</li>
+      </ul>
+
+      <h3>USUALLY (Important Features)</h3>
+      <ul>
+        <li>✓ CRUD operations on main resources</li>
+        <li>✓ Email notifications</li>
+        <li>✓ Background jobs</li>
+        <li>✓ Edge cases and error paths</li>
+      </ul>
+
+      <h3>SKIP (Nice-to-Have, Trivial)</h3>
+      <ul>
+        <li>✗ Trivial getters/setters</li>
+        <li>✗ Blade templates (test visually instead)</li>
+        <li>✗ Controllers that just route to models</li>
+        <li>✗ Migrations (trust Laravel)</li>
+      </ul>
+
+      <h2>Tools We Use</h2>
+
+      <h3>Testing</h3>
+      <ul>
+        <li><strong>Pest</strong>: Main framework</li>
+        <li><strong>Factories & Seeders</strong>: Elegant data setup</li>
+        <li><strong>Fakes</strong>: Fake Mail, Storage, Notifications without touching disk</li>
+      </ul>
+
+      <h3>CI/CD</h3>
+      <ul>
+        <li><strong>GitHub Actions</strong>: Tests run on every push</li>
+        <li><strong>Parallel execution</strong>: 4-10 tests at once, full suite in 2 minutes</li>
+        <li><strong>Coverage reports</strong>: See what code is covered</li>
+      </ul>
+
+      <h3>Debugging</h3>
+      <ul>
+        <li><strong>dd() & dump()</strong>: Quick debug in tests</li>
+        <li><strong>Pest filter</strong>: Run only 1 test without commenting out the rest</li>
+        <li><strong>SQL logging</strong>: See exactly what queries run</li>
+      </ul>
+
+      <h2>FAQ</h2>
+
+      <h3>How many tests do we need?</h3>
+      <p>No magic number. It's coverage. 70-85% for critical paths is a good target. More is diminishing returns. Less and you miss bugs.</p>
+
+      <h3>Are tests slow?</h3>
+      <p>No if written well. 600+ tests in 2 minutes. That's fast. If it takes longer, we have optimizations (DB transactions, efficient factories).</p>
+
+      <h3>What if we have no tests right now?</h3>
+      <p>Perfect. Start from scratch. Simpler than migrating broken PHPUnit. 4-8 weeks and you're at 600+ tests.</p>
+
+      <h3>What if we already have PHPUnit?</h3>
+      <p>We migrate to Pest. Syntax is similar, straightforward. While we're at it, we add tests for gaps.</p>
+
+      <h3>Who maintains the tests after?</h3>
+      <p>Your team. Tests are code, they need maintenance. When you change code, tests may fail. That's good—it means tests work. Your team maintains them like any other code.</p>
+
+      <h3>What about flaky tests?</h3>
+      <p>Flaky tests (sometimes pass, sometimes fail) are a real problem. We prevent with: explicit waits, no sleep(), test isolation with transactions. Some flakiness is inevitable. Retries and logging help.</p>
+
+      <h3>Can you teach my team?</h3>
+      <p>Yes. Pair programming while we write tests. They learn by doing, not reading. After, they write tests on their own.</p>
+    </div>
+
+    <div class="section cta-block">
+      <div class="section-label">Ready for tests that protect your code?</div>
+      <h2 class="section-title">Stop testing manually. Automate.</h2>
+      <p class="contact-intro">Book a 30-minute call. Tell me about your app: stack, age, testing situation. I'll tell you how a test suite could accelerate your team.</p>
+      <div class="hero-actions">
+        <a href="{{calendly}}" class="btn-primary" target="_blank" rel="noopener">Book a 30-min call ↗</a>
+        <a href="mailto:{{email}}" class="btn-ghost">{{email}}</a>
+      </div>
+    </div>
+  </article>

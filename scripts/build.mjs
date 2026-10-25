@@ -149,11 +149,19 @@ const PERSON = {
   ],
 };
 
-const breadcrumb = (items) => ({
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: items.map(([name, url], i) => ({ '@type': 'ListItem', position: i + 1, name, item: SITE + url })),
-});
+const breadcrumb = (items) => {
+  const isES = items.some(([, url]) => url.startsWith('/es/'));
+  const translate = (label) => {
+    if (!isES) return label;
+    const map = { 'Home': 'Inicio', 'Work': 'Trabajos', 'Services': 'Servicios', 'About': 'Acerca de', 'Contact': 'Contacto' };
+    return map[label] || label;
+  };
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map(([name, url], i) => ({ '@type': 'ListItem', position: i + 1, name: translate(name), item: SITE + url })),
+  };
+};
 
 const NAV = [
   ['/', 'Home', 'home'],
