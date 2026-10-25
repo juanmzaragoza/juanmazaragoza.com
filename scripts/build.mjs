@@ -314,6 +314,10 @@ const pageMap = {
   '/services/': '/es/services/',
   '/contact/': '/es/contact/',
   '/work/': '/es/work/',
+  '/services/fractional-cto/': '/es/services/cto-fraccionado/',
+  '/services/project-rescue/': '/es/services/rescate-proyectos/',
+  '/services/technical-audit/': '/es/services/auditoria-tecnica/',
+  '/services/qa-automation/': '/es/services/automatizacion-qa/',
 };
 
 const esMap = {
@@ -322,6 +326,10 @@ const esMap = {
   '/es/services/': '/services/',
   '/es/contact/': '/contact/',
   '/es/work/': '/work/',
+  '/es/services/cto-fraccionado/': '/services/fractional-cto/',
+  '/es/services/rescate-proyectos/': '/services/project-rescue/',
+  '/es/services/auditoria-tecnica/': '/services/technical-audit/',
+  '/es/services/automatizacion-qa/': '/services/qa-automation/',
 };
 
 function getHreflangs(urlPath) {
@@ -374,7 +382,17 @@ for (const [key, page] of Object.entries(pages)) {
       description: page.description, provider: { '@id': `${SITE}/#person` }, areaServed: ['US', 'ES', 'MX', 'CO', 'PE', 'CL', 'AR', 'EC'],
       url: SITE + page.path });
   } else if (key !== 'notFound') {
-    jsonLd.push(breadcrumb([['Home', page.path.startsWith('/es/') ? '/es/' : '/'], [page.crumb, page.path]]));
+    const isES = page.path.startsWith('/es/');
+    const homeLabel = isES ? 'Inicio' : 'Home';
+    const homePath = isES ? '/es/' : '/';
+    const servicesLabel = isES ? 'Servicios' : 'Services';
+    const servicesPath = isES ? '/es/services/' : '/services/';
+
+    if (page.path.includes('/services/')) {
+      jsonLd.push(breadcrumb([[homeLabel, homePath], [servicesLabel, servicesPath], [page.crumb, page.path]]));
+    } else {
+      jsonLd.push(breadcrumb([[homeLabel, homePath], [page.crumb, page.path]]));
+    }
   }
   const vars = isES ? commonVarsES : commonVars;
   let body = fill(read(`src/${page.src}`), vars);
