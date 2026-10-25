@@ -125,6 +125,41 @@
     "title": "Contact & Book a 30-min Call — Juan Manuel Zaragoza",
     "description": "Tell me about your project or the system that is holding you back. Book a free 30-minute call or email hola@juanmazaragoza.com."
   },
+  "homeES": {
+    "path": "/es/",
+    "src": "home-es.html",
+    "crumb": "Inicio",
+    "title": "Juan Manuel Zaragoza — Ingeniero Full-Stack & CTO Fraccionado",
+    "description": "Ingeniero full-stack con 10+ años construyendo software personalizado, automatizaciones y BI, y rescatando plataformas inestables para empresas en EE.UU., España y LATAM."
+  },
+  "workES": {
+    "path": "/es/work/",
+    "src": "work-es.html",
+    "crumb": "Trabajos",
+    "title": "Casos de estudio — Juan Manuel Zaragoza",
+    "description": "18+ proyectos de software en ticketing, real estate, pharma, gobierno, fintech: plataformas full-stack, automatización QA, plataformas de datos y chatbots."
+  },
+  "servicesES": {
+    "path": "/es/services/",
+    "src": "services-es.html",
+    "crumb": "Servicios",
+    "title": "Desarrollo de Software, Automatización QA, Rescate de Proyectos & CTO Fraccionado",
+    "description": "Desarrollo de software personalizado, automatización QA con Pest y Playwright, rescate de proyectos para plataformas rotas, auditorías de deuda técnica, y liderazgo de CTO fraccionado para empresas en crecimiento."
+  },
+  "aboutES": {
+    "path": "/es/about/",
+    "src": "about-es.html",
+    "crumb": "Acerca de",
+    "title": "Acerca de Juan Manuel Zaragoza — 10+ Años en Software",
+    "description": "Ingeniero en Informática de Argentina basado en Cuenca, Ecuador. 10+ años, desde especialista en QA hasta tech lead, construyendo plataformas para gobierno, pharma y SaaS."
+  },
+  "contactES": {
+    "path": "/es/contact/",
+    "src": "contact-es.html",
+    "crumb": "Contacto",
+    "title": "Contacto & Agendar Llamada 30 min — Juan Manuel Zaragoza",
+    "description": "Cuéntame sobre tu proyecto o el sistema que te está retrasando. Reserva una llamada gratuita de 30 minutos o envía un email a hola@juanmazaragoza.com."
+  },
   "notFound": {
     "path": "/404.html",
     "src": "404.html",

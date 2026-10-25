@@ -159,20 +159,41 @@ const NAV = [
   ['/about/', 'About', 'about'],
 ];
 
-function layout({ urlPath, title, description, body, active, jsonLd = [], ogType = 'website', ogImage = OG_DEFAULT, noindex = false }) {
+function layout({ urlPath, title, description, body, active, jsonLd = [], ogType = 'website', ogImage = OG_DEFAULT, noindex = false, lang = 'en', hreflangs = [] }) {
   const canonical = SITE + urlPath;
-  const nav = NAV.map(([href, label, key]) =>
+  const isES = urlPath.startsWith('/es/');
+  const actualLang = lang || (isES ? 'es' : 'en');
+
+  // Generate language links for nav
+  let langLink = '';
+  if (isES) {
+    const enUrl = urlPath.slice(3);
+    langLink = `<a href="${enUrl}" class="nav-lang">EN</a>`;
+  } else {
+    const esUrl = '/es' + (urlPath === '/' ? '/' : urlPath);
+    langLink = `<a href="${esUrl}" class="nav-lang">ES</a>`;
+  }
+
+  // Adjust nav hrefs for Spanish pages
+  let navLinks = NAV;
+  if (isES) {
+    navLinks = NAV.map(([href, label, key]) => ['/es' + href, label, key]);
+  }
+
+  const nav = navLinks.map(([href, label, key]) =>
     `<a href="${href}"${key === active ? ' class="active" aria-current="page"' : ''}>${label}</a>`).join('\n    ');
   const ld = jsonLd.map((o) => `<script type="application/ld+json">${JSON.stringify(o)}</script>`).join('\n  ');
-  const heroPreload = urlPath === '/' ? '<link rel="preload" as="image" href="/images/img_3062-Yan6xja2xjijrwNj.webp" type="image/webp">' : '';
+  const heroPreload = urlPath === '/' || urlPath === '/es/' ? '<link rel="preload" as="image" href="/images/img_3062-Yan6xja2xjijrwNj.webp" type="image/webp">' : '';
+  const hreflangtags = hreflangs.map(([lang, url]) => `<link rel="alternate" hreflang="${lang}" href="${SITE}${url}">`).join('\n  ');
   return `<!DOCTYPE html>
-<html lang="en">
+<html lang="${actualLang}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${esc(title)}</title>
   <meta name="description" content="${esc(description)}">
   ${noindex ? '<meta name="robots" content="noindex">' : `<link rel="canonical" href="${canonical}">`}
+  ${hreflangtags}
   <meta property="og:type" content="${ogType}">
   <meta property="og:site_name" content="Juan Manuel Zaragoza">
   <meta property="og:title" content="${esc(title)}">
@@ -198,7 +219,8 @@ function layout({ urlPath, title, description, body, active, jsonLd = [], ogType
   </button>
   <div class="nav-links">
     ${nav}
-    <a href="/contact/" class="nav-cta${active === 'contact' ? ' active' : ''}">Contact</a>
+    <a href="${isES ? '/es/contact/' : '/contact/'}" class="nav-cta${active === 'contact' ? ' active' : ''}">Contact</a>
+    ${langLink}
   </div>
 </nav>
 
@@ -261,6 +283,35 @@ const commonVars = {
   grid: projects.map(projectCard).join('\n'),
 };
 
+// Map pages to their Spanish equivalents for hreflang tags
+const pageMap = {
+  '/': '/es/',
+  '/about/': '/es/about/',
+  '/services/': '/es/services/',
+  '/contact/': '/es/contact/',
+  '/work/': '/es/work/',
+};
+
+const esMap = {
+  '/es/': '/',
+  '/es/about/': '/about/',
+  '/es/services/': '/services/',
+  '/es/contact/': '/contact/',
+  '/es/work/': '/work/',
+};
+
+function getHreflangs(urlPath) {
+  const hreflangs = [];
+
+  if (urlPath in pageMap) {
+    hreflangs.push(['es', pageMap[urlPath]]);
+  } else if (urlPath in esMap) {
+    hreflangs.push(['en', esMap[urlPath]]);
+  }
+
+  return hreflangs;
+}
+
 const outputs = [];
 function write(urlPath, html, { sitemap = true } = {}) {
   const file = urlPath.endsWith('/') ? path.join(urlPath, 'index.html') : urlPath;
@@ -273,12 +324,16 @@ function write(urlPath, html, { sitemap = true } = {}) {
 // Static pages
 for (const [key, page] of Object.entries(pages)) {
   const jsonLd = [];
-  if (key === 'home') {
+  const isES = page.path.startsWith('/es/');
+  const pageLang = isES ? 'es' : 'en';
+
+  if (key === 'home' || key === 'homeES') {
+    const inLanguage = isES ? 'es' : 'en';
     jsonLd.push({ '@context': 'https://schema.org', '@graph': [PERSON, {
-      '@type': 'WebSite', '@id': `${SITE}/#website`, url: `${SITE}/`, name: 'Juan Manuel Zaragoza',
-      inLanguage: 'en', publisher: { '@id': `${SITE}/#person` } }] });
-  } else if (key === 'about') {
-    jsonLd.push({ '@context': 'https://schema.org', '@type': 'ProfilePage', url: `${SITE}/about/`, mainEntity: PERSON });
+      '@type': 'WebSite', '@id': `${SITE}/#website`, url: `${SITE}${page.path}`, name: 'Juan Manuel Zaragoza',
+      inLanguage, publisher: { '@id': `${SITE}/#person` } }] });
+  } else if (key === 'about' || key === 'aboutES') {
+    jsonLd.push({ '@context': 'https://schema.org', '@type': 'ProfilePage', url: `${SITE}${page.path}`, mainEntity: PERSON });
   } else if (key === 'serviceRescue') {
     jsonLd.push(breadcrumb([['Home', '/'], ['Services', '/services/'], [page.crumb, page.path]]));
     jsonLd.push({ '@context': 'https://schema.org', '@type': 'Service', name: 'Software Project Rescue',
@@ -295,10 +350,22 @@ for (const [key, page] of Object.entries(pages)) {
       description: page.description, provider: { '@id': `${SITE}/#person` }, areaServed: ['US', 'ES', 'MX', 'CO', 'PE', 'CL', 'AR', 'EC'],
       url: SITE + page.path });
   } else if (key !== 'notFound') {
-    jsonLd.push(breadcrumb([['Home', '/'], [page.crumb, page.path]]));
+    jsonLd.push(breadcrumb([['Home', page.path.startsWith('/es/') ? '/es/' : '/'], [page.crumb, page.path]]));
   }
-  const body = fill(read(`src/${page.src}`), commonVars);
-  write(page.path, layout({ urlPath: page.path, title: page.title, description: page.description, body, active: key, jsonLd, noindex: key === 'notFound' }), { sitemap: key !== 'notFound' });
+  let body = fill(read(`src/${page.src}`), commonVars);
+
+  // Rewrite internal links in Spanish pages
+  if (isES) {
+    body = body
+      .replace(/href="\/([^e\/])/g, 'href="/es/$1')
+      .replace(/href="\/about\//g, 'href="/es/about/')
+      .replace(/href="\/services\//g, 'href="/es/services/')
+      .replace(/href="\/contact\//g, 'href="/es/contact/')
+      .replace(/href="\/work\//g, 'href="/es/work/');
+  }
+
+  const hreflangs = getHreflangs(page.path);
+  write(page.path, layout({ urlPath: page.path, title: page.title, description: page.description, body, active: key, jsonLd, noindex: key === 'notFound', lang: pageLang, hreflangs }), { sitemap: key !== 'notFound' });
 }
 
 // Service mappings for internal linking
