@@ -10,6 +10,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SITE = 'https://juanmazaragoza.com';
 const CALENDLY = 'https://calendly.com/juanmanuelzaragoza/30min';
 const EMAIL = 'hola@juanmazaragoza.com';
+const GA4_ID = 'G-7ZJFFTN5W2';
 const OG_DEFAULT = '/images/og-preview.jpg';
 const BUILD_DATE = new Date().toISOString().slice(0, 10);
 
@@ -223,6 +224,13 @@ function layout({ urlPath, title, description, body, active, jsonLd = [], ogType
   <link rel="stylesheet" href="/css/style.css">
   <script>document.documentElement.classList.add('js')</script>
   ${ld}
+  <script async src="https://www.googletagmanager.com/gtag/js?id=${GA4_ID}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '${GA4_ID}');
+  </script>
 </head>
 <body>
 
