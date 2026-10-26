@@ -1,0 +1,4 @@
+Contact: mailto:hola@juanmazaragoza.com
+Expires: 2027-10-26T00:00:00.000Z
+Preferred-Languages: en, es
+Canonical: https://juanmazaragoza.com/.well-known/security.txt
