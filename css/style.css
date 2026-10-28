@@ -286,7 +286,7 @@ nav.scrolled {
 
 /* ─── Section base ──────────────────────────────────────────── */
 .section {
-  padding: 100px 40px;
+  padding: 60px;
   max-width: var(--max-w);
   margin: 0 auto;
 }
@@ -1050,4 +1050,51 @@ a.service-item:hover h3 { color: var(--accent); }
 @media (max-width: 900px) {
   .testimonial-grid { grid-template-columns: 1fr; gap: 32px; }
   .service-item { padding: 24px; }
+}
+
+/* ─── Skills ticker with animated badges ────────────────── */
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.skills-strip {
+  width: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  padding: 24px 0;
+}
+
+.skills-ticker {
+  display: flex;
+  gap: 12px;
+  animation: scroll-left 40s linear infinite;
+  will-change: transform;
+}
+
+.skill-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  background: var(--bg-2);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.skill-badge:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--bg);
+  box-shadow: 0 2px 8px rgba(216, 90, 48, 0.1);
+}
+
+@media (max-width: 768px) {
+  .skills-strip { padding: 16px 0; }
+  .skills-ticker { gap: 10px; animation-duration: 30s; }
+  .skill-badge { padding: 6px 12px; font-size: 12px; }
 }
