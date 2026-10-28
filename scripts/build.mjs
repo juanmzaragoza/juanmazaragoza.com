@@ -300,7 +300,7 @@ const commonVars = {
   email: EMAIL,
   projectCount: String(projects.length),
   heroImg: imgTag('images/img_3062-Yan6xja2xjijrwNj.jpg', 'Juan Manuel Zaragoza, full-stack engineer', { priority: true, lazy: false }),
-  aboutImg: imgTag('images/zyro-image-1-m2WBn69XLECKwk52.png', 'Portrait of Juan Manuel Zaragoza', { lazy: false }),
+  aboutImg: imgTag('images/juan-manuel-portrait-new.webp', 'Portrait of Juan Manuel Zaragoza', { lazy: false }),
   featured: fallback.map(p => projectCard(p, false)).join('\n'),
   grid: projects.map(p => projectCard(p, false)).join('\n'),
 };
@@ -310,7 +310,7 @@ const commonVarsES = {
   email: EMAIL,
   projectCount: String(projects.length),
   heroImg: imgTag('images/img_3062-Yan6xja2xjijrwNj.jpg', 'Juan Manuel Zaragoza, ingeniero full-stack', { priority: true, lazy: false }),
-  aboutImg: imgTag('images/zyro-image-1-m2WBn69XLECKwk52.png', 'Retrato de Juan Manuel Zaragoza', { lazy: false }),
+  aboutImg: imgTag('images/juan-manuel-portrait-new.webp', 'Retrato de Juan Manuel Zaragoza', { lazy: false }),
   featured: fallback.map(p => projectCard(p, true)).join('\n'),
   grid: projects.map(p => projectCard(p, true)).join('\n'),
 };
