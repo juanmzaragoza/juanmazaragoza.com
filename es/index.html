@@ -80,9 +80,19 @@
       </div>
     </div>
     <div class="hero-image">
-      <div class="hero-image-frame">
-        <img src="/images/img_3062-Yan6xja2xjijrwNj.webp" alt="Juan Manuel Zaragoza, ingeniero full-stack" width="1600" height="1200" decoding="async" fetchpriority="high">
-        <div class="hero-image-tag">Cuenca · Ecuador · UTC-5</div>
+      <div class="hero-carousel-container">
+        <div class="hero-carousel-viewport"></div>
+        <div class="hero-carousel-dots"></div>
+        <div class="hero-carousel-controls">
+          <div class="hero-carousel-info">
+            <span id="carousel-counter">1</span> / <span id="carousel-total">3</span>
+          </div>
+          <div class="hero-carousel-buttons">
+            <button class="hero-carousel-btn" id="carousel-prev" title="Previous">←</button>
+            <button class="hero-carousel-btn" id="carousel-play" title="Play/Pause">⏸</button>
+            <button class="hero-carousel-btn" id="carousel-next" title="Next">→</button>
+          </div>
+        </div>
       </div>
       <div class="hero-socials">
         <a href="https://www.linkedin.com/in/juanmzaragoza/" target="_blank" rel="noopener me" class="hero-social-link">LinkedIn</a>
@@ -90,6 +100,97 @@
         <a href="https://www.upwork.com/freelancers/~018d17cfb4fda29566" target="_blank" rel="noopener me" class="hero-social-link">Upwork</a>
       </div>
     </div>
+
+    <script>
+      const carouselProjects = [
+        { title: 'Atacana Group', subtitle: 'Pharma BI & Analytics', image: '/images/project-atacana.webp' },
+        { title: 'Listing Los Cabos', subtitle: 'Real Estate Marketplace', image: '/images/project-listing-cabos.webp' },
+        { title: 'Output Brand Analytics', subtitle: 'Brand Intelligence Dashboard', image: '/images/project-datakimia.png' },
+        { title: 'RWA.io', subtitle: 'Tokenized Assets & DeFi', image: '/images/project-rwa.webp' },
+        { title: 'Carvix', subtitle: 'Car Inventory Platform', image: '/images/project-carvix.jpg' },
+        { title: 'BA Participa', subtitle: 'Civic Participation Platform', image: '/images/project-ba-participa.webp' }
+      ];
+
+      let carouselIndex = 0;
+      let carouselPlaying = true;
+      let carouselTimer = null;
+
+      const viewport = document.querySelector('.hero-carousel-viewport');
+      const dotsContainer = document.querySelector('.hero-carousel-dots');
+      const counter = document.querySelector('#carousel-counter');
+      const total = document.querySelector('#carousel-total');
+      const btnPrev = document.querySelector('#carousel-prev');
+      const btnNext = document.querySelector('#carousel-next');
+      const btnPlay = document.querySelector('#carousel-play');
+
+      function initCarousel() {
+        total.textContent = carouselProjects.length;
+
+        carouselProjects.forEach((proj, idx) => {
+          const slide = document.createElement('div');
+          slide.className = `hero-carousel-slide ${idx === 0 ? 'active' : ''}`;
+          slide.style.backgroundImage = `url(${proj.image})`;
+          viewport.appendChild(slide);
+
+          const dot = document.createElement('button');
+          dot.className = `hero-carousel-dot ${idx === 0 ? 'active' : ''}`;
+          dot.onclick = () => goToSlide(idx);
+          dotsContainer.appendChild(dot);
+        });
+
+        startAutoplay();
+      }
+
+      function goToSlide(idx) {
+        const slides = document.querySelectorAll('.hero-carousel-slide');
+        const dots = document.querySelectorAll('.hero-carousel-dot');
+        slides.forEach(s => s.classList.remove('active'));
+        dots.forEach(d => d.classList.remove('active'));
+        slides[idx].classList.add('active');
+        dots[idx].classList.add('active');
+        carouselIndex = idx;
+        counter.textContent = idx + 1;
+      }
+
+      function nextSlide() {
+        goToSlide((carouselIndex + 1) % carouselProjects.length);
+      }
+
+      function prevSlide() {
+        goToSlide((carouselIndex - 1 + carouselProjects.length) % carouselProjects.length);
+      }
+
+      function startAutoplay() {
+        if (carouselTimer) clearInterval(carouselTimer);
+        carouselTimer = setInterval(nextSlide, 5000);
+        btnPlay.textContent = '⏸';
+      }
+
+      function stopAutoplay() {
+        if (carouselTimer) clearInterval(carouselTimer);
+        btnPlay.textContent = '▶';
+      }
+
+      function toggleAutoplay() {
+        if (carouselPlaying) {
+          stopAutoplay();
+        } else {
+          startAutoplay();
+        }
+        carouselPlaying = !carouselPlaying;
+      }
+
+      btnNext.addEventListener('click', nextSlide);
+      btnPrev.addEventListener('click', prevSlide);
+      btnPlay.addEventListener('click', toggleAutoplay);
+
+      viewport.addEventListener('mouseenter', stopAutoplay);
+      viewport.addEventListener('mouseleave', () => {
+        if (carouselPlaying) startAutoplay();
+      });
+
+      initCarousel();
+    </script>
   </section>
 
   <!-- Skills ticker with badges -->

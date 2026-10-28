@@ -1093,8 +1093,115 @@ a.service-item:hover h3 { color: var(--accent); }
   box-shadow: 0 2px 8px rgba(216, 90, 48, 0.1);
 }
 
+/* ─── Hero Carousel ─────────────────────────────────────────── */
+.hero-carousel-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.hero-carousel-viewport {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-carousel-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out, transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  background-size: cover;
+  background-position: center;
+  transform: scale(0.8) rotate(-5deg);
+}
+
+.hero-carousel-slide.active {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+.hero-carousel-controls {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.hero-carousel-info {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(0, 0, 0, 0.3);
+  padding: 8px 12px;
+  border-radius: 4px;
+  backdrop-filter: blur(10px);
+}
+
+.hero-carousel-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.hero-carousel-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  font-size: 12px;
+  color: white;
+  backdrop-filter: blur(10px);
+}
+
+.hero-carousel-btn:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.hero-carousel-dots {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 10;
+}
+
+.hero-carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero-carousel-dot.active {
+  background: var(--accent);
+  width: 20px;
+  border-radius: 4px;
+}
+
 @media (max-width: 768px) {
   .skills-strip { padding: 16px 0; }
   .skills-ticker { gap: 10px; animation-duration: 30s; }
   .skill-badge { padding: 6px 12px; font-size: 12px; }
+
+  .hero-carousel-info { font-size: 11px; padding: 6px 10px; }
+  .hero-carousel-btn { width: 28px; height: 28px; font-size: 10px; }
 }
