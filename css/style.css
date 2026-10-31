@@ -655,11 +655,22 @@ nav.scrolled {
 .case-context p {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 0;
   font-size: 13px;
   color: var(--text-2);
+  align-items: center;
 }
-.case-context span { font-weight: 500; }
+.case-context span {
+  margin: 0 4px;
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-weight: 500;
+  background: var(--bg-2);
+}
+.case-context span:first-child {
+  margin-left: 0;
+}
 
 .case-results, .case-testimonial {
   margin: 60px auto;
@@ -1070,6 +1081,22 @@ a.service-item:hover h3 { color: var(--accent); }
   gap: 12px;
   animation: scroll-left 40s linear infinite;
   will-change: transform;
+}
+
+.skills-ticker span {
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding: 6px 14px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+}
+
+.skills-ticker .dot {
+  display: none;
 }
 
 .skill-badge {
