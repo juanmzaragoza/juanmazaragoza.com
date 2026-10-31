@@ -1124,6 +1124,7 @@ a.service-item:hover h3 { color: var(--accent); }
 .hero-carousel-container {
   position: relative;
   width: 100%;
+  height: stretch;
   aspect-ratio: 1;
   border-radius: 8px;
   overflow: hidden;
