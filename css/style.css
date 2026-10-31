@@ -607,7 +607,7 @@ nav.scrolled {
 .project-detail { display: none; }
 .project-detail.active { display: block; }
 .detail-hero {
-  padding: 60px 40px 0;
+  padding: 40px 40px 0;
   max-width: var(--max-w);
   margin: 0 auto;
 }
@@ -619,11 +619,11 @@ nav.scrolled {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-2);
-  margin-bottom: 40px;
+  margin-bottom: 24px;
   transition: color 0.2s;
 }
 .detail-back:hover { color: var(--accent); }
-.detail-header { margin-bottom: 48px; }
+.detail-header { margin-bottom: 32px; }
 .detail-header .section-label { margin-bottom: 16px; }
 .detail-title {
   font-family: var(--font-display);
@@ -648,7 +648,7 @@ nav.scrolled {
 .detail-meta-item .label { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-2); font-weight: 600; }
 .detail-meta-item .value { font-size: 14px; color: var(--text); font-weight: 500; }
 .case-context {
-  margin: 40px auto 60px;
+  margin: 24px auto 40px;
   max-width: var(--max-w);
   padding: 0 40px;
 }
@@ -673,7 +673,7 @@ nav.scrolled {
 }
 
 .case-results, .case-testimonial {
-  margin: 60px auto;
+  margin: 40px auto;
   max-width: var(--max-w);
   padding: 0 40px;
 }
