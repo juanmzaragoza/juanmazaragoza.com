@@ -83,12 +83,13 @@ function projectCard(p, isES = false) {
   const tags = p.tags.slice(0, 3).map((t) => `<span class="tag">${esc(t)}</span>`).join('');
   const status = p.status === 'running' ? '<span class="tag running">● Running</span>' : '';
   const cardImg = p.cardImage || p.hero;
-  const subtitle = isES ? projectsES[p.slug] : p.subtitle;
+  const projectData = isES ? projectsES.find(ps => ps.slug === p.slug) : p;
+  const subtitle = projectData ? (projectData.subtitle || p.subtitle) : p.subtitle;
   const workPath = isES ? '/es/work/' : '/work/';
   return `<a class="project-card fade-in" href="${workPath}${p.slug}/" data-tags="${esc(p.tags.join('|').toLowerCase())}" data-status="${p.status}">
       ${imgTag(cardImg, p.title, { cls: 'project-card-img' })}
       <div class="project-card-tags">${status}${tags}</div>
-      <h3 class="project-card-title">${esc(p.title)}</h3>
+      <h3 class="project-card-title">${esc(projectData ? projectData.title : p.title)}</h3>
       <p class="project-card-desc">${esc(subtitle)}</p>
       <div class="project-card-footer">
         <span class="project-card-date">${esc(p.date)}</span>
@@ -107,6 +108,14 @@ function caseResults(p) {
   if (!p.results || p.results.length === 0) return '';
   return `<div class="case-results">
     <h3>Results</h3>
+    <ul>${p.results.map((r) => `<li>${esc(r)}</li>`).join('')}</ul>
+  </div>`;
+}
+
+function caseResultsES(p) {
+  if (!p.results || p.results.length === 0) return '';
+  return `<div class="case-results">
+    <h3>Resultados</h3>
     <ul>${p.results.map((r) => `<li>${esc(r)}</li>`).join('')}</ul>
   </div>`;
 }
@@ -254,10 +263,10 @@ ${body}
   <div class="footer-logo">JMZ<span>.</span></div>
   <div class="footer-copy">© ${new Date().getFullYear()} Juan Manuel Zaragoza · Cuenca, Ecuador · Remote worldwide</div>
   <div class="footer-links">
-    <a href="/work/">Work</a>
-    <a href="/services/">Services</a>
-    <a href="/about/">About</a>
-    <a href="/contact/">Contact</a>
+    <a href="${isES ? '/es/work/' : '/work/'}">${isES ? 'Trabajos' : 'Work'}</a>
+    <a href="${isES ? '/es/services/' : '/services/'}">${isES ? 'Servicios' : 'Services'}</a>
+    <a href="${isES ? '/es/about/' : '/about/'}">${isES ? 'Acerca de' : 'About'}</a>
+    <a href="${isES ? '/es/contact/' : '/contact/'}">${isES ? 'Contacto' : 'Contact'}</a>
   </div>
 </footer>
 
@@ -292,6 +301,91 @@ for (const p of projects) {
   }
 }
 
+const carouselProjects = [
+  { title: 'Atacana Group', subtitle: 'Pharma BI & Analytics', image: '/images/project-atacana.webp' },
+  { title: 'Listing Los Cabos', subtitle: 'Real Estate Marketplace', image: '/images/project-listing-cabos.webp' },
+  { title: 'Output Brand Analytics', subtitle: 'Brand Intelligence Dashboard', image: '/images/project-datakimia.png' },
+  { title: 'RWA.io', subtitle: 'Tokenized Assets & DeFi', image: '/images/project-rwa.webp' },
+  { title: 'Carvix', subtitle: 'Car Inventory Platform', image: '/images/project-carvix.jpg' },
+  { title: 'BA Participa', subtitle: 'Civic Participation Platform', image: '/images/project-ba-participa.webp' }
+];
+
+function heroCarousel() {
+  const html = `<div class="hero-carousel-container">
+        <div class="hero-carousel-viewport"></div>
+        <div class="hero-carousel-dots"></div>
+        <div class="hero-carousel-controls">
+          <div class="hero-carousel-info">
+            <span id="carousel-counter">1</span> / <span id="carousel-total">6</span>
+          </div>
+          <div class="hero-carousel-buttons">
+            <button class="hero-carousel-btn" id="carousel-prev" title="Previous">←</button>
+            <button class="hero-carousel-btn" id="carousel-play" title="Play/Pause">⏸</button>
+            <button class="hero-carousel-btn" id="carousel-next" title="Next">→</button>
+          </div>
+        </div>
+      </div>
+      <script>
+      const carouselProjects = ${JSON.stringify(carouselProjects)};
+      let carouselIndex = 0;
+      let carouselPlaying = true;
+      let carouselTimer = null;
+      const viewport = document.querySelector('.hero-carousel-viewport');
+      const dotsContainer = document.querySelector('.hero-carousel-dots');
+      const counter = document.querySelector('#carousel-counter');
+      const total = document.querySelector('#carousel-total');
+      const btnPrev = document.querySelector('#carousel-prev');
+      const btnNext = document.querySelector('#carousel-next');
+      const btnPlay = document.querySelector('#carousel-play');
+      function initCarousel() {
+        total.textContent = carouselProjects.length;
+        carouselProjects.forEach((proj, idx) => {
+          const slide = document.createElement('div');
+          slide.className = 'hero-carousel-slide' + (idx === 0 ? ' active' : '');
+          slide.style.backgroundImage = 'url(' + proj.image + ')';
+          viewport.appendChild(slide);
+          const dot = document.createElement('button');
+          dot.className = 'hero-carousel-dot' + (idx === 0 ? ' active' : '');
+          dot.onclick = () => goToSlide(idx);
+          dotsContainer.appendChild(dot);
+        });
+        startAutoplay();
+      }
+      function goToSlide(idx) {
+        const slides = document.querySelectorAll('.hero-carousel-slide');
+        const dots = document.querySelectorAll('.hero-carousel-dot');
+        slides.forEach(s => s.classList.remove('active'));
+        dots.forEach(d => d.classList.remove('active'));
+        slides[idx].classList.add('active');
+        dots[idx].classList.add('active');
+        carouselIndex = idx;
+        counter.textContent = idx + 1;
+      }
+      function nextSlide() { goToSlide((carouselIndex + 1) % carouselProjects.length); }
+      function prevSlide() { goToSlide((carouselIndex - 1 + carouselProjects.length) % carouselProjects.length); }
+      function startAutoplay() {
+        if (carouselTimer) clearInterval(carouselTimer);
+        carouselTimer = setInterval(nextSlide, 5000);
+        btnPlay.textContent = '⏸';
+      }
+      function stopAutoplay() {
+        if (carouselTimer) clearInterval(carouselTimer);
+        btnPlay.textContent = '▶';
+      }
+      function toggleAutoplay() {
+        if (carouselPlaying) stopAutoplay(); else startAutoplay();
+        carouselPlaying = !carouselPlaying;
+      }
+      btnNext.addEventListener('click', nextSlide);
+      btnPrev.addEventListener('click', prevSlide);
+      btnPlay.addEventListener('click', toggleAutoplay);
+      viewport.addEventListener('mouseenter', stopAutoplay);
+      viewport.addEventListener('mouseleave', () => { if (carouselPlaying) startAutoplay(); });
+      initCarousel();
+    </script>`;
+  return html;
+}
+
 const featuredProjects = projects.filter((p) => p.featured).sort((a, b) => (a.order || 999) - (b.order || 999)).slice(0, 6);
 const fallback = featuredProjects.length > 0 ? featuredProjects : projects.slice(0, 6);
 
@@ -299,7 +393,7 @@ const commonVars = {
   calendly: CALENDLY,
   email: EMAIL,
   projectCount: String(projects.length),
-  heroImg: imgTag('images/img_3062-Yan6xja2xjijrwNj.jpg', 'Juan Manuel Zaragoza, full-stack engineer', { priority: true, lazy: false }),
+  heroImg: heroCarousel(),
   aboutImg: imgTag('images/juan-manuel-portrait-new.webp', 'Portrait of Juan Manuel Zaragoza', { lazy: false }),
   featured: fallback.map(p => projectCard(p, false)).join('\n'),
   grid: projects.map(p => projectCard(p, false)).join('\n'),
@@ -309,7 +403,7 @@ const commonVarsES = {
   calendly: CALENDLY,
   email: EMAIL,
   projectCount: String(projects.length),
-  heroImg: imgTag('images/img_3062-Yan6xja2xjijrwNj.jpg', 'Juan Manuel Zaragoza, ingeniero full-stack', { priority: true, lazy: false }),
+  heroImg: heroCarousel(),
   aboutImg: imgTag('images/juan-manuel-portrait-new.webp', 'Retrato de Juan Manuel Zaragoza', { lazy: false }),
   featured: fallback.map(p => projectCard(p, true)).join('\n'),
   grid: projects.map(p => projectCard(p, true)).join('\n'),
@@ -322,10 +416,10 @@ const pageMap = {
   '/services/': '/es/services/',
   '/contact/': '/es/contact/',
   '/work/': '/es/work/',
-  '/services/fractional-cto/': '/es/services/cto-fraccionado/',
-  '/services/project-rescue/': '/es/services/rescate-proyectos/',
-  '/services/technical-audit/': '/es/services/auditoria-tecnica/',
-  '/services/qa-automation/': '/es/services/automatizacion-qa/',
+  '/services/fractional-cto/': '/es/services/fractional-cto/',
+  '/services/project-rescue/': '/es/services/project-rescue/',
+  '/services/technical-audit/': '/es/services/technical-audit/',
+  '/services/qa-automation/': '/es/services/qa-automation/',
 };
 
 const esMap = {
@@ -334,10 +428,10 @@ const esMap = {
   '/es/services/': '/services/',
   '/es/contact/': '/contact/',
   '/es/work/': '/work/',
-  '/es/services/cto-fraccionado/': '/services/fractional-cto/',
-  '/es/services/rescate-proyectos/': '/services/project-rescue/',
-  '/es/services/auditoria-tecnica/': '/services/technical-audit/',
-  '/es/services/automatizacion-qa/': '/services/qa-automation/',
+  '/es/services/fractional-cto/': '/services/fractional-cto/',
+  '/es/services/project-rescue/': '/services/project-rescue/',
+  '/es/services/technical-audit/': '/services/technical-audit/',
+  '/es/services/qa-automation/': '/services/qa-automation/',
 };
 
 function getHreflangs(urlPath) {
@@ -433,7 +527,7 @@ for (const p of projects) {
   const serviceLink = serviceLinks[p.slug] ? `<div class="section"><div class="section-label">Service</div><h2 class="section-title">Related Service</h2><p class="contact-intro">This case study demonstrates our expertise in <a href="${serviceLinks[p.slug].path}">${serviceLinks[p.slug].name}</a>.</p></div>` : '';
   const gallery = p.gallery.length
     ? `<div class="detail-gallery">${p.gallery.map((g, i) => imgTag(g, galleryAlt(p, g, i))).join('')}</div>` : '';
-  const related = relatedProjects(p).map(projectCard).join('\n');
+  const related = relatedProjects(p).map(q => projectCard(q, false)).join('\n');
   const contextBlock = caseContext(p);
   const resultsBlock = caseResults(p);
   const testimonialBlock = caseTestimonial(p);
@@ -501,6 +595,82 @@ for (const p of projects) {
   const ogImage = ogImageExists ? ogImagePath : img(p.hero).src;
 
   write(urlPath, layout({ urlPath, title: seoTitle(p), description: pageDescription, body, active: 'work', jsonLd, ogType: 'article', ogImage }));
+}
+
+// Spanish case study pages
+for (const pES of Array.isArray(projectsES) ? projectsES : Object.keys(projectsES).map(slug => ({ slug, ...projectsES[slug] }))) {
+  const p = projects.find(proj => proj.slug === pES.slug);
+  if (!p) continue;
+
+  const urlPath = `/es/work/${pES.slug}/`;
+  const statusLabel = p.status === 'running' ? '● Running' : '✓ Completed';
+  const gallery = p.gallery.length
+    ? `<div class="detail-gallery">${p.gallery.map((g, i) => imgTag(g, galleryAlt(pES, g, i))).join('')}</div>` : '';
+  const related = relatedProjects(p).map(q => projectCard(q, true)).join('\n');
+  const contextBlock = caseContext(pES);
+  const resultsBlock = caseResultsES(pES);
+  const testimonialBlock = caseTestimonial(pES);
+  const pageDescription = pES.seoDescription || truncate(pES.subtitle);
+  const body = `
+  <article>
+    <div class="detail-hero">
+      <div class="breadcrumb" role="navigation" aria-label="Breadcrumb"><a href="/es/">Inicio</a> / <a href="/es/work/">Trabajos</a> / <span>${esc(shortName(pES))}</span></div>
+      <div class="detail-header">
+        <div class="section-label">${esc(p.date)} &nbsp;·&nbsp; <span class="${p.status === 'running' ? 'tag running' : ''}">${statusLabel}</span></div>
+        <h1 class="detail-title">${esc(pES.title)}</h1>
+        <p class="detail-subtitle">${esc(pES.subtitle)}</p>
+        <div class="detail-meta">
+          ${p.tags.map((t) => `<div class="detail-meta-item"><span class="label">Tech</span><span class="value">${esc(t)}</span></div>`).join('')}
+        </div>
+      </div>
+    </div>
+    <div class="detail-hero-img">${imgTag(p.hero, pES.title, { priority: true, lazy: false })}</div>
+    ${contextBlock}
+    ${resultsBlock}
+    <div class="detail-body">${pES.body}</div>
+    ${testimonialBlock}
+    ${gallery}
+  </article>
+  <div class="section cta-block">
+    <div class="section-label">¿Desafío similar?</div>
+    <h2 class="section-title">Hablemos sobre tu sistema.</h2>
+    <p class="contact-intro">Agendar una llamada gratis de 30 minutos. Revisaré tu situación y te diré honestamente qué haría.</p>
+    <div class="hero-actions">
+      <a href="${CALENDLY}" class="btn-primary" target="_blank" rel="noopener">Agendar llamada 30 min ↗</a>
+      <a href="mailto:${EMAIL}" class="btn-ghost">${EMAIL}</a>
+    </div>
+  </div>
+  <div class="section">
+    <div class="section-header">
+      <div>
+        <div class="section-label">Trabajos relacionados</div>
+        <h2 class="section-title">Más casos de estudio</h2>
+      </div>
+      <a href="/es/work/" class="section-link">Ver todos ${projects.length} proyectos →</a>
+    </div>
+    <div class="projects-featured">${related}</div>
+  </div>`;
+
+  const jsonLd = [breadcrumb([['Inicio', '/es/'], ['Trabajos', '/es/work/'], [pES.title, urlPath]])];
+
+  const creativeWork = {
+    '@context': 'https://schema.org',
+    '@type': 'CreativeWork',
+    name: pES.title,
+    description: pageDescription,
+    url: SITE + urlPath,
+    dateCreated: p.date,
+    keywords: p.tags.join(', '),
+    creator: { '@id': SITE + '/#person' }
+  };
+  if (pES.client) creativeWork.about = pES.client;
+  jsonLd.push(creativeWork);
+
+  const ogImagePath = `/images/og/${pES.slug}.jpg`;
+  const ogImageExists = fs.existsSync(path.join(ROOT, 'images/og', `${pES.slug}.jpg`));
+  const ogImage = ogImageExists ? ogImagePath : img(p.hero).src;
+
+  write(urlPath, layout({ urlPath, title: seoTitle(pES), description: pageDescription, body, active: 'work', jsonLd, lang: 'es', ogType: 'article', ogImage }));
 }
 
 // Sitemap

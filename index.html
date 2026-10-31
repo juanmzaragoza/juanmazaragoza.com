@@ -80,12 +80,13 @@
       </div>
     </div>
     <div class="hero-image">
-      <div class="hero-carousel-container">
+      <div class="hero-image-frame">
+        <div class="hero-carousel-container">
         <div class="hero-carousel-viewport"></div>
         <div class="hero-carousel-dots"></div>
         <div class="hero-carousel-controls">
           <div class="hero-carousel-info">
-            <span id="carousel-counter">1</span> / <span id="carousel-total">3</span>
+            <span id="carousel-counter">1</span> / <span id="carousel-total">6</span>
           </div>
           <div class="hero-carousel-buttons">
             <button class="hero-carousel-btn" id="carousel-prev" title="Previous">←</button>
@@ -94,27 +95,11 @@
           </div>
         </div>
       </div>
-      <div class="hero-socials">
-        <a href="https://www.linkedin.com/in/juanmzaragoza/" target="_blank" rel="noopener me" class="hero-social-link">LinkedIn</a>
-        <a href="https://github.com/juanmzaragoza" target="_blank" rel="noopener me" class="hero-social-link">GitHub</a>
-        <a href="https://www.upwork.com/freelancers/~018d17cfb4fda29566" target="_blank" rel="noopener me" class="hero-social-link">Upwork</a>
-      </div>
-    </div>
-
-    <script>
-      const carouselProjects = [
-        { title: 'Atacana Group', subtitle: 'Pharma BI & Analytics', image: '/images/project-atacana.webp' },
-        { title: 'Listing Los Cabos', subtitle: 'Real Estate Marketplace', image: '/images/project-listing-cabos.webp' },
-        { title: 'Output Brand Analytics', subtitle: 'Brand Intelligence Dashboard', image: '/images/project-datakimia.png' },
-        { title: 'RWA.io', subtitle: 'Tokenized Assets & DeFi', image: '/images/project-rwa.webp' },
-        { title: 'Carvix', subtitle: 'Car Inventory Platform', image: '/images/project-carvix.jpg' },
-        { title: 'BA Participa', subtitle: 'Civic Participation Platform', image: '/images/project-ba-participa.webp' }
-      ];
-
+      <script>
+      const carouselProjects = [{"title":"Atacana Group","subtitle":"Pharma BI & Analytics","image":"/images/project-atacana.webp"},{"title":"Listing Los Cabos","subtitle":"Real Estate Marketplace","image":"/images/project-listing-cabos.webp"},{"title":"Output Brand Analytics","subtitle":"Brand Intelligence Dashboard","image":"/images/project-datakimia.png"},{"title":"RWA.io","subtitle":"Tokenized Assets & DeFi","image":"/images/project-rwa.webp"},{"title":"Carvix","subtitle":"Car Inventory Platform","image":"/images/project-carvix.jpg"},{"title":"BA Participa","subtitle":"Civic Participation Platform","image":"/images/project-ba-participa.webp"}];
       let carouselIndex = 0;
       let carouselPlaying = true;
       let carouselTimer = null;
-
       const viewport = document.querySelector('.hero-carousel-viewport');
       const dotsContainer = document.querySelector('.hero-carousel-dots');
       const counter = document.querySelector('#carousel-counter');
@@ -122,25 +107,20 @@
       const btnPrev = document.querySelector('#carousel-prev');
       const btnNext = document.querySelector('#carousel-next');
       const btnPlay = document.querySelector('#carousel-play');
-
       function initCarousel() {
         total.textContent = carouselProjects.length;
-
         carouselProjects.forEach((proj, idx) => {
           const slide = document.createElement('div');
-          slide.className = `hero-carousel-slide ${idx === 0 ? 'active' : ''}`;
-          slide.style.backgroundImage = `url(${proj.image})`;
+          slide.className = 'hero-carousel-slide' + (idx === 0 ? ' active' : '');
+          slide.style.backgroundImage = 'url(' + proj.image + ')';
           viewport.appendChild(slide);
-
           const dot = document.createElement('button');
-          dot.className = `hero-carousel-dot ${idx === 0 ? 'active' : ''}`;
+          dot.className = 'hero-carousel-dot' + (idx === 0 ? ' active' : '');
           dot.onclick = () => goToSlide(idx);
           dotsContainer.appendChild(dot);
         });
-
         startAutoplay();
       }
-
       function goToSlide(idx) {
         const slides = document.querySelectorAll('.hero-carousel-slide');
         const dots = document.querySelectorAll('.hero-carousel-dot');
@@ -151,87 +131,77 @@
         carouselIndex = idx;
         counter.textContent = idx + 1;
       }
-
-      function nextSlide() {
-        goToSlide((carouselIndex + 1) % carouselProjects.length);
-      }
-
-      function prevSlide() {
-        goToSlide((carouselIndex - 1 + carouselProjects.length) % carouselProjects.length);
-      }
-
+      function nextSlide() { goToSlide((carouselIndex + 1) % carouselProjects.length); }
+      function prevSlide() { goToSlide((carouselIndex - 1 + carouselProjects.length) % carouselProjects.length); }
       function startAutoplay() {
         if (carouselTimer) clearInterval(carouselTimer);
         carouselTimer = setInterval(nextSlide, 5000);
         btnPlay.textContent = '⏸';
       }
-
       function stopAutoplay() {
         if (carouselTimer) clearInterval(carouselTimer);
         btnPlay.textContent = '▶';
       }
-
       function toggleAutoplay() {
-        if (carouselPlaying) {
-          stopAutoplay();
-        } else {
-          startAutoplay();
-        }
+        if (carouselPlaying) stopAutoplay(); else startAutoplay();
         carouselPlaying = !carouselPlaying;
       }
-
       btnNext.addEventListener('click', nextSlide);
       btnPrev.addEventListener('click', prevSlide);
       btnPlay.addEventListener('click', toggleAutoplay);
-
       viewport.addEventListener('mouseenter', stopAutoplay);
-      viewport.addEventListener('mouseleave', () => {
-        if (carouselPlaying) startAutoplay();
-      });
-
+      viewport.addEventListener('mouseleave', () => { if (carouselPlaying) startAutoplay(); });
       initCarousel();
     </script>
+        <div class="hero-image-tag">Cuenca · Ecuador · UTC-5</div>
+      </div>
+      <div class="hero-socials">
+        <a href="https://www.linkedin.com/in/juanmzaragoza/" target="_blank" rel="noopener me" class="hero-social-link">LinkedIn</a>
+        <a href="https://github.com/juanmzaragoza" target="_blank" rel="noopener me" class="hero-social-link">GitHub</a>
+        <a href="https://www.upwork.com/freelancers/~018d17cfb4fda29566" target="_blank" rel="noopener me" class="hero-social-link">Upwork</a>
+      </div>
+    </div>
   </section>
 
-  <!-- Skills ticker with badges -->
+  <!-- Skills ticker (decorative duplicate hidden from assistive tech) -->
   <div class="skills-strip">
     <div class="skills-ticker">
-      <span class="skill-badge">PHP</span>
-      <span class="skill-badge">Laravel</span>
-      <span class="skill-badge">JavaScript</span>
-      <span class="skill-badge">TypeScript</span>
-      <span class="skill-badge">React</span>
-      <span class="skill-badge">Next.js</span>
-      <span class="skill-badge">Node.js</span>
-      <span class="skill-badge">NestJS</span>
-      <span class="skill-badge">Python</span>
-      <span class="skill-badge">Angular</span>
-      <span class="skill-badge">PostgreSQL</span>
-      <span class="skill-badge">Docker</span>
-      <span class="skill-badge">GCP</span>
-      <span class="skill-badge">AWS</span>
-      <span class="skill-badge">Azure</span>
-      <span class="skill-badge">Superset</span>
-      <span class="skill-badge">Firebase</span>
-      <span class="skill-badge">BigQuery</span>
-      <span class="skill-badge" aria-hidden="true">PHP</span>
-      <span class="skill-badge" aria-hidden="true">Laravel</span>
-      <span class="skill-badge" aria-hidden="true">JavaScript</span>
-      <span class="skill-badge" aria-hidden="true">TypeScript</span>
-      <span class="skill-badge" aria-hidden="true">React</span>
-      <span class="skill-badge" aria-hidden="true">Next.js</span>
-      <span class="skill-badge" aria-hidden="true">Node.js</span>
-      <span class="skill-badge" aria-hidden="true">NestJS</span>
-      <span class="skill-badge" aria-hidden="true">Python</span>
-      <span class="skill-badge" aria-hidden="true">Angular</span>
-      <span class="skill-badge" aria-hidden="true">PostgreSQL</span>
-      <span class="skill-badge" aria-hidden="true">Docker</span>
-      <span class="skill-badge" aria-hidden="true">GCP</span>
-      <span class="skill-badge" aria-hidden="true">AWS</span>
-      <span class="skill-badge" aria-hidden="true">Azure</span>
-      <span class="skill-badge" aria-hidden="true">Superset</span>
-      <span class="skill-badge" aria-hidden="true">Firebase</span>
-      <span class="skill-badge" aria-hidden="true">BigQuery</span>
+      <span>PHP</span><span class="dot">·</span>
+      <span>Laravel</span><span class="dot">·</span>
+      <span>JavaScript</span><span class="dot">·</span>
+      <span>TypeScript</span><span class="dot">·</span>
+      <span>React</span><span class="dot">·</span>
+      <span>Next.js</span><span class="dot">·</span>
+      <span>Node.js</span><span class="dot">·</span>
+      <span>NestJS</span><span class="dot">·</span>
+      <span>Python</span><span class="dot">·</span>
+      <span>Angular</span><span class="dot">·</span>
+      <span>PostgreSQL</span><span class="dot">·</span>
+      <span>Docker</span><span class="dot">·</span>
+      <span>GCP</span><span class="dot">·</span>
+      <span>AWS</span><span class="dot">·</span>
+      <span>Azure</span><span class="dot">·</span>
+      <span>Superset</span><span class="dot">·</span>
+      <span>Firebase</span><span class="dot">·</span>
+      <span>BigQuery</span><span class="dot">·</span>
+      <span aria-hidden="true">PHP</span><span class="dot" aria-hidden="true">·</span>
+      <span aria-hidden="true">Laravel</span><span class="dot" aria-hidden="true">·</span>
+      <span aria-hidden="true">JavaScript</span><span class="dot" aria-hidden="true">·</span>
+      <span aria-hidden="true">TypeScript</span><span class="dot" aria-hidden="true">·</span>
+      <span aria-hidden="true">React</span><span class="dot" aria-hidden="true">·</span>
+      <span aria-hidden="true">Next.js</span><span class="dot" aria-hidden="true">·</span>
+      <span aria-hidden="true">Node.js</span><span class="dot" aria-hidden="true">·</span>
+      <span aria-hidden="true">NestJS</span><span class="dot" aria-hidden="true">·</span>
+      <span aria-hidden="true">Python</span><span class="dot" aria-hidden="true">·</span>
+      <span aria-hidden="true">Angular</span><span class="dot" aria-hidden="true">·</span>
+      <span aria-hidden="true">PostgreSQL</span><span class="dot" aria-hidden="true">·</span>
+      <span aria-hidden="true">Docker</span><span class="dot" aria-hidden="true">·</span>
+      <span aria-hidden="true">GCP</span><span class="dot" aria-hidden="true">·</span>
+      <span aria-hidden="true">AWS</span><span class="dot" aria-hidden="true">·</span>
+      <span aria-hidden="true">Azure</span><span class="dot" aria-hidden="true">·</span>
+      <span aria-hidden="true">Superset</span><span class="dot" aria-hidden="true">·</span>
+      <span aria-hidden="true">Firebase</span><span class="dot" aria-hidden="true">·</span>
+      <span aria-hidden="true">BigQuery</span><span class="dot" aria-hidden="true">·</span>
     </div>
   </div>
 

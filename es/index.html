@@ -80,12 +80,13 @@
       </div>
     </div>
     <div class="hero-image">
-      <div class="hero-carousel-container">
+      <div class="hero-image-frame">
+        <div class="hero-carousel-container">
         <div class="hero-carousel-viewport"></div>
         <div class="hero-carousel-dots"></div>
         <div class="hero-carousel-controls">
           <div class="hero-carousel-info">
-            <span id="carousel-counter">1</span> / <span id="carousel-total">3</span>
+            <span id="carousel-counter">1</span> / <span id="carousel-total">6</span>
           </div>
           <div class="hero-carousel-buttons">
             <button class="hero-carousel-btn" id="carousel-prev" title="Previous">←</button>
@@ -94,27 +95,11 @@
           </div>
         </div>
       </div>
-      <div class="hero-socials">
-        <a href="https://www.linkedin.com/in/juanmzaragoza/" target="_blank" rel="noopener me" class="hero-social-link">LinkedIn</a>
-        <a href="https://github.com/juanmzaragoza" target="_blank" rel="noopener me" class="hero-social-link">GitHub</a>
-        <a href="https://www.upwork.com/freelancers/~018d17cfb4fda29566" target="_blank" rel="noopener me" class="hero-social-link">Upwork</a>
-      </div>
-    </div>
-
-    <script>
-      const carouselProjects = [
-        { title: 'Atacana Group', subtitle: 'Pharma BI & Analytics', image: '/images/project-atacana.webp' },
-        { title: 'Listing Los Cabos', subtitle: 'Real Estate Marketplace', image: '/images/project-listing-cabos.webp' },
-        { title: 'Output Brand Analytics', subtitle: 'Brand Intelligence Dashboard', image: '/images/project-datakimia.png' },
-        { title: 'RWA.io', subtitle: 'Tokenized Assets & DeFi', image: '/images/project-rwa.webp' },
-        { title: 'Carvix', subtitle: 'Car Inventory Platform', image: '/images/project-carvix.jpg' },
-        { title: 'BA Participa', subtitle: 'Civic Participation Platform', image: '/images/project-ba-participa.webp' }
-      ];
-
+      <script>
+      const carouselProjects = [{"title":"Atacana Group","subtitle":"Pharma BI & Analytics","image":"/images/project-atacana.webp"},{"title":"Listing Los Cabos","subtitle":"Real Estate Marketplace","image":"/images/project-listing-cabos.webp"},{"title":"Output Brand Analytics","subtitle":"Brand Intelligence Dashboard","image":"/images/project-datakimia.png"},{"title":"RWA.io","subtitle":"Tokenized Assets & DeFi","image":"/images/project-rwa.webp"},{"title":"Carvix","subtitle":"Car Inventory Platform","image":"/images/project-carvix.jpg"},{"title":"BA Participa","subtitle":"Civic Participation Platform","image":"/images/project-ba-participa.webp"}];
       let carouselIndex = 0;
       let carouselPlaying = true;
       let carouselTimer = null;
-
       const viewport = document.querySelector('.hero-carousel-viewport');
       const dotsContainer = document.querySelector('.hero-carousel-dots');
       const counter = document.querySelector('#carousel-counter');
@@ -122,25 +107,20 @@
       const btnPrev = document.querySelector('#carousel-prev');
       const btnNext = document.querySelector('#carousel-next');
       const btnPlay = document.querySelector('#carousel-play');
-
       function initCarousel() {
         total.textContent = carouselProjects.length;
-
         carouselProjects.forEach((proj, idx) => {
           const slide = document.createElement('div');
-          slide.className = `hero-carousel-slide ${idx === 0 ? 'active' : ''}`;
-          slide.style.backgroundImage = `url(${proj.image})`;
+          slide.className = 'hero-carousel-slide' + (idx === 0 ? ' active' : '');
+          slide.style.backgroundImage = 'url(' + proj.image + ')';
           viewport.appendChild(slide);
-
           const dot = document.createElement('button');
-          dot.className = `hero-carousel-dot ${idx === 0 ? 'active' : ''}`;
+          dot.className = 'hero-carousel-dot' + (idx === 0 ? ' active' : '');
           dot.onclick = () => goToSlide(idx);
           dotsContainer.appendChild(dot);
         });
-
         startAutoplay();
       }
-
       function goToSlide(idx) {
         const slides = document.querySelectorAll('.hero-carousel-slide');
         const dots = document.querySelectorAll('.hero-carousel-dot');
@@ -151,87 +131,77 @@
         carouselIndex = idx;
         counter.textContent = idx + 1;
       }
-
-      function nextSlide() {
-        goToSlide((carouselIndex + 1) % carouselProjects.length);
-      }
-
-      function prevSlide() {
-        goToSlide((carouselIndex - 1 + carouselProjects.length) % carouselProjects.length);
-      }
-
+      function nextSlide() { goToSlide((carouselIndex + 1) % carouselProjects.length); }
+      function prevSlide() { goToSlide((carouselIndex - 1 + carouselProjects.length) % carouselProjects.length); }
       function startAutoplay() {
         if (carouselTimer) clearInterval(carouselTimer);
         carouselTimer = setInterval(nextSlide, 5000);
         btnPlay.textContent = '⏸';
       }
-
       function stopAutoplay() {
         if (carouselTimer) clearInterval(carouselTimer);
         btnPlay.textContent = '▶';
       }
-
       function toggleAutoplay() {
-        if (carouselPlaying) {
-          stopAutoplay();
-        } else {
-          startAutoplay();
-        }
+        if (carouselPlaying) stopAutoplay(); else startAutoplay();
         carouselPlaying = !carouselPlaying;
       }
-
       btnNext.addEventListener('click', nextSlide);
       btnPrev.addEventListener('click', prevSlide);
       btnPlay.addEventListener('click', toggleAutoplay);
-
       viewport.addEventListener('mouseenter', stopAutoplay);
-      viewport.addEventListener('mouseleave', () => {
-        if (carouselPlaying) startAutoplay();
-      });
-
+      viewport.addEventListener('mouseleave', () => { if (carouselPlaying) startAutoplay(); });
       initCarousel();
     </script>
+        <div class="hero-image-tag">Cuenca · Ecuador · UTC-5</div>
+      </div>
+      <div class="hero-socials">
+        <a href="https://www.linkedin.com/in/juanmzaragoza/" target="_blank" rel="noopener me" class="hero-social-link">LinkedIn</a>
+        <a href="https://github.com/juanmzaragoza" target="_blank" rel="noopener me" class="hero-social-link">GitHub</a>
+        <a href="https://www.upwork.com/freelancers/~018d17cfb4fda29566" target="_blank" rel="noopener me" class="hero-social-link">Upwork</a>
+      </div>
+    </div>
   </section>
 
-  <!-- Skills ticker with badges -->
+  <!-- Skills ticker (decorative duplicate hidden from assistive tech) -->
   <div class="skills-strip">
     <div class="skills-ticker">
-      <span class="skill-badge">PHP</span>
-      <span class="skill-badge">Laravel</span>
-      <span class="skill-badge">JavaScript</span>
-      <span class="skill-badge">TypeScript</span>
-      <span class="skill-badge">React</span>
-      <span class="skill-badge">Next.js</span>
-      <span class="skill-badge">Node.js</span>
-      <span class="skill-badge">NestJS</span>
-      <span class="skill-badge">Python</span>
-      <span class="skill-badge">Angular</span>
-      <span class="skill-badge">PostgreSQL</span>
-      <span class="skill-badge">Docker</span>
-      <span class="skill-badge">GCP</span>
-      <span class="skill-badge">AWS</span>
-      <span class="skill-badge">Azure</span>
-      <span class="skill-badge">Superset</span>
-      <span class="skill-badge">Firebase</span>
-      <span class="skill-badge">BigQuery</span>
-      <span class="skill-badge" aria-hidden="true">PHP</span>
-      <span class="skill-badge" aria-hidden="true">Laravel</span>
-      <span class="skill-badge" aria-hidden="true">JavaScript</span>
-      <span class="skill-badge" aria-hidden="true">TypeScript</span>
-      <span class="skill-badge" aria-hidden="true">React</span>
-      <span class="skill-badge" aria-hidden="true">Next.js</span>
-      <span class="skill-badge" aria-hidden="true">Node.js</span>
-      <span class="skill-badge" aria-hidden="true">NestJS</span>
-      <span class="skill-badge" aria-hidden="true">Python</span>
-      <span class="skill-badge" aria-hidden="true">Angular</span>
-      <span class="skill-badge" aria-hidden="true">PostgreSQL</span>
-      <span class="skill-badge" aria-hidden="true">Docker</span>
-      <span class="skill-badge" aria-hidden="true">GCP</span>
-      <span class="skill-badge" aria-hidden="true">AWS</span>
-      <span class="skill-badge" aria-hidden="true">Azure</span>
-      <span class="skill-badge" aria-hidden="true">Superset</span>
-      <span class="skill-badge" aria-hidden="true">Firebase</span>
-      <span class="skill-badge" aria-hidden="true">BigQuery</span>
+      <span>PHP</span><span class="dot">·</span>
+      <span>Laravel</span><span class="dot">·</span>
+      <span>JavaScript</span><span class="dot">·</span>
+      <span>TypeScript</span><span class="dot">·</span>
+      <span>React</span><span class="dot">·</span>
+      <span>Next.js</span><span class="dot">·</span>
+      <span>Node.js</span><span class="dot">·</span>
+      <span>NestJS</span><span class="dot">·</span>
+      <span>Python</span><span class="dot">·</span>
+      <span>Angular</span><span class="dot">·</span>
+      <span>PostgreSQL</span><span class="dot">·</span>
+      <span>Docker</span><span class="dot">·</span>
+      <span>GCP</span><span class="dot">·</span>
+      <span>AWS</span><span class="dot">·</span>
+      <span>Azure</span><span class="dot">·</span>
+      <span>Superset</span><span class="dot">·</span>
+      <span>Firebase</span><span class="dot">·</span>
+      <span>BigQuery</span><span class="dot">·</span>
+      <span aria-hidden="true">PHP</span><span class="dot" aria-hidden="true">·</span>
+      <span aria-hidden="true">Laravel</span><span class="dot" aria-hidden="true">·</span>
+      <span aria-hidden="true">JavaScript</span><span class="dot" aria-hidden="true">·</span>
+      <span aria-hidden="true">TypeScript</span><span class="dot" aria-hidden="true">·</span>
+      <span aria-hidden="true">React</span><span class="dot" aria-hidden="true">·</span>
+      <span aria-hidden="true">Next.js</span><span class="dot" aria-hidden="true">·</span>
+      <span aria-hidden="true">Node.js</span><span class="dot" aria-hidden="true">·</span>
+      <span aria-hidden="true">NestJS</span><span class="dot" aria-hidden="true">·</span>
+      <span aria-hidden="true">Python</span><span class="dot" aria-hidden="true">·</span>
+      <span aria-hidden="true">Angular</span><span class="dot" aria-hidden="true">·</span>
+      <span aria-hidden="true">PostgreSQL</span><span class="dot" aria-hidden="true">·</span>
+      <span aria-hidden="true">Docker</span><span class="dot" aria-hidden="true">·</span>
+      <span aria-hidden="true">GCP</span><span class="dot" aria-hidden="true">·</span>
+      <span aria-hidden="true">AWS</span><span class="dot" aria-hidden="true">·</span>
+      <span aria-hidden="true">Azure</span><span class="dot" aria-hidden="true">·</span>
+      <span aria-hidden="true">Superset</span><span class="dot" aria-hidden="true">·</span>
+      <span aria-hidden="true">Firebase</span><span class="dot" aria-hidden="true">·</span>
+      <span aria-hidden="true">BigQuery</span><span class="dot" aria-hidden="true">·</span>
     </div>
   </div>
 
@@ -277,8 +247,8 @@
 <a class="project-card fade-in" href="/es/work/real-estate-listing-platform-listing-los-cabos/" data-tags="react|node.js|firebase|stripe" data-status="completed">
       <img class="project-card-img" src="/images/screenshot-from-2024-09-03-19-03-23-A854J684oRUvPoel.webp" alt="Real Estate Platform — Listing Los Cabos: From Inherited to Profitable" width="1218" height="760" loading="lazy" decoding="async">
       <div class="project-card-tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Firebase</span></div>
-      <h3 class="project-card-title">Real Estate Platform — Listing Los Cabos: From Inherited to Profitable</h3>
-      <p class="project-card-desc">Plataforma de listados inmobiliarios en Los Cabos — suscripciones de agentes, integración con Stripe, $3K MRR</p>
+      <h3 class="project-card-title">Plataforma Inmobiliaria — Listing Los Cabos: De Heredado a Rentable</h3>
+      <p class="project-card-desc">Rescaté una plataforma React + Firebase medio-construida, agregué suscripciones de Stripe y seguridad, ahora sirviendo dos ciudades desde un mismo codebase</p>
       <div class="project-card-footer">
         <span class="project-card-date">Apr 2024 – Jul 2025</span>
         <span class="project-card-arrow">↗</span>
@@ -287,8 +257,8 @@
 <a class="project-card fade-in" href="/es/work/information-connection-and-visualization-platform-datakimia/" data-tags="next.js|nestjs|superset|postgresql|bigquery|python" data-status="running">
       <img class="project-card-img" src="/images/datakimia_logo-03-Aq2NWxDVDwhKB1nz.webp" alt="Data Platform — Datakimia: Multi-Tenant BI SaaS" width="1600" height="1600" loading="lazy" decoding="async">
       <div class="project-card-tags"><span class="tag running">● Running</span><span class="tag">Next.js</span><span class="tag">NestJS</span><span class="tag">Superset</span></div>
-      <h3 class="project-card-title">Data Platform — Datakimia: Multi-Tenant BI SaaS</h3>
-      <p class="project-card-desc">Plataforma de datos con Apache Superset, BigQuery, NestJS backend, y agentes de IA conversacional — 3+ años en producción</p>
+      <h3 class="project-card-title">Plataforma de Datos — Datakimia: Multi-Tenant BI SaaS</h3>
+      <p class="project-card-desc">Plataforma de datos full-stack con Next.js, NestJS, reportes de Superset embebidos, aislamiento per-customer, y agentes de IA conversacional</p>
       <div class="project-card-footer">
         <span class="project-card-date">May 2024</span>
         <span class="project-card-arrow">↗</span>
@@ -297,8 +267,8 @@
 <a class="project-card fade-in" href="/es/work/qa-automation-for-laravel/" data-tags="laravel php|playwright|pest|superset|docker|postgresql" data-status="running">
       <img class="project-card-img" src="/images/ticket-platform-hero-card.webp" alt="Ticketing Platform: E2E QA Automation" loading="lazy" decoding="async">
       <div class="project-card-tags"><span class="tag running">● Running</span><span class="tag">Laravel PHP</span><span class="tag">Playwright</span><span class="tag">Pest</span></div>
-      <h3 class="project-card-title">Ticketing Platform: E2E QA Automation</h3>
-      <p class="project-card-desc">Suite de automatización E2E con Playwright, tests de integración con Pest, y dashboards de Superset — eliminando regresiones manuales y mejorando estabilidad y escalabilidad</p>
+      <h3 class="project-card-title">Plataforma de Ticketing: Automatización E2E QA</h3>
+      <p class="project-card-desc">Tests E2E con Playwright, tests de integración con Pest, y dashboards de Superset — eliminando regresiones manuales, mejorando estabilidad y escalabilidad</p>
       <div class="project-card-footer">
         <span class="project-card-date">Jan 2025</span>
         <span class="project-card-arrow">↗</span>
@@ -307,8 +277,8 @@
 <a class="project-card fade-in" href="/es/work/performance-evaluation-platform-for-a-public-organization/" data-tags="angular|java spring boot|postgresql|agile" data-status="completed">
       <img class="project-card-img" src="/images/screenshot-from-2020-03-16-10-49-49-AVL38g00L2iExlwM.webp" alt="City-Wide Performance Evaluation System — Buenos Aires Gov" width="1600" height="651" loading="lazy" decoding="async">
       <div class="project-card-tags"><span class="tag">Angular</span><span class="tag">Java Spring Boot</span><span class="tag">PostgreSQL</span></div>
-      <h3 class="project-card-title">City-Wide Performance Evaluation System — Buenos Aires Gov</h3>
-      <p class="project-card-desc">Plataforma de evaluación de desempeño para Gobierno de Buenos Aires — 1,733 commits, 7 años de liderazgo técnico</p>
+      <h3 class="project-card-title">Sistema de Evaluación de Rendimiento a Nivel Ciudad — Buenos Aires Gov</h3>
+      <p class="project-card-desc">Tech Lead para evaluación anual de empleados en todos los ministerios de la ciudad — Angular, Java Spring Boot, PostgreSQL, entrega ágil a escala gubernamental</p>
       <div class="project-card-footer">
         <span class="project-card-date">Jan 2019</span>
         <span class="project-card-arrow">↗</span>
@@ -317,8 +287,8 @@
 <a class="project-card fade-in" href="/es/work/medical-units-attention-platform/" data-tags="angular|java|mariadb|agile" data-status="completed">
       <img class="project-card-img" src="/images/screencapture-atencionmedicamentos-hml-gcba-gob-ar-home-2020-03-16-11_20_12-A852QEbDxKS9gMgl.webp" alt="Pharmacy Tracking System — Buenos Aires Gov: AUM" width="1600" height="840" loading="lazy" decoding="async">
       <div class="project-card-tags"><span class="tag">Angular</span><span class="tag">Java</span><span class="tag">MariaDB</span></div>
-      <h3 class="project-card-title">Pharmacy Tracking System — Buenos Aires Gov: AUM</h3>
-      <p class="project-card-desc">Sistema de atención de unidades médicas con seguimiento de medicamentos</p>
+      <h3 class="project-card-title">Sistema de Rastreo de Farmacia — Buenos Aires Gov: AUM</h3>
+      <p class="project-card-desc">Director Técnico y desarrollador frontend principal para un sistema de dispensación de medicamentos a nivel ciudad — Angular, Java, MariaDB, entrega ágil</p>
       <div class="project-card-footer">
         <span class="project-card-date">Aug 2019</span>
         <span class="project-card-arrow">↗</span>
@@ -327,8 +297,8 @@
 <a class="project-card fade-in" href="/es/work/takeda-covid-vaccine-platform/" data-tags="angular|.net|azure|cosmosdb" data-status="completed">
       <img class="project-card-img" src="/images/landing-and-login-640x1470-m6LP9G0X3nujGZDK.webp" alt="COVID Vaccine Platform — Takeda" width="640" height="1470" loading="lazy" decoding="async">
       <div class="project-card-tags"><span class="tag">Angular</span><span class="tag">.NET</span><span class="tag">Azure</span></div>
-      <h3 class="project-card-title">COVID Vaccine Platform — Takeda</h3>
-      <p class="project-card-desc">Plataforma de reporte farmacéutico en .NET y Azure con dashboards de análisis</p>
+      <h3 class="project-card-title">Plataforma de Reporte COVID — Takeda</h3>
+      <p class="project-card-desc">Angular + .NET plataforma de reporte farmacéutico desplegada en Azure — habilitando entrega de reportes rápida y customizable</p>
       <div class="project-card-footer">
         <span class="project-card-date">Oct 2022</span>
         <span class="project-card-arrow">↗</span>
@@ -397,10 +367,10 @@
   <div class="footer-logo">JMZ<span>.</span></div>
   <div class="footer-copy">© 2026 Juan Manuel Zaragoza · Cuenca, Ecuador · Remote worldwide</div>
   <div class="footer-links">
-    <a href="/work/">Work</a>
-    <a href="/services/">Services</a>
-    <a href="/about/">About</a>
-    <a href="/contact/">Contact</a>
+    <a href="/es/work/">Trabajos</a>
+    <a href="/es/services/">Servicios</a>
+    <a href="/es/about/">Acerca de</a>
+    <a href="/es/contact/">Contacto</a>
   </div>
 </footer>
 

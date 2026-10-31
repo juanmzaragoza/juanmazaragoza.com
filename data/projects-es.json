@@ -1,24 +1,338 @@
-{
-  "qa-automation-for-laravel": "Suite de automatización E2E con Playwright, tests de integración con Pest, y dashboards de Superset — eliminando regresiones manuales y mejorando estabilidad y escalabilidad",
-  "real-estate-chatbot-development-casa-domo-peru": "Interacciones automatizadas con clientes, agendamiento de visitas, y gestión de leads usando Manychat y Google Sheets",
-  "information-connection-and-visualization-platform-datakimia": "Plataforma de datos con Apache Superset, BigQuery, NestJS backend, y agentes de IA conversacional — 3+ años en producción",
-  "data-platform-development-rwa-platform": "Plataforma de datos en tiempo real con BigQuery, Apache Superset, y embeddings seguros para clientes — análisis de activos RWA",
-  "automated-google-my-business-integration-data-for-looker-studio": "Integración automatizada GMB → Google Sheets → Looker Studio usando Google Apps Script",
-  "vet-scripts-for-scraping-pdf-files": "Scripts en Node.js para scraping de PDFs con máquinas virtuales en GCP, almacenamiento en Cloud Storage",
-  "wordpress-development-digitalice-su-pyme": "Sitio WordPress en Español para agencia inmobiliaria — optimizado para conversión y SEO",
-  "wordpress-based-e-commerce-platform": "E-commerce basado en WooCommerce con integraciones de pago y customización de tema",
-  "performance-evaluation-platform-for-a-public-organization": "Plataforma de evaluación de desempeño para Gobierno de Buenos Aires — 1,733 commits, 7 años de liderazgo técnico",
-  "spain-crm-development": "Suite de CRM en Laravel para agencias inmobiliarias españolas — módulos de propiedades, clientes, seguimiento",
-  "takeda-covid-vaccine-platform": "Plataforma de reporte farmacéutico en .NET y Azure con dashboards de análisis",
-  "latin-america-professionals-marketplace": "Marketplace de profesionales en React y Firebase — búsqueda, perfiles, mensajería en tiempo real",
-  "real-estate-listing-platform-listing-los-cabos": "Plataforma de listados inmobiliarios en Los Cabos — suscripciones de agentes, integración con Stripe, $3K MRR",
-  "testing-framework-overhaul-and-pest-adoption": "Migración de PHPUnit a Pest, construcción de suite de tests desde cero — cobertura 70%+",
-  "feature-migration-php-legacy-to-laravel": "Migración de código PHP legacy a Laravel moderno — refactoring, tests, documentación",
-  "saas-platform-scaling-and-optimization": "Optimización de plataforma SaaS — performance, base de datos, caching, escalabilidad horizontal",
-  "mobile-app-development-cross-platform": "App móvil cross-platform en React Native — autenticación, pagos, notificaciones push",
-  "veterinarian-software": "Software de clínica veterinaria en React con Firebase — gestión de pacientes, citas, historiales médicos",
-  "aws-lambdas-and-react-native-app-for-a-lifestyle-startup": "App nativa en React con AWS Lambda — autenticación, pagos, notificaciones push",
-  "crm-erp-software": "Software CRM/ERP en React, Java y MariaDB para gestión empresarial",
-  "pharmaceutical-platform-development": "Plataforma farmacéutica en .NET y Azure con reportes de análisis",
-  "medical-units-attention-platform": "Sistema de atención de unidades médicas con seguimiento de medicamentos"
-}
+[
+  {
+    "slug": "qa-automation-for-laravel",
+    "title": "Plataforma de Ticketing: Automatización E2E QA",
+    "subtitle": "Tests E2E con Playwright, tests de integración con Pest, y dashboards de Superset — eliminando regresiones manuales, mejorando estabilidad y escalabilidad",
+    "seoTitle": "Construyendo automatización E2E QA para una plataforma de ticketing",
+    "seoDescription": "Arquitecto y propietario de la suite E2E con Playwright para flujos de checkout con 3 puertas de pago, más tests de integración con Pest e integración de Superset.",
+    "client": "Plataforma Premium de Ticketing",
+    "sector": "Ticketing & Eventos",
+    "country": "España, América Latina",
+    "role": "Ingeniero QA",
+    "duration": "Ene 2025 – Presente",
+    "results": [
+      "Suite E2E integral cubriendo flujos críticos de checkout",
+      "600+ casos de test de integración en backend en flujos críticos",
+      "3 navegadores cubiertos (Chromium, Firefox, WebKit)",
+      "3 puertas de pago testeadas end-to-end incluyendo flujos 3D Secure",
+      "Aproximadamente 15–20 horas de regresión manual por release eliminadas"
+    ],
+    "body": "<h2>El Desafío</h2>\n      <p>Una plataforma de ticketing y gestión de eventos white-label (monolito Laravel desde 2017) manejando flujos de checkout de alto volumen en España y América Latina. Flujos de ingresos — creación de eventos, entrega de tickets, pagos a través de 3 puertas de pago — no tenían cobertura end-to-end. Los releases dependían completamente de testing manual.</p>\n      <ul>\n        <li>Sin suite E2E existente; testing manual era insostenible</li>\n        <li>Flujos críticos (checkout, códigos de descuento, reenvío de tickets vía email/WhatsApp) carecían de automatización</li>\n        <li>Múltiples puertas de pago incluyendo flujos 3D Secure sin testear</li>\n        <li>Stakeholders de negocio carecían de visibilidad en tiempo real del rendimiento de la plataforma</li>\n      </ul>\n      <h2>Lo Que Construí</h2>\n      <h3>Suite E2E con Playwright</h3>\n      <p>Diseñé la estrategia completa de testing desde cero como propietario de la suite E2E. Construí una suite integral de <strong>Playwright + TypeScript</strong> que corre después de cada deploy en sandbox y staging: una puerta crítica de tests @critical primero, luego cobertura completa en Chromium, Firefox y WebKit. Testeé checkout end-to-end con todas las 3 puertas de pago incluyendo flujos 3D Secure. Usé test users pre-creados en lugar de registro vía email para garantizar tests determinísticos y rápidos.</p>\n      <h3>Tests de Integración con Pest</h3>\n      <p>Escribí tests de integración robustos cubriendo endpoints de API y lógica de negocio crítica: endpoints <code>/check</code>, <code>/resend</code>, <code>/me</code>, <code>/sessions</code>; validaciones de permisos basados en roles (seller, admin, whitebrand); validación de códigos de descuento y gestión de cupones.</p>\n      <h3>Fork de Superset & Embedding</h3>\n      <p>Introduje <strong>Apache Superset</strong> (fork) dentro de Docker; integré Google OAuth e integración segura basada en tokens en Laravel con filtrado de nivel de fila por organizador. Habilité dashboards en tiempo real en ventas de tickets, actividad de sesión, y comportamiento de usuarios.</p>\n      <h3>Observabilidad de Tests & CI/CD</h3>\n      <p>Construí una herramienta interna de métricas (Node, Prisma, PostgreSQL, Chart.js) para rastrear tests flaky y duración de tests por commit. Mejoré pipelines de GitLab CI; estandaricé templates de PR y documentación interna.</p>\n      <h2>Stack</h2>\n      <p>Laravel 12, PHP 8.4, Playwright, TypeScript, Pest, React 19, Apache Superset, GitLab CI, PostgreSQL.</p>"
+  },
+  {
+    "slug": "real-estate-chatbot-development-casa-domo-peru",
+    "title": "Chatbot Inmobiliario — Casa Domo Peru",
+    "subtitle": "Interacciones automatizadas con clientes, agendamiento de visitas, y gestión de leads usando Manychat y Google Sheets",
+    "seoTitle": "Chatbot Inmobiliario Agendando Visitas vía Manychat",
+    "seoDescription": "Agendamiento automatizado de leads y seguimiento para una agencia inmobiliaria peruana usando Manychat, Google Sheets, y flujos de conversación determinísticos.",
+    "client": "Casa Domo",
+    "sector": "Bienes Raíces",
+    "country": "Perú",
+    "role": "Desarrollador",
+    "duration": "Ene 2025",
+    "results": [
+      "Automatización de una porción significativa del proceso de interacción con clientes",
+      "Gestión de leads y agendamiento streamlineado",
+      "Equipo interactuando más efectivamente con compradores potenciales"
+    ],
+    "body": "<p>Para Nicole en <a href=\"https://www.facebook.com/casadomo.pe\" target=\"_blank\">Casa Domo</a> en Perú, desarrollé una solución de chatbot para asistir a su equipo en agendamiento de visitas a varios proyectos inmobiliarios donde ofrecen terrenos en venta. La solución completa fue construida usando Manychat y Google Sheets.</p>\n      <h2>Características</h2>\n      <ul>\n        <li>Identifica cualquier tipo de mensaje enviado por el cliente</li>\n        <li>Reconoce cuándo un cliente quiere saber más sobre un proyecto específico</li>\n        <li>Evita saludos duplicados o interacciones repetitivas</li>\n        <li>Envía mensajes predefinidos adaptados para cada proyecto — consistente y preciso</li>\n        <li>Proporciona respuestas genéricas con un tono amigable y humano</li>\n        <li>Usa datos almacenados en una Google Sheet para proporcionar respuestas en tiempo real</li>\n        <li>Ayuda a clientes a agendar una visita para ver el terreno</li>\n        <li>Registra tanto visitas agendadas como no agendadas en Google Sheets para seguimientos</li>\n      </ul>\n      <h2>Resultado</h2>\n      <p>Automatización de una porción significativa del proceso de interacción con clientes, haciendo más fácil gestionar leads y mejorar eficiencia. La herramienta empoderÓ al equipo para interactuar más efectivamente con compradores potenciales mientras ahorraba tiempo y recursos valiosos.</p>"
+  },
+  {
+    "slug": "automated-google-my-business-integration-data-for-looker-studio",
+    "title": "Google My Business → Looker Studio",
+    "subtitle": "Conector personalizado de comunidad construido con Apps Script para automatizar integración de datos GMB y creación de dashboards para una agencia de marketing en Barcelona",
+    "seoTitle": "Automatizando Google My Business Data a Looker Studio",
+    "seoDescription": "Conector Apps Script personalizado extrayendo datos de GMB (reseñas, ratings, visibilidad) y entregando dashboards visualmente atractivos en Looker Studio.",
+    "client": "New Condal",
+    "sector": "Marketing Digital",
+    "country": "España",
+    "role": "Desarrollador",
+    "duration": "Dic 2024",
+    "results": [
+      "Eliminación de trabajo manual de reportes",
+      "Flujo de datos sin fricciones desde múltiples cuentas GMB",
+      "Dashboards visualmente atractivos para comunicación con clientes"
+    ],
+    "body": "<p>Cuando Marcos de <a href=\"https://newcondal.com/\" target=\"_blank\">New Condal</a> se acercó, tenía un desafío claro: integrar sin fricciones datos de múltiples cuentas de Google My Business en sus dashboards de marketing. Como agencia de marketing digital en Barcelona, conectar y analizar manualmente datos de GMB para múltiples clientes era consumidor de tiempo e ineficiente.</p>\n      <h2>Solución</h2>\n      <p>Desarrollé un <strong>conector personalizado de comunidad usando Apps Script</strong>. Esta solución cerró la brecha entre cuentas de Google My Business y dashboards de Looker Studio, permitiendo a Marcos acceder sin esfuerzo a datos empresariales clave — reseñas, ratings, métricas de visibilidad, y más.</p>\n      <p>El conector automatizó la extracción y organización de información esencial de GMB, haciéndola readily available para análisis y reportes sin ningún esfuerzo manual.</p>\n      <h2>Diseño de Dashboards</h2>\n      <p>Una vez que los datos fluían sin fricciones, colaboré con Marcos para diseñar <strong>dashboards visualmente atractivos e informativos</strong>. Estos dashboards transformaron datos crudos en insights significativos, mostrados de forma que fuera tanto estéticamente agradable como efectiva para comunicar resultados a los clientes de New Condal.</p>\n      <h2>Resultado</h2>\n      <p>La solución eliminó trabajo manual en pulling de reportes, permitió a la agencia enfocarse en lo que realmente importa — ayudar a sus clientes a crecer — y elevó los servicios de New Condal dando a clientes una comprensión más clara de su presencia online y oportunidades de marketing.</p>"
+  },
+  {
+    "slug": "wordpress-based-e-commerce-platform",
+    "title": "E-Commerce WordPress — Amedia Social",
+    "subtitle": "Resuelto problemas críticos de WooCommerce: bugs de cálculo de carrito y mensajería de errores de pago para una plataforma de servicios de redes sociales",
+    "seoTitle": "Arreglando Carrito WooCommerce & Mensajería de Errores de Pago",
+    "seoDescription": "Debugged y arreglado bug crítico de cálculo de carrito en WooCommerce causado por actualizaciones de plugins, más mejorada mensajería de errores de pago para mejor UX.",
+    "client": "Amedia Social",
+    "sector": "SaaS",
+    "country": "Brasil",
+    "role": "Desarrollador",
+    "duration": "Nov 2024",
+    "results": [
+      "Cálculos de carrito restaurados a precisión",
+      "Mensajes de error de pago aclarados para usuarios",
+      "Abandono de checkout reducido"
+    ],
+    "body": "<p><a href=\"https://amediasocial.com/\" target=\"_blank\">Amedia Social</a>, manejado por Simbiotic Digital, se acercó con dos problemas críticos afectando su plataforma basada en WooCommerce diseñada para impulsar rendimiento de redes sociales y reputación online.</p>\n      <h2>Problema 1 — Bug de Cálculo de Carrito</h2>\n      <p>Los usuarios experimentaban <strong>cálculos de total incorrectos</strong> siempre que seleccionaban variaciones de producto. Después de sumergirme en el codebase, descubrí que el problema provenía de un script JavaScript responsable de calcular dinámicamente totales del carrito. Una actualización reciente de plugin de WooCommerce había alterado la estructura del DOM de la página del carrito, dejando el script obsoleto.</p>\n      <p>Analizando la nueva estructura del DOM y reescribiendo el script en consecuencia, restauré cálculos de precios precisos, asegurando que usuarios pudieran proceder confiadamente con sus compras.</p>\n      <h2>Problema 2 — Mensajería de Error de Pago</h2>\n      <p>Cuando clientes intentaban pagar y la transacción fallaba, los <strong>mensajes de error eran vagos e inútiles</strong>, llevando a frustración y abandono. Implementé una solución usando el hook <code>woocommerce_add_error</code> de WooCommerce, creando una función para reemplazar mensajes predeterminados con explicaciones más descriptivas y user-friendly.</p>\n      <h2>Resultado</h2>\n      <p>Cálculos precisos de carrito restauraron confianza en la experiencia de compra, mientras que mensajería más clara contribuyó a interacciones de cliente más suaves y abandono reducido en la página de checkout.</p>"
+  },
+  {
+    "slug": "real-estate-listing-platform-listing-los-cabos",
+    "title": "Plataforma Inmobiliaria — Listing Los Cabos: De Heredado a Rentable",
+    "subtitle": "Rescaté una plataforma React + Firebase medio-construida, agregué suscripciones de Stripe y seguridad, ahora sirviendo dos ciudades desde un mismo codebase",
+    "seoTitle": "Rescatando una Plataforma React + Firebase Inmobiliaria",
+    "seoDescription": "Tomé control de un portal medio-construido, agregué suscripciones de Stripe y seguridad, sirviendo Los Cabos y Ciudad de México. Ahora en vivo con gestión de propiedades de agentes.",
+    "client": "Listing Los Cabos",
+    "sector": "Bienes Raíces",
+    "country": "México",
+    "role": "Lead Developer & Propietario del Proyecto",
+    "duration": "Abr 2024 – Jul 2025",
+    "results": [
+      "2 ciudades/brands (Los Cabos, Ciudad de México) desde un mismo codebase",
+      "3 planes de suscripción pagados (10/30/50 listados) con 60 días de prueba gratuita",
+      "~10 agentes gestionando sus listados en la plataforma",
+      "De papel y Excel a portal en vivo con visibilidad completa de propiedades y promoción de desarrollo"
+    ],
+    "testimonial": {
+      "quote": "Juan llevó nuestro proyecto inmobiliario de una idea a producción. Entregó ownership, control, y una plataforma que funciona. Estamos en vivo, rentables, y expandiendo.",
+      "author": "Julio César Pérez",
+      "role": "Project Leader"
+    },
+    "body": "<h2>La Situación</h2>\n      <p>Un portal inmobiliario para Los Cabos y Ciudad de México — medio-construido por desarrolladores anteriores en 2023, sin vista unificada de propiedades, una persona sostenía todo el conocimiento, promoción de propiedades era manual. El cliente carecía de ownership del código y hosting.</p>\n      <h2>El Desafío</h2>\n      <ul>\n        <li>Codebase heredado con features incompletas y sin cobertura de tests</li>\n        <li>Sin integración con Google Maps; creación de propiedades rota</li>\n        <li>Promoción de propiedades y activación manual</li>\n        <li>Sin modelo de suscripción o procesamiento de pagos</li>\n        <li>Problemas de seguridad: claves hardcodeadas, acceso Firebase sin validar</li>\n        <li>Cliente incapaz de escalar a una segunda ciudad sin ayuda externa</li>\n      </ul>\n      <h2>Lo Que Construí</h2>\n      <h3>Búsqueda & Descubrimiento</h3>\n      <p>Construí listado de propiedades searchable con filtros (precio, habitaciones, amenidades) y vista interactiva de Google Maps. Integré Google Maps para autocomplete de direcciones y geocoding.</p>\n      <h3>Gestión de Propiedades</h3>\n      <p>Workflows de creación y edición de propiedades con upload de imagen/video a Firebase Storage, rastreo de estado (draft/active/sold), y asignación de perfil de agente. Diseño responsive en dispositivos.</p>\n      <h3>Sistema de Suscripción Stripe</h3>\n      <p>Integración de <strong>pagos Stripe</strong> end-to-end: flujo de checkout, webhooks para ciclo de vida de suscripción (creación, renovación, cancelación), límites de plan (10/30/50 listados activos por tier), prueba gratuita de 60 días, códigos de descuento. Cada tier de suscripción desbloquea capabilities diferentes.</p>\n      <h3>Seguridad & Backend</h3>\n      <p>Reemplacé claves Firebase hardcodeadas con variables de entorno. Agregué validación de token Firebase en backend serverless Express de Node.js (Vercel). Implementé reCAPTCHA en formularios de contacto.</p>\n      <h3>Setup Multi-Brand</h3>\n      <p>Arquitecturé un codebase sirviendo dos ciudades: imágenes hero separadas, branding, y pools de agentes. Staging y producción en Vercel con deployments automatizados de GitHub.</p>\n      <h3>Revisión de Seguridad Externa</h3>\n      <p>Comisioné una auditoría de seguridad profesional antes de escalar a la segunda ciudad, asegurando readiness de plataforma.</p>\n      <h2>Stack</h2>\n      <p>React 18, Tailwind CSS, Firebase (Auth, Firestore, Storage), Node.js/Express (Vercel Serverless), Stripe, Google Maps API.</p>"
+  },
+  {
+    "slug": "information-connection-and-visualization-platform-datakimia",
+    "title": "Plataforma de Datos — Datakimia: Multi-Tenant BI SaaS",
+    "subtitle": "Plataforma de datos full-stack con Next.js, NestJS, reportes de Superset embebidos, aislamiento per-customer, y agentes de IA conversacional",
+    "seoTitle": "Construyendo SaaS BI Multi-Tenant con Superset Embebido",
+    "seoDescription": "Backend NestJS fundado (37 endpoints), migración Superset 4.1→6.1 ejecutada en 30 días, agentes de IA de datos construidos sobre BigQuery sin impacto en producción.",
+    "client": "Datakimia",
+    "sector": "SaaS de Analytics",
+    "country": "EE.UU.",
+    "role": "Head of Software Development",
+    "duration": "May 2024 – Presente",
+    "results": [
+      "3 clientes de producción aislados por deployment",
+      "Backend en producción 2+ años sin outages orientados a clientes",
+      "3 versiones mayores de Superset migradas en 30 días (8 Sep – 7 Oct)",
+      "Fork de Apache Superset con ~430 commits personalizado mantenido sincronizado con upstream",
+      "Migración Superset 4.1 → 6.1: 6 upstream merges, ~4,400 archivos en merge final, 23 checks de wiring automatizados detectaron 3 regresiones silentes antes de producción",
+      "Smoke test de 5-fases / 17-pasos cubriendo local → ephemeral → pilot → preprod → production"
+    ],
+    "body": "<h2>El Desafío</h2>\n      <p>Datakimia es un SaaS de analytics multi-tenant white-label (EE.UU.): cada cliente está aislado en su propio deployment. El desafío: entregar BI embebido y agentes de IA conversacional de datos seguramente per-customer, y mantener la capa de BI (fork de Apache Superset con ~430 commits personalizado) actualizada sin romper producción.</p>\n      <h2>Lo Que Construí</h2>\n      <h3>Backend NestJS (37 Endpoints)</h3>\n      <p>Fundé y creé el backend de producción (primer commit May 2024): login Google/Microsoft Entra/Auth0, tokens JWT, control de acceso basado en roles derivado de permisos de Superset, autorización basada en CASL, aislamiento de datos per-customer. Grado de producción para 2+ años sin downtime orientado a clientes.</p>\n      <h3>Embedding de Superset & RBAC</h3>\n      <p>Generación de guest tokens para dashboards embebidos con filtros de seguridad de nivel de fila aplicados per-customer. Filtrado de dashboard dinámico por contexto de customer. Embedding seguro en iframe en el frontend de Next.js.</p>\n      <h3>Agentes de IA Conversacional de Datos</h3>\n      <p>Construí exploración de datos basada en chat sobre BigQuery usando <strong>Google Gemini Data Analytics API</strong> (respuestas SSE streaming). Implementé agente de voz con <strong>Gemini Live API</strong> para queries de datos habladas. Los usuarios hacen preguntas en lenguaje natural; el agente traduce a SQL de BigQuery y devuelve insights.</p>\n      <h3>Migración Apache Superset 4.1 → 6.1</h3>\n      <p>Migré el fork de Superset altamente customizado de Datakimia en 3 versiones mayores (8 Sep – 7 Oct 2024, ~30 días de calendario). Proceso:</p>\n      <ul>\n        <li>Inventario de ~430 commits personalizado clasificados en carry/replace/drop</li>\n        <li>6 upstream merges con resolución de conflictos asistida por IA (Cursor) dentro de checks determinísticos</li>\n        <li>Merge final tocó ~4,400 archivos</li>\n        <li>23 checks de wiring automatizados; detectaron 3 features que habían silenciosamente roto</li>\n        <li>Test de humo de 5-fases, 17-pasos (local → ephemeral → pilot → preprod → prod)</li>\n        <li>Esfuerzo: ~100 horas en 30 días</li>\n      </ul>\n      <h2>Stack</h2>\n      <p>Next.js 14 (frontend), NestJS 10 (backend), Prisma ORM, PostgreSQL, Apache Superset, BigQuery, Google Gemini, GKE, Helm.</p>"
+  },
+  {
+    "slug": "latin-america-professionals-marketplace",
+    "title": "Marketplace de Profesionales — Guruxy",
+    "subtitle": "Sistema de menú basado en roles e integración de live streaming usando Agora para un marketplace freelance latinoamericano",
+    "seoTitle": "Integración de Live Streaming para un Marketplace Freelance",
+    "seoDescription": "Implementé menús basados en roles e integración de Agora live streaming para una plataforma de profesionales latinoamericana, mejorando UX y habilitando compartición de conocimiento en tiempo real.",
+    "client": "Guruxy",
+    "sector": "Marketplace Freelance",
+    "country": "América Latina",
+    "role": "Desarrollador",
+    "duration": "Mar 2024",
+    "results": [
+      "Customización de menú basada en rol de usuario",
+      "Feature de live streaming para compartición de conocimiento en tiempo real",
+      "Navegación y seguridad mejoradas"
+    ],
+    "body": "<p>Mi cliente <a href=\"https://guruxy.com\" target=\"_blank\">Guruxy</a> tenía dos necesidades claras: mejorar carga de menú con customización basada en rol de usuario, y desarrollar una feature de live streaming permitiendo a profesionales transmitir su conocimiento en tiempo real.</p>\n      <h2>Sistema de Menú Basado en Roles</h2>\n      <p>Implementé una <strong>estructura user-role-menu</strong> que permitía a cada usuario autenticado ver solo menús relevantes a su perfil, mejorando tanto UX como seguridad.</p>\n      <h2>Live Streaming</h2>\n      <p>Integré <strong>Agora</strong> para gestionar ventanas de streaming y sesiones en el sitio. Hice adjusts de backend para asegurar sincronización apropiada de status de live entre profesionales y usuarios, habilitando compartición de conocimiento en tiempo real sin fricciones.</p>\n      <h2>Resultado</h2>\n      <p>Mejora significativa en experiencia de usuario con menús más relevantes y navegación más suave. La implementación de live streaming proporcionó una forma nueva y excitante para que profesionales se conecten con su audiencia en tiempo real.</p>"
+  },
+  {
+    "slug": "spain-crm-development",
+    "title": "Desarrollo CRM — Cloudin & Omnisauto",
+    "subtitle": "Mejoré y customicé dos plataformas CRM españolas con Laravel, integradas sin fricciones con WordPress vía endpoints de API personalizado",
+    "seoTitle": "Escalando Plataformas CRM Españolas con Laravel & WordPress",
+    "seoDescription": "Customización de dos plataformas CRM (Cloudin, Omnisauto) con Laravel, integración WordPress sin fricciones vía REST API, mejorada facturación y UX de dashboard.",
+    "client": "Cloudin, Omnisauto",
+    "sector": "Software Empresarial",
+    "country": "España",
+    "role": "Full-Stack Developer",
+    "duration": "Feb 2024",
+    "results": [
+      "Dos plataformas CRM mejoradas y customizadas",
+      "Integración WordPress vía endpoints de API personalizado",
+      "Sincronización de datos y rendimiento mejorados"
+    ],
+    "body": "<p>Para <a href=\"https://cloudin.noticrm.app/\" target=\"_blank\">Cloudin</a> y <a href=\"https://omnisauto.pro/\" target=\"_blank\">Omnisauto</a>, mi tarea fue mejorar funcionalidades de CRM existentes y adaptarlas a necesidades específicas de clientes usando Laravel PHP, JavaScript, y MariaDB.</p>\n      <h2>Desarrollo Core</h2>\n      <p>Modifiqué el codebase principal enfocándome en creación de entidades, procesos de facturación, y customización de dashboard. Aprovechando capacidades de ORM de Laravel, optimicé queries de base de datos y mejoré rendimiento de retrieval de datos para manejo eficiente de datasets grandes.</p>\n      <h2>Integración WordPress</h2>\n      <p>Uno de los desafíos significativos involucró integrar estos CRMs con una plataforma WordPress para sincronizar todos los datos sin fricciones. Desarrollando <strong>endpoints de API personalizado y protocolos de transferencia de datos</strong>, establecí una conexión robusta habilitando intercambio de datos en tiempo real entre sistemas CRM y WordPress.</p>\n      <h2>Resultado</h2>\n      <p>Mejora significativa en funcionalidad y usabilidad de ambas plataformas. Clientes se beneficiaron de procesos streamlineados, interfaces intuitivas, y capabilities mejoradas que los empoderaron para operar más eficientemente en sus respectivos dominios.</p>"
+  },
+  {
+    "slug": "wordpress-development-digitalice-su-pyme",
+    "title": "WordPress — Posada Estela de Barros",
+    "subtitle": "Build completo de WordPress para un hotel español: customización de tema, setup multilingüe, integración SiteMinder, y módulo WhatsApp",
+    "seoTitle": "Sitio de Hotel Construido en WordPress con PMS SiteMinder",
+    "seoDescription": "Sitio WordPress personalizado para un hotel español: customización de tema, multilingüe WPML, integración de booking SiteMinder, módulos WhatsApp y cookies.",
+    "client": "Posada Estela de Barros",
+    "sector": "Hospitalidad",
+    "country": "España",
+    "role": "WordPress Developer",
+    "duration": "Feb 2024",
+    "results": [
+      "Sitio WordPress completo construido desde cero",
+      "Setup multilingüe para huéspedes internacionales",
+      "Integración sin fricciones de reservas con SiteMinder"
+    ],
+    "body": "<p>En colaboración con <a href=\"https://digitalicesupyme.es/\" target=\"_blank\">Digitalice su Pyme</a>, undertook un proyecto de desarrollo WordPress integral para su cliente Posada Estela de Barros (<a href=\"https://posadalaesteladebarros.es/\" target=\"_blank\">posadalaesteladebarros.es</a>).</p>\n      <h2>Lo Que Fue Construido</h2>\n      <ul>\n        <li>Instalación y configuración de WordPress desde cero</li>\n        <li>Customización de tema alineada con la ambiance única del posada</li>\n        <li>Módulos de gestión de WhatsApp y cookies para comunicación con huéspedes</li>\n        <li>Traducciones multilingües para diversos visitantes internacionales</li>\n        <li>Integración de plugin SiteMinder para gestión de reservas de hotel</li>\n        <li>Templates de email para comunicación consistente y profesional con huéspedes</li>\n      </ul>\n      <h2>Resultado</h2>\n      <p>Entregué un sitio web completo, funcional, y user-friendly que superó las expectativas del cliente — reflejando la esencia de Posada Estela de Barros mientras proporcionaba una experiencia online excepcional para visitantes.</p>"
+  },
+  {
+    "slug": "data-platform-development-rwa-platform",
+    "title": "Plataforma de Datos RWA — Next.js + BigQuery",
+    "subtitle": "Aplicación web integrando múltiples fuentes de datos en un warehouse BigQuery con una capa de API Python Flask para querying en tiempo real",
+    "seoTitle": "Plataforma de Datos Real-World Assets en BigQuery",
+    "seoDescription": "Frontend Next.js integrado con warehouse BigQuery vía backend Python Flask, replicando diseños complejos de Figma para toma de decisiones data-driven.",
+    "client": "RWA Insights",
+    "sector": "Fintech / Data Analytics",
+    "country": "EE.UU.",
+    "role": "Full-Stack Developer",
+    "duration": "Feb 2024",
+    "results": [
+      "Diseños complejos de Figma replicados con precisión",
+      "Querying de datos en tiempo real vía API Flask",
+      "Insights accionables desde warehouse BigQuery"
+    ],
+    "body": "<p>Contribuí al Proyecto de Plataforma RWA en un período de tres semanas, jugando un papel pivotal en desarrollar una solución basada en Next.js. Usando mockups detallados de Figma como blueprint, ayudé a diseñar y construir una aplicación web que integra datos de varias fuentes en un data warehouse de BigQuery.</p>\n      <h2>Arquitectura</h2>\n      <p><strong>Python Flask</strong> fue usado para construir una capa API eficiente, habilitando querying en tiempo real e integración de datos sin fricciones. Este acceso de datos streamlineado permitió al cliente ganar insights accionables y mejorar eficiencia operacional.</p>\n      <h2>Resultado</h2>\n      <p>Demostré la habilidad de replicar mockups complejos de Figma con precisión, integrar tecnologías avanzadas como BigQuery y Flask, y aprovechar herramientas web modernas para mejorar business intelligence y facilitar toma de decisiones data-driven.</p>"
+  },
+  {
+    "slug": "takeda-covid-vaccine-platform",
+    "title": "Plataforma de Reporte COVID — Takeda",
+    "subtitle": "Angular + .NET plataforma de reporte farmacéutico desplegada en Azure — habilitando entrega de reportes rápida y customizable",
+    "seoTitle": "Plataforma de Reporte de Vacuna COVID: Angular & .NET en Azure",
+    "seoDescription": "Construido como parte de equipo subcontratado para plataforma entregada a Takeda: reporte rápido y customizable con hosting en Azure.",
+    "client": "Takeda (subcontratado)",
+    "sector": "Farmacéutico",
+    "country": "Global",
+    "role": "Full-Stack Developer",
+    "duration": "Oct 2022",
+    "results": [
+      "Aumento sustancial en productividad de entrega de reportes",
+      "Plataforma de reporte rápida y customizable",
+      "Seguridad de grado empresarial y escalabilidad en Azure"
+    ],
+    "body": "<p>Construido como parte de equipo subcontratado, esta plataforma fue entregada a Takeda para reporte de programa de vacuna COVID. Los requerimientos del cliente eran claros: experiencia de usuario sin fricciones, entrega de reportes lightning-fast, y agilidad para adaptarse a un mercado farmacéutico dinámico.</p>\n      <h2>Stack</h2>\n      <ul>\n        <li><strong>Angular</strong> para interfaz frontend intuitiva y responsive</li>\n        <li><strong>.NET</strong> para desarrollo de features rápido y flexible de lógica de negocio</li>\n        <li><strong>Microsoft Azure</strong> para rendimiento óptimo, escalabilidad, y seguridad de grado empresarial</li>\n      </ul>\n      <h2>Resultado</h2>\n      <p>La plataforma logró mejoras sustanciales en velocidad de entrega de reportes y habilitó adaptación rápida a requerimientos cambiantes — una capability crítica en operaciones farmacéuticas. Los usuarios ganaron la agilidad necesaria para responder rápidamente a demandas del mundo real.</p>"
+  },
+  {
+    "slug": "veterinarian-software",
+    "title": "Software Veterinario — IVEE",
+    "subtitle": "Colaboración de dos años: scripts de React integrados en Squarespace vía Firebase, seguido por plataforma React completa con dashboards y gestión de usuarios",
+    "seoTitle": "Plataforma SaaS Veterinaria: React, Firebase, Dashboards",
+    "seoDescription": "Engagement de dos años: construí scripts React para Squarespace, luego plataforma React completa con dashboards, gestión de usuarios, e infraestructura GCP.",
+    "client": "IVEE",
+    "sector": "Tech Veterinario",
+    "country": "EE.UU.",
+    "role": "Full-Stack Developer",
+    "duration": "Abr 2022 – Feb 2024",
+    "results": [
+      "Scripts React embebidos en Squarespace",
+      "Plataforma React completa con dashboards",
+      "Gestión de usuarios y acceso basado en roles"
+    ],
+    "body": "<p>Dos años enriquecedores colaborando con IVEE, una compañía de tecnología veterinaria, en dos proyectos mayores.</p>\n      <h2>Proyecto 1 — Scripts React + Squarespace</h2>\n      <p>Desarrollé múltiples scripts de React sirviendo funcionalidades distintas dentro de un framework de Website Builder. Estos scripts personalizados automatizaron parsing de archivos y extrajeron datos de fuentes diversas. Hosted vía Firebase, con integración sin fricciones en Squarespace embebiendo JavaScript minificado. Firestore y Cloud Storage fueron usados para persistencia de datos.</p>\n      <h2>Proyecto 2 — Plataforma React</h2>\n      <p>Creé una plataforma cutting-edge basada en React incorporando dashboards y funcionalidades de gestión de usuarios. Bridged la brecha entre requerimientos de negocio y especificaciones técnicas, y coordiné equipos multidisciplinarios para ejecución eficiente.</p>"
+  },
+  {
+    "slug": "aws-lambdas-and-react-native-app-for-a-lifestyle-startup",
+    "title": "AWS Lambdas & React Native — Indigo",
+    "subtitle": "Funciones Lambda para consolidar lógica de backend de app React Native, más optimización de rendimiento y documentación de equipo para un startup de lifestyle",
+    "seoTitle": "Backend Serverless para una App React Native de Lifestyle",
+    "seoDescription": "Arquitecturé funciones AWS Lambda para consolidar lógica de backend de React Native, optimicé rendimiento, y establecí estándares de documentación de equipo.",
+    "client": "Indigo",
+    "sector": "Salud & Bienestar",
+    "country": "EE.UU.",
+    "role": "Full-Stack Developer",
+    "duration": "Feb 2022",
+    "results": [
+      "Arquitectura modular de función Lambda",
+      "Mejoras de rendimiento para app React Native",
+      "Documentación integral de equipo"
+    ],
+    "body": "<p>Indigo fue confrontado con la tarea compleja de desarrollar un backend versátil capaz de gestionar la lógica de negocio intrincada de su aplicación de lifestyle — nutrición, workout, y meditación — que previo estaba integrada dentro de su plataforma React Native.</p>\n      <h2>Arquitectura de Backend</h2>\n      <p>Creé una arquitectura de backend sofisticada implementando una serie de <strong>funciones Lambda</strong>. Estas fueron estratégicamente diseñadas para consolidar y optimizar la lógica de aplicación, resultando en infraestructura de backend robusta y escalable. Modularizando el codebase, aseguré que el backend de Indigo no solo fuera eficiente sino también altamente adaptable a modificaciones futuras.</p>\n      <h2>Rendimiento & Documentación</h2>\n      <p>Proporcioné soporte continuo para la app React Native, conduciendo análisis profundos de rendimiento e implementando mejoras dirigidas. Organizé y documenté la aplicación web y equipo de desarrollo — estableciendo directrices claras, protocolos de documentación, y canales de comunicación para streamline la colaboración.</p>"
+  },
+  {
+    "slug": "crm-erp-software",
+    "title": "CRM/ERP Personalizado — España",
+    "subtitle": "Frontend ERP React con backend Java, más un sistema SSO de Projects Organization para centralizar acceso en múltiples aplicaciones",
+    "seoTitle": "Enterprise CRM/ERP con Frontend React y SSO",
+    "seoDescription": "Construí frontend ERP React y backend Java para cliente español, más sistema SSO para gestión de acceso multi-app con MariaDB.",
+    "client": "Cliente Empresarial (España)",
+    "sector": "Software Empresarial",
+    "country": "España",
+    "role": "Full-Stack Developer",
+    "duration": "Nov 2021",
+    "results": [
+      "Frontend ERP adaptivo con UX rica",
+      "SSO centralizado para múltiples aplicaciones",
+      "Rastreo de recursos eficiente a través de proyectos"
+    ],
+    "body": "<p>Desarrollé dos soluciones de software a medida para un cliente basado en España que revolucionaron sus operaciones de negocio.</p>\n      <h2>Frontend ERP</h2>\n      <p>Construí un frontend ERP altamente adaptable y user-friendly usando <strong>React.js</strong>. El framework permitió creación de experiencia de usuario dinámica y responsive, empoderando usuarios para interactuar sin fricciones con sus datos. Integré con un <strong>backend Java robusto</strong> asegurando flujo de datos suave y ejecución eficiente de lógica de negocio.</p>\n      <h2>Projects Organization — SSO</h2>\n      <p>Un endeavor ambicioso: una aplicación web centralizando acceso a múltiples aplicaciones a través de una solución <strong>Single Sign-On (SSO)</strong>. Proporcionó rastreo integral de recursos a través de varios proyectos. Aprovechando <strong>MariaDB</strong> como plataforma de base de datos, con un servidor backend Java orquestando integración sin fricciones de datos y funcionalidades.</p>"
+  },
+  {
+    "slug": "pharmaceutical-platform-development",
+    "title": "Plataforma Farmacéutica — Atacana Group",
+    "subtitle": "Plataforma React con cloud functions Node.js para gestión de entidades, agregación de noticias, y permisos de usuarios en el sector farmacéutico",
+    "seoTitle": "Plataforma del Sector Farmacéutico: React & GCP Firebase",
+    "seoDescription": "Plataforma React con cloud functions Node.js para gestión de entidades pharma, agregación de noticias por base de clientes, y permisos basados en roles.",
+    "client": "Atacana Group",
+    "sector": "Farmacéutico",
+    "country": "Chile",
+    "role": "Full-Stack Developer",
+    "duration": "Sep 2021",
+    "results": [
+      "Gestión de entidades core (clientes, compuestos, keywords)",
+      "Agregación de noticias y segmentación de clientes",
+      "Sistema integral de permisos de usuarios"
+    ],
+    "body": "<p>Colaboración inicial con Atacana Group involucró mejorar la funcionalidad de su sistema basado en React, complementado por cloud functions Node.js y una base de datos MongoDB.</p>\n      <h2>Desarrollo de Features</h2>\n      <p>Creé features esenciales e interfaces para gestionar entidades core: clientes, compañías, compuestos, keywords, y usuarios. Mientras el involvement expandía, participé en reuniones de definición de plataforma core para <strong>agregación de noticias y segmentación por base de clientes</strong>.</p>\n      <h2>Contribución Estratégica</h2>\n      <p>Presenté varias propuestas y fostered debates productivos dentro de todo el equipo — un enfoque colaborativo que permitió a soluciones innovadoras surfacear. Contribuí a configuración de ambientes de desarrollo y expandí scope a desarrollo de backend, incluyendo gestión de usuarios y permisos.</p>"
+  },
+  {
+    "slug": "vet-scripts-for-scraping-pdf-files",
+    "title": "Scraping PDF Veterinario — IVEE",
+    "subtitle": "Scripts Node.js en GCP para extraer datos médicos de registros PDF de pacientes caninos, almacenando resultados en BigQuery para visualización en dashboards",
+    "seoTitle": "Extracción de Datos PDF para Analytics Veterinaria",
+    "seoDescription": "GCP Cloud Functions extrayendo datos médicos de archivos PDF, almacenando en BigQuery para dashboards veterinarios interactivos e insights de pacientes.",
+    "client": "IVEE",
+    "sector": "Tech Veterinario",
+    "country": "EE.UU.",
+    "role": "Backend Developer",
+    "duration": "Ene 2021 – Ene 2022",
+    "results": [
+      "Extracción automática de datos PDF a escala",
+      "Diseño modular de scraper para múltiples formatos de PDF",
+      "Analytics de BigQuery habilitando insights veterinarios"
+    ],
+    "body": "<p>Para IVEE, una compañía veterinaria dedicada al cuidado integral de animales, desarrollé scripts sofisticados para streamline la extracción de información médica vital de archivos PDF conteniendo historiales médicos de pacientes caninos.</p>\n      <h2>Arquitectura</h2>\n      <ul>\n        <li><strong>Google Storage bucket</strong> como repositorio para PDFs subidos por veterinarios</li>\n        <li><strong>Cloud Function</strong> automaticamente triggered upon cada recepción de archivo</li>\n        <li>La función lee y scrapes contenidos PDF basado en el scraper asociado para cada formato de sistema</li>\n        <li><strong>Diseño modular:</strong> nuevos formatos PDF acomodados agregando nuevas funciones de scraping</li>\n        <li>Datos extraídos persistidos en <strong>BigQuery</strong> para análisis cross-departamento</li>\n        <li>Dashboards interactivos proporcionando veterinarios insights en salud de pacientes e historia de tratamiento</li>\n      </ul>\n      <p>El proyecto se extendió más de un año y ejemplificó la dedicación requerida para abordar desafíos complejos en healthcare veterinario a través de tecnología.</p>"
+  },
+  {
+    "slug": "medical-units-attention-platform",
+    "title": "Sistema de Rastreo de Farmacia — Buenos Aires Gov: AUM",
+    "subtitle": "Director Técnico y desarrollador frontend principal para un sistema de dispensación de medicamentos a nivel ciudad — Angular, Java, MariaDB, entrega ágil",
+    "seoTitle": "Rastreo de Medicamentos de Farmacia para una Capital",
+    "seoDescription": "Líder técnico y desarrollador frontend para sistema AUM de Buenos Aires: frontend Angular, backend Spring Boot, gestión de dispensación de medicamentos en farmacias.",
+    "client": "Gobierno de la Ciudad de Buenos Aires",
+    "sector": "Gobierno, Healthcare",
+    "country": "Argentina",
+    "role": "Tech Lead & Frontend Developer",
+    "duration": "Ago 2019 – May 2020",
+    "results": [
+      "Monitorea dispensación de medicamentos en farmacias afiliadas",
+      "Rastreo de pagos pre-settlement y settlement para farmacias",
+      "Trazabilidad completa de distribución de medicina gubernamental"
+    ],
+    "body": "<h2>El Desafío</h2>\n      <p>Gestionar dispensación de medicamentos en farmacias afiliadas en nombre del Gobierno de la Ciudad de Buenos Aires. Requerimientos: monitorear operaciones de dispensación, gestionar subsidios, analizar tendencias de demanda de medicinas, asegurar trazabilidad completa, e implementar medidas preventivas para continuidad de cadena de suministro.</p>\n      <h2>Liderazgo Técnico</h2>\n      <p>Seleccioné el technology stack: <strong>Angular</strong> (frontend), <strong>Java Spring Boot 2</strong> (backend), <strong>MariaDB</strong> (base de datos). Colaboré estrechamente con analistas y Product Owner para definir reglas de negocio. Lideré el equipo usando <strong>metodologías de desarrollo ágil</strong>, asegurando adherencia a deadlines mientras entregaba un producto de alta calidad. Instituí robustas prácticas de entrega de código habilitando al equipo QA del gobierno trabajar independientemente.</p>\n      <h2>Objetivos del Sistema</h2>\n      <ul>\n        <li>Monitorear farmacias dispensando medicinas subsidiadas por el gobierno</li>\n        <li>Gestionar subsidios y analizar estadísticas en tipos de medicinas más necesitadas</li>\n        <li>Implementar medidas preventivas para continuidad de cadena de suministro</li>\n        <li>Asegurar trazabilidad completa de todas las operaciones de distribución</li>\n      </ul>\n      <h2>Stack</h2>\n      <p>Angular, Java Spring Boot 2, JPA, QueryDSL, OpenAPI, MariaDB.</p>"
+  },
+  {
+    "slug": "performance-evaluation-platform-for-a-public-organization",
+    "title": "Sistema de Evaluación de Rendimiento a Nivel Ciudad — Buenos Aires Gov",
+    "subtitle": "Tech Lead para evaluación anual de empleados en todos los ministerios de la ciudad — Angular, Java Spring Boot, PostgreSQL, entrega ágil a escala gubernamental",
+    "seoTitle": "Liderando 3 Generaciones de un Sistema de Evaluación a Nivel Ciudad",
+    "seoDescription": "Tech lead para sistema de evaluación de desempeño de empleados de Buenos Aires: seleccioné Angular + Java + PostgreSQL, gestioné 5 stacks, 1,733 commits.",
+    "client": "Gobierno de la Ciudad de Buenos Aires",
+    "sector": "Gobierno",
+    "country": "Argentina",
+    "role": "Technical Lead",
+    "duration": "Ene 2019 – Jun 2020",
+    "results": [
+      "Plataforma evalúa empleados en todos los ministerios de la ciudad anualmente",
+      "Tres generaciones de tecnología entregadas en el mismo dominio",
+      "1,733 commits autorizado en 26 repositorios",
+      "5 stacks de tecnología diferentes gestionados durante 7 años (2014–2020)"
+    ],
+    "body": "<h2>El Desafío</h2>\n      <p>Evaluar sistemáticamente, continuamente, y objetivamente desempeño de empleados en todos los departamentos de la Ciudad de Buenos Aires. Requerimientos: definir criterios de desempeño basados en rol, identificar necesidades de training, promover fairness y transparencia, y habilitar adaptación ágil conforme objetivos organizacionales evolucionaban.</p>\n      <h2>Liderazgo Técnico (3 Generaciones)</h2>\n      <p>Trabajé en todas las tres generaciones de este sistema:</p>\n      <ul>\n        <li><strong>Generación 1 (Symfony 2):</strong> 2014–2015, 200 de 356 commits — la plataforma inicial</li>\n        <li><strong>Generación 2 (LoopBack):</strong> 2018 — capa de API de integración</li>\n        <li><strong>Generación 3 (Angular + Java Spring Boot):</strong> 2019–2020, tech lead de frontend — la versión actual</li>\n      </ul>\n      <h2>Gen 3: Liderazgo Técnico</h2>\n      <p>Stack seleccionado: <strong>Angular</strong> (frontend), <strong>Java Spring Boot</strong> (backend), <strong>PostgreSQL</strong> (base de datos). Definí reglas de negocio con analista y Product Owner. Introduje metodología ágil y establecí proceso de entrega eficiente habilitando al equipo QA del gobierno trabajar independientemente. Colaboré con representantes de sindicato de trabajadores para asegurar fairness y transparencia en criterios de evaluación.</p>\n      <h2>Objetivos del Sistema</h2>\n      <ul>\n        <li>Evaluar sistemáticamente desempeño de empleados contra requerimientos de rol</li>\n        <li>Identificar necesidades de training y diseñar planes de mejora a corto plazo</li>\n        <li>Mejorar comunicación para lograr objetivos organizacionales predefinidos</li>\n        <li>Promover transparencia, objetividad, equidad, e imparcialidad</li>\n      </ul>\n      <h2>Plataforma En Vivo</h2>\n      <p>El sistema de evaluación está en vivo en <a href=\"https://evaluaciongcaba.buenosaires.gob.ar/login\" target=\"_blank\">evaluaciongcaba.buenosaires.gob.ar</a>.</p>\n      <h2>Contexto Más Amplio</h2>\n      <p>Sobre ~7 años (2014–2020) en Buenos Aires City, serví como tech lead en casi todos los sistemas desarrollados, autorizando <strong>1,733 commits en 26 repositorios</strong> y gestionando <strong>5 stacks de tecnología diferentes</strong> (Symfony 2, Angular, Java Spring Boot, React, Azure/.NET).</p>\n      <h2>Stack</h2>\n      <p>Angular, Java Spring Boot, PostgreSQL, OpenAPI, Ágil.</p>"
+  }
+]

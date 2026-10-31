@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Backend Serverless para una App React Native de Lifestyle</title>
+  <meta name="description" content="Arquitecturé funciones AWS Lambda para consolidar lógica de backend de React Native, optimicé rendimiento, y establecí estándares de documentación de equipo.">
+  <link rel="canonical" href="https://juanmazaragoza.com/es/work/aws-lambdas-and-react-native-app-for-a-lifestyle-startup/">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Juan Manuel Zaragoza">
+  <meta property="og:title" content="Backend Serverless para una App React Native de Lifestyle">
+  <meta property="og:description" content="Arquitecturé funciones AWS Lambda para consolidar lógica de backend de React Native, optimicé rendimiento, y establecí estándares de documentación de equipo.">
+  <meta property="og:url" content="https://juanmazaragoza.com/es/work/aws-lambdas-and-react-native-app-for-a-lifestyle-startup/">
+  <meta property="og:image" content="https://juanmazaragoza.com/images/og/aws-lambdas-and-react-native-app-for-a-lifestyle-startup.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/images/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="/css/style.css">
+  <script>document.documentElement.classList.add('js')</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://juanmazaragoza.com/es/"},{"@type":"ListItem","position":2,"name":"Trabajos","item":"https://juanmazaragoza.com/es/work/"},{"@type":"ListItem","position":3,"name":"AWS Lambdas & React Native — Indigo","item":"https://juanmazaragoza.com/es/work/aws-lambdas-and-react-native-app-for-a-lifestyle-startup/"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"AWS Lambdas & React Native — Indigo","description":"Arquitecturé funciones AWS Lambda para consolidar lógica de backend de React Native, optimicé rendimiento, y establecí estándares de documentación de equipo.","url":"https://juanmazaragoza.com/es/work/aws-lambdas-and-react-native-app-for-a-lifestyle-startup/","dateCreated":"Feb 2022","keywords":"AWS Lambda, React Native, Node.js","creator":{"@id":"https://juanmazaragoza.com/#person"},"about":"Indigo"}</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7ZJFFTN5W2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7ZJFFTN5W2');
+  </script>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/" aria-label="Juan Manuel Zaragoza — Home"><img src="/images/favicon.png" alt="JMZ" width="64" height="64"></a>
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links">
+    <a href="/es/">Inicio</a>
+    <a href="/es/work/" class="active" aria-current="page">Trabajos</a>
+    <a href="/es/services/">Servicios</a>
+    <a href="/es/about/">Acerca de</a>
+    <a href="/es/contact/" class="nav-cta">Contacto</a>
+    <a href="/work/aws-lambdas-and-react-native-app-for-a-lifestyle-startup/" class="nav-lang">EN</a>
+  </div>
+</nav>
+
+<main class="page active">
+
+  <article>
+    <div class="detail-hero">
+      <div class="breadcrumb" role="navigation" aria-label="Breadcrumb"><a href="/es/">Inicio</a> / <a href="/es/work/">Trabajos</a> / <span>Indigo</span></div>
+      <div class="detail-header">
+        <div class="section-label">Feb 2022 &nbsp;·&nbsp; <span class="">✓ Completed</span></div>
+        <h1 class="detail-title">AWS Lambdas &amp; React Native — Indigo</h1>
+        <p class="detail-subtitle">Funciones Lambda para consolidar lógica de backend de app React Native, más optimización de rendimiento y documentación de equipo para un startup de lifestyle</p>
+        <div class="detail-meta">
+          <div class="detail-meta-item"><span class="label">Tech</span><span class="value">AWS Lambda</span></div><div class="detail-meta-item"><span class="label">Tech</span><span class="value">React Native</span></div><div class="detail-meta-item"><span class="label">Tech</span><span class="value">Node.js</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="detail-hero-img"><img src="/images/screenshot-from-2023-03-23-14-39-26-640x479-Yan6Qg9vPJtoBB3k.webp" alt="AWS Lambdas &amp; React Native — Indigo" width="640" height="479" decoding="async" fetchpriority="high"></div>
+    <div class="case-context"><p><span>Indigo</span> · <span>Salud &amp; Bienestar</span> · <span>EE.UU.</span> · <span>Full-Stack Developer</span> · <span>Feb 2022</span></p></div>
+    <div class="case-results">
+    <h3>Resultados</h3>
+    <ul><li>Arquitectura modular de función Lambda</li><li>Mejoras de rendimiento para app React Native</li><li>Documentación integral de equipo</li></ul>
+  </div>
+    <div class="detail-body"><p>Indigo fue confrontado con la tarea compleja de desarrollar un backend versátil capaz de gestionar la lógica de negocio intrincada de su aplicación de lifestyle — nutrición, workout, y meditación — que previo estaba integrada dentro de su plataforma React Native.</p>
+      <h2>Arquitectura de Backend</h2>
+      <p>Creé una arquitectura de backend sofisticada implementando una serie de <strong>funciones Lambda</strong>. Estas fueron estratégicamente diseñadas para consolidar y optimizar la lógica de aplicación, resultando en infraestructura de backend robusta y escalable. Modularizando el codebase, aseguré que el backend de Indigo no solo fuera eficiente sino también altamente adaptable a modificaciones futuras.</p>
+      <h2>Rendimiento & Documentación</h2>
+      <p>Proporcioné soporte continuo para la app React Native, conduciendo análisis profundos de rendimiento e implementando mejoras dirigidas. Organizé y documenté la aplicación web y equipo de desarrollo — estableciendo directrices claras, protocolos de documentación, y canales de comunicación para streamline la colaboración.</p></div>
+    
+    
+  </article>
+  <div class="section cta-block">
+    <div class="section-label">¿Desafío similar?</div>
+    <h2 class="section-title">Hablemos sobre tu sistema.</h2>
+    <p class="contact-intro">Agendar una llamada gratis de 30 minutos. Revisaré tu situación y te diré honestamente qué haría.</p>
+    <div class="hero-actions">
+      <a href="https://calendly.com/juanmanuelzaragoza/30min" class="btn-primary" target="_blank" rel="noopener">Agendar llamada 30 min ↗</a>
+      <a href="mailto:hola@juanmazaragoza.com" class="btn-ghost">hola@juanmazaragoza.com</a>
+    </div>
+  </div>
+  <div class="section">
+    <div class="section-header">
+      <div>
+        <div class="section-label">Trabajos relacionados</div>
+        <h2 class="section-title">Más casos de estudio</h2>
+      </div>
+      <a href="/es/work/" class="section-link">Ver todos 18 proyectos →</a>
+    </div>
+    <div class="projects-featured"><a class="project-card fade-in" href="/es/work/real-estate-listing-platform-listing-los-cabos/" data-tags="react|node.js|firebase|stripe" data-status="completed">
+      <img class="project-card-img" src="/images/screenshot-from-2024-09-03-19-03-23-A854J684oRUvPoel.webp" alt="Real Estate Platform — Listing Los Cabos: From Inherited to Profitable" width="1218" height="760" loading="lazy" decoding="async">
+      <div class="project-card-tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Firebase</span></div>
+      <h3 class="project-card-title">Plataforma Inmobiliaria — Listing Los Cabos: De Heredado a Rentable</h3>
+      <p class="project-card-desc">Rescaté una plataforma React + Firebase medio-construida, agregué suscripciones de Stripe y seguridad, ahora sirviendo dos ciudades desde un mismo codebase</p>
+      <div class="project-card-footer">
+        <span class="project-card-date">Apr 2024 – Jul 2025</span>
+        <span class="project-card-arrow">↗</span>
+      </div>
+    </a>
+<a class="project-card fade-in" href="/es/work/latin-america-professionals-marketplace/" data-tags="react|node.js|postgresql|agora" data-status="completed">
+      <img class="project-card-img" src="/images/1652191275505-YrDXVzGQJ7ueXvWP.webp" alt="Professionals Marketplace — Guruxy" width="400" height="400" loading="lazy" decoding="async">
+      <div class="project-card-tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">PostgreSQL</span></div>
+      <h3 class="project-card-title">Marketplace de Profesionales — Guruxy</h3>
+      <p class="project-card-desc">Sistema de menú basado en roles e integración de live streaming usando Agora para un marketplace freelance latinoamericano</p>
+      <div class="project-card-footer">
+        <span class="project-card-date">Mar 2024</span>
+        <span class="project-card-arrow">↗</span>
+      </div>
+    </a>
+<a class="project-card fade-in" href="/es/work/veterinarian-software/" data-tags="react|node.js|firebase|gcp|squarespace" data-status="completed">
+      <img class="project-card-img" src="/images/screencapture-ivee-platform-buildout-staging-web-app-login-2023-02-13-12_09_42-AE02nxyP2OcKq0jz.webp" alt="Veterinarian Software — IVEE" width="1600" height="735" loading="lazy" decoding="async">
+      <div class="project-card-tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Firebase</span></div>
+      <h3 class="project-card-title">Software Veterinario — IVEE</h3>
+      <p class="project-card-desc">Colaboración de dos años: scripts de React integrados en Squarespace vía Firebase, seguido por plataforma React completa con dashboards y gestión de usuarios</p>
+      <div class="project-card-footer">
+        <span class="project-card-date">Apr 2022</span>
+        <span class="project-card-arrow">↗</span>
+      </div>
+    </a>
+<a class="project-card fade-in" href="/es/work/pharmaceutical-platform-development/" data-tags="react|node.js|firebase|gcp|mongodb" data-status="completed">
+      <img class="project-card-img" src="/images/screenshot-from-2023-09-15-09-01-42-A852zQ024gCvvJN1.webp" alt="Pharmaceutical Platform — Atacana Group" width="1600" height="550" loading="lazy" decoding="async">
+      <div class="project-card-tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Firebase</span></div>
+      <h3 class="project-card-title">Plataforma Farmacéutica — Atacana Group</h3>
+      <p class="project-card-desc">Plataforma React con cloud functions Node.js para gestión de entidades, agregación de noticias, y permisos de usuarios en el sector farmacéutico</p>
+      <div class="project-card-footer">
+        <span class="project-card-date">Sep 2021</span>
+        <span class="project-card-arrow">↗</span>
+      </div>
+    </a></div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-logo">JMZ<span>.</span></div>
+  <div class="footer-copy">© 2026 Juan Manuel Zaragoza · Cuenca, Ecuador · Remote worldwide</div>
+  <div class="footer-links">
+    <a href="/es/work/">Trabajos</a>
+    <a href="/es/services/">Servicios</a>
+    <a href="/es/about/">Acerca de</a>
+    <a href="/es/contact/">Contacto</a>
+  </div>
+</footer>
+
+<script src="/js/main.js" defer></script>
+</body>
+</html>

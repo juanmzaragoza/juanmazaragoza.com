@@ -91,28 +91,28 @@
     "description": "Migrate from PHPUnit to Pest. Complete coverage with elegant tests. Safe deploys. Your team ships 2x faster. 4-8 weeks."
   },
   "serviceCTOFraccionadoES": {
-    "path": "/es/services/cto-fraccionado/",
+    "path": "/es/services/fractional-cto/",
     "src": "service-cto-fraccionado.html",
     "crumb": "CTO Fraccionado",
     "title": "CTO Fraccionado para Startups — Liderazgo Técnico Sin el Sueldo de $250K",
     "description": "Decisiones de arquitectura, soporte en hiring, gestión de proveedores. 10-20 horas/semana. Sin equity, sin compromiso a largo plazo."
   },
   "serviceRescateProyectosES": {
-    "path": "/es/services/rescate-proyectos/",
+    "path": "/es/services/project-rescue/",
     "src": "service-rescate-proyectos.html",
     "crumb": "Rescate de Proyectos",
     "title": "Rescate de Proyectos de Software — Recupera Tu Proyecto del Caos Técnico",
     "description": "Diagnosticamos, refactorizamos, y entregamos un producto que funciona. Sin empezar de cero. 4-8 semanas."
   },
   "serviceAuditoriaTecnicaES": {
-    "path": "/es/services/auditoria-tecnica/",
+    "path": "/es/services/technical-audit/",
     "src": "service-auditoria-tecnica.html",
     "crumb": "Auditoría Técnica",
     "title": "Auditoría Técnica de Deuda — Descubre Qué Te Ralentiza y Cuánto Cuesta",
     "description": "Análisis completo: código, arquitectura, testing, performance, security, deployment. Reporte con prioridades y plan de acción."
   },
   "serviceAutomatizacionQAES": {
-    "path": "/es/services/automatizacion-qa/",
+    "path": "/es/services/qa-automation/",
     "src": "service-automatizacion-qa-laravel.html",
     "crumb": "Automatización QA",
     "title": "Automatización QA para Laravel — 600+ Tests, Cero Regresiones Manuales",
