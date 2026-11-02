@@ -229,8 +229,13 @@ function layout({ urlPath, title, description, body, active, jsonLd = [], ogType
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   ${heroPreload}
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;500;600;700;800&display=swap">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;500;600;700;800&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;500;600;700;800&display=swap">
+  </noscript>
+  <style>${fs.readFileSync(path.join(ROOT, 'css/style.css'), 'utf8')}</style>
   <script>document.documentElement.classList.add('js')</script>
   ${ld}
   <script async src="https://www.googletagmanager.com/gtag/js?id=${GA4_ID}"></script>
