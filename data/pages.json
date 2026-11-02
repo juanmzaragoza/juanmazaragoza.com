@@ -122,8 +122,8 @@
     "path": "/about/",
     "src": "about.html",
     "crumb": "About",
-    "title": "About Juan Manuel Zaragoza — 10+ Years in Software",
-    "description": "Computer engineer from Argentina based in Cuenca, Ecuador. 10+ years, from QA specialist to tech lead, building platforms for government, pharma and SaaS."
+    "title": "Juan Manuel Zaragoza — Fractional CTO & Full-Stack Engineer for Hire",
+    "description": "I build custom software, automate QA and act as Fractional CTO for startups and agencies. Based in Ecuador, US-friendly hours. Let's talk."
   },
   "contact": {
     "path": "/contact/",
@@ -157,8 +157,8 @@
     "path": "/es/about/",
     "src": "about-es.html",
     "crumb": "Acerca de",
-    "title": "Acerca de Juan Manuel Zaragoza — 10+ Años en Software",
-    "description": "Ingeniero en Informática de Argentina basado en Cuenca, Ecuador. 10+ años, desde especialista en QA hasta tech lead, construyendo plataformas para gobierno, pharma y SaaS."
+    "title": "Juan Manuel Zaragoza — CTO Fraccionado & Ingeniero Full-Stack para Contratar",
+    "description": "Construyo software personalizado, automatizo QA y actúo como CTO Fraccionado para startups y agencias. Basado en Ecuador, horario US-friendly. Conversemos."
   },
   "contactES": {
     "path": "/es/contact/",
