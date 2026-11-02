@@ -38,7 +38,7 @@
   --text:       #1a1a1a;
   --text-2:     #666666;
   --text-3:     #999999;
-  --accent:     #d85a30;
+  --accent:     #a83d1a;
   --accent-dim: #d85a3015;
   --font-display: 'Inter', sans-serif;
   --font-mono:    'Inter', sans-serif;
@@ -1367,6 +1367,7 @@ a.service-item:hover h3 { color: var(--accent); }
           viewport.appendChild(slide);
           const dot = document.createElement('button');
           dot.className = 'hero-carousel-dot' + (idx === 0 ? ' active' : '');
+          dot.setAttribute('aria-label', 'Slide ' + (idx + 1) + ' of ' + carouselProjects.length);
           dot.onclick = () => goToSlide(idx);
           dotsContainer.appendChild(dot);
         });

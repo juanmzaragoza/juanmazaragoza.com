@@ -362,6 +362,7 @@ function heroCarousel() {
           viewport.appendChild(slide);
           const dot = document.createElement('button');
           dot.className = 'hero-carousel-dot' + (idx === 0 ? ' active' : '');
+          dot.setAttribute('aria-label', 'Slide ' + (idx + 1) + ' of ' + carouselProjects.length);
           dot.onclick = () => goToSlide(idx);
           dotsContainer.appendChild(dot);
         });
