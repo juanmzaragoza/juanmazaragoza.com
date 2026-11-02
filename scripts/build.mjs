@@ -342,7 +342,18 @@ function heroCarousel() {
         carouselProjects.forEach((proj, idx) => {
           const slide = document.createElement('div');
           slide.className = 'hero-carousel-slide' + (idx === 0 ? ' active' : '');
-          slide.style.backgroundImage = 'url(' + proj.image + ')';
+          if (idx === 0) {
+            const img = document.createElement('img');
+            img.src = proj.image;
+            img.alt = proj.title || '';
+            img.fetchPriority = 'high';
+            img.loading = 'eager';
+            img.decoding = 'sync';
+            img.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;';
+            slide.appendChild(img);
+          } else {
+            slide.style.backgroundImage = 'url(' + proj.image + ')';
+          }
           viewport.appendChild(slide);
           const dot = document.createElement('button');
           dot.className = 'hero-carousel-dot' + (idx === 0 ? ' active' : '');
