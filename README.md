@@ -29,11 +29,17 @@ npm run images
 # regenerate all pages and the sitemap
 npm run build
 
+# verify internal links (run after build; must show 0 broken links)
+npm run link-audit
+
+# or both in one step
+npm run check
+
 # preview at http://localhost:8000
 npm run serve
 ```
 
-Then commit everything, including the generated HTML, and push to `main`.
+Before push: `npm run check`, then commit everything (including generated HTML) and push to `main`.
 
 ## Rules that keep GitHub Pages happy
 

@@ -142,10 +142,27 @@ const PERSON = {
   url: `${SITE}/`,
   image: `${SITE}/images/img_3062-Yan6xja2xjijrwNj.webp`,
   email: `mailto:${EMAIL}`,
-  jobTitle: 'Full-Stack Engineer & Fractional CTO',
-  description: 'Software engineer with 10+ years building, automating and rescuing web platforms for companies in the US, Spain and Latin America.',
-  knowsAbout: ['Custom software development', 'Business process automation', 'Chatbots', 'Software architecture',
-    'Technical debt audit', 'Laravel', 'React', 'Next.js', 'NestJS', 'Apache Superset', 'QA automation', 'Google Cloud', 'AWS'],
+  jobTitle: 'Full-Stack Engineer & QA Automation Engineer',
+  description: 'Software engineer with 10+ years building, automating, testing and rescuing web platforms for companies in the US, Spain and Latin America. Playwright E2E, Pest/PHPUnit, CI/CD quality gates, architecture audits.',
+  knowsAbout: [
+    'Custom software development',
+    'Business process automation',
+    'Software architecture',
+    'Technical debt audit',
+    'Project rescue',
+    'QA automation',
+    'Playwright E2E testing',
+    'Pest PHP testing',
+    'CI/CD quality gates',
+    'Laravel',
+    'React',
+    'Next.js',
+    'NestJS',
+    'Apache Superset',
+    'Embedded analytics',
+    'Google Cloud',
+    'AWS',
+  ],
   knowsLanguage: ['es', 'en', 'pt'],
   nationality: { '@type': 'Country', name: 'Argentina' },
   homeLocation: { '@type': 'Place', name: 'Cuenca, Ecuador' },
@@ -197,6 +214,10 @@ function layout({ urlPath, title, description, body, active, jsonLd = [], ogType
   if (isES) {
     const enUrl = urlPath.slice(3);
     langLink = `<a href="${enUrl}" class="nav-lang">EN</a>`;
+  } else if (urlPath === '/404.html') {
+    langLink = `<a href="/es/" class="nav-lang">ES</a>`;
+  } else if (urlPath === '/services/ecuador/') {
+    langLink = '';
   } else {
     const esUrl = '/es' + (urlPath === '/' ? '/' : urlPath);
     langLink = `<a href="${esUrl}" class="nav-lang">ES</a>`;
@@ -433,7 +454,6 @@ const pageMap = {
   '/services/': '/es/services/',
   '/contact/': '/es/contact/',
   '/work/': '/es/work/',
-  '/services/fractional-cto/': '/es/services/fractional-cto/',
   '/services/project-rescue/': '/es/services/project-rescue/',
   '/services/technical-audit/': '/es/services/technical-audit/',
   '/services/qa-automation/': '/es/services/qa-automation/',
@@ -445,7 +465,6 @@ const esMap = {
   '/es/services/': '/services/',
   '/es/contact/': '/contact/',
   '/es/work/': '/work/',
-  '/es/services/fractional-cto/': '/services/fractional-cto/',
   '/es/services/project-rescue/': '/services/project-rescue/',
   '/es/services/technical-audit/': '/services/technical-audit/',
   '/es/services/qa-automation/': '/services/qa-automation/',
@@ -523,18 +542,20 @@ for (const [key, page] of Object.entries(pages)) {
       .replace(/href="\/about\//g, 'href="/es/about/')
       .replace(/href="\/services\//g, 'href="/es/services/')
       .replace(/href="\/contact\//g, 'href="/es/contact/')
-      .replace(/href="\/work\//g, 'href="/es/work/');
+      .replace(/href="\/work\//g, 'href="/es/work/')
+      .replace(/href="\/es\/images\//g, 'href="/images/');
   }
 
   const hreflangs = getHreflangs(page.path);
-  write(page.path, layout({ urlPath: page.path, title: page.title, description: page.description, body, active: key, jsonLd, noindex: key === 'notFound', lang: pageLang, hreflangs }), { sitemap: key !== 'notFound' });
+  const noindex = key === 'notFound' || page.noindex === true;
+  write(page.path, layout({ urlPath: page.path, title: page.title, description: page.description, body, active: key, jsonLd, noindex, lang: pageLang, hreflangs }), { sitemap: !noindex });
 }
 
 // Service mappings for internal linking
 const serviceLinks = {
-  'real-estate-listing-platform-listing-los-cabos': { name: 'Software Project Rescue', path: '/services/software-project-rescue/' },
-  'qa-automation-for-laravel': { name: 'QA Automation for Laravel', path: '/services/qa-automation-laravel/' },
-  'performance-evaluation-platform-for-a-public-organization': { name: 'Technical Debt Audit', path: '/services/technical-debt-audit/' },
+  'real-estate-listing-platform-listing-los-cabos': { name: 'Software Project Rescue', path: '/services/project-rescue/' },
+  'qa-automation-for-laravel': { name: 'QA Automation for Laravel', path: '/services/qa-automation/' },
+  'performance-evaluation-platform-for-a-public-organization': { name: 'Technical Debt Audit', path: '/services/technical-audit/' },
 };
 
 // Case study pages
@@ -688,6 +709,30 @@ for (const pES of Array.isArray(projectsES) ? projectsES : Object.keys(projectsE
   const ogImage = ogImageExists ? ogImagePath : img(p.hero).src;
 
   write(urlPath, layout({ urlPath, title: seoTitle(pES), description: pageDescription, body, active: 'work', jsonLd, lang: 'es', ogType: 'article', ogImage }));
+}
+
+const DEPRECATED_REDIRECTS = {
+  '/services/fractional-cto/': '/services/project-rescue/',
+  '/es/services/fractional-cto/': '/es/services/project-rescue/',
+};
+
+function writeRedirect(fromPath, toPath) {
+  const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="refresh" content="0; url=${toPath}">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="${SITE}${toPath}">
+  <title>Redirecting…</title>
+</head>
+<body><p><a href="${toPath}">Continue</a></p></body>
+</html>`;
+  write(fromPath, html, { sitemap: false });
+}
+
+for (const [from, to] of Object.entries(DEPRECATED_REDIRECTS)) {
+  writeRedirect(from, to);
 }
 
 // Sitemap

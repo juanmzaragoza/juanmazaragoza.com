@@ -5,6 +5,8 @@
   "scripts": {
     "images": "./scripts/optimize-images.sh",
     "build": "node scripts/build.mjs",
+    "link-audit": "node scripts/link-audit.mjs",
+    "check": "npm run build && npm run link-audit",
     "serve": "python3 -m http.server 8000"
   }
 }

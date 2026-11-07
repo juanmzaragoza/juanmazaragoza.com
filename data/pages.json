@@ -3,36 +3,29 @@
     "path": "/",
     "src": "home.html",
     "crumb": "Home",
-    "title": "Juan Manuel Zaragoza — Full-Stack Engineer & Fractional CTO",
-    "description": "Full-stack engineer with 10+ years building custom software, automations and BI, and rescuing unstable platforms for companies in the US, Spain and LATAM."
+    "title": "Juan Manuel Zaragoza — Full-Stack Engineer & QA Automation",
+    "description": "10+ years building, automating and testing software for companies in the US, Spain and Latin America. Playwright E2E, Pest/PHPUnit, project rescue and architecture audits."
   },
   "work": {
     "path": "/work/",
     "src": "work.html",
     "crumb": "Work",
-    "title": "Case Studies — Juan Manuel Zaragoza",
-    "description": "18 software projects across ticketing, real estate, pharma, government and fintech: full-stack platforms, QA automation, data platforms and chatbots."
+    "title": "Work — Case Studies by Juan Manuel Zaragoza",
+    "description": "Real projects: QA automation for a ticketing platform, a multi-tenant data platform, public-sector systems, real estate marketplace rescue, and more."
   },
   "services": {
     "path": "/services/",
     "src": "services.html",
     "crumb": "Services",
-    "title": "Software Development, QA Automation, Project Rescue & Fractional CTO",
-    "description": "Custom software development, QA automation with Pest and Playwright, project rescue for broken platforms, technical debt audits, and fractional CTO leadership for growing companies."
+    "title": "Services — Full-Stack Development & QA Automation",
+    "description": "Custom software development, QA automation, E2E testing with Playwright, Pest PHP suites, architecture audits and project rescue. Fixed-scope engagements."
   },
   "serviceEcuador": {
     "path": "/services/ecuador/",
     "src": "service-ecuador.html",
     "crumb": "Ecuador",
-    "title": "Software Development, CTO & Technical Services — Ecuador",
-    "description": "Based in Cuenca, Ecuador (UTC-5). Custom software, project rescue, technical audits, QA automation, and fractional CTO for companies in Ecuador and LATAM."
-  },
-  "serviceFractionalCTO": {
-    "path": "/services/fractional-cto/",
-    "src": "service-fractional-cto.html",
-    "crumb": "Fractional CTO",
-    "title": "Fractional CTO: Technical Leadership Without the $250K Salary",
-    "description": "Architecture decisions, hiring support, vendor roadmaps, and hands-on problem-solving. 10-20 hours/week. No equity, no long-term commitment required."
+    "title": "Software Development & QA Services — Ecuador",
+    "description": "Based in Cuenca, Ecuador (UTC-5). Custom software, project rescue, technical audits, QA automation with Playwright and Pest for companies in Ecuador and LATAM."
   },
   "serviceCustomSoftware": {
     "path": "/services/custom-software/",
@@ -45,57 +38,43 @@
     "path": "/services/pest-testing/",
     "src": "service-pest-testing.html",
     "crumb": "Pest Testing",
-    "title": "Pest PHP Testing: 600+ Tests in Production, Zero Manual Regression",
-    "description": "Build a Pest test suite that catches bugs before production. Migrate from PHPUnit. Automated testing, zero manual regression, ship faster."
+    "title": "Pest PHP Testing — Migrate from PHPUnit",
+    "description": "Build a Pest test suite from zero or migrate from PHPUnit. 600+ tests in production. Zero manual regression testing. Your team ships faster."
   },
   "serviceE2ETesting": {
     "path": "/services/e2e-testing/",
     "src": "service-e2e-testing.html",
     "crumb": "E2E Testing",
-    "title": "E2E Test Suite Development: Test Real User Flows, Not Just Code",
-    "description": "Playwright or Cypress. Automate checkout, payments, signup, critical workflows. Deploy with confidence. 4-8 weeks."
+    "title": "E2E Test Suite Development — Playwright & Cypress",
+    "description": "Playwright or Cypress end-to-end test suites for critical flows: checkout, payments, signup. Wired into CI so every deploy is validated automatically."
   },
   "servicePlaywrightCICD": {
     "path": "/services/playwright-cicd/",
     "src": "service-playwright-cicd.html",
     "crumb": "Playwright CI/CD",
-    "title": "Playwright CI/CD Integration: Deploy With Confidence, Every Time",
-    "description": "Wire Playwright into your pipeline. Tests run automatically. Failing tests block deployment. Ship fast, no manual QA."
-  },
-  "serviceFractionalCTOEN": {
-    "path": "/services/fractional-cto/",
-    "src": "service-fractional-cto-en.html",
-    "crumb": "Fractional CTO",
-    "title": "Fractional CTO for Startups: Technical Leadership Without the $250K Salary",
-    "description": "Architecture decisions, hiring support, vendor management, and hands-on problem solving. 10-20 hours/week. No equity, no long-term commitment."
+    "title": "Playwright CI/CD Integration — GitHub Actions & GitLab",
+    "description": "Wire your Playwright tests into GitHub Actions or GitLab CI. Tests run on every push. Failing tests block deployment. Ship with confidence."
   },
   "serviceProjectRescueEN": {
     "path": "/services/project-rescue/",
     "src": "service-project-rescue-en.html",
     "crumb": "Project Rescue",
-    "title": "Software Project Rescue: Recover Your Project From Technical Chaos in 4-8 Weeks",
-    "description": "Your project is slow, over budget, or the team left. We diagnose, refactor, and deliver working software. Without starting from scratch."
+    "title": "Project Rescue — Take Over Broken or Abandoned Platforms",
+    "description": "Taking over platforms that are broken, abandoned or without code ownership. I diagnose, stabilize, and hand back a system your team can own and grow."
   },
   "serviceTechnicalAuditEN": {
     "path": "/services/technical-audit/",
     "src": "service-technical-audit-en.html",
     "crumb": "Technical Audit",
-    "title": "Technical Debt Audit: Discover What's Slowing You Down and What It Costs to Fix",
-    "description": "Complete analysis of your codebase, architecture, and deployment. Written report with priorities: what to fix first, how long it takes, what impact it has."
+    "title": "Architecture & Technical Debt Audit — 2 Weeks, Fixed Scope",
+    "description": "Two-week architecture review: code quality, security findings, CI/CD gaps, scalability, technical debt. Deliverable: prioritized roadmap. Fixed scope, credited toward follow-up."
   },
   "serviceQAAutomationEN": {
     "path": "/services/qa-automation/",
     "src": "service-qa-automation-en.html",
     "crumb": "QA Automation",
-    "title": "QA Automation for Laravel: 600+ Tests in Production, Zero Manual Regression",
-    "description": "Migrate from PHPUnit to Pest. Complete coverage with elegant tests. Safe deploys. Your team ships 2x faster. 4-8 weeks."
-  },
-  "serviceCTOFraccionadoES": {
-    "path": "/es/services/fractional-cto/",
-    "src": "service-cto-fraccionado.html",
-    "crumb": "CTO Fraccionado",
-    "title": "CTO Fraccionado para Startups — Liderazgo Técnico Sin el Sueldo de $250K",
-    "description": "Decisiones de arquitectura, soporte en hiring, gestión de proveedores. 10-20 horas/semana. Sin equity, sin compromiso a largo plazo."
+    "title": "QA Automation Services — Playwright & Pest Testing",
+    "description": "Build a QA automation suite from zero: Playwright E2E tests, Pest/PHPUnit integration tests, CI/CD quality gates. 600+ tests in production. Fixed scope."
   },
   "serviceRescateProyectosES": {
     "path": "/es/services/project-rescue/",
@@ -122,8 +101,8 @@
     "path": "/about/",
     "src": "about.html",
     "crumb": "About",
-    "title": "Juan Manuel Zaragoza — Fractional CTO & Full-Stack Engineer for Hire",
-    "description": "I build custom software, automate QA and act as Fractional CTO for startups and agencies. Based in Ecuador, US-friendly hours. Let's talk."
+    "title": "About Juan Manuel Zaragoza — Full-Stack Engineer & QA",
+    "description": "Computer Engineer from Buenos Aires, based in Ecuador (UTC-5). 10+ years building software end to end: QA automation, full-stack development, project rescue for US and LatAm companies."
   },
   "contact": {
     "path": "/contact/",
@@ -136,29 +115,29 @@
     "path": "/es/",
     "src": "home-es.html",
     "crumb": "Inicio",
-    "title": "Juan Manuel Zaragoza — Ingeniero Full-Stack & CTO Fraccionado",
-    "description": "Ingeniero full-stack con 10+ años construyendo software personalizado, automatizaciones y BI, y rescatando plataformas inestables para empresas en EE.UU., España y LATAM."
+    "title": "Juan Manuel Zaragoza — Ingeniero Full-Stack & Automatización QA",
+    "description": "10+ años construyendo, automatizando y testeando software para empresas en EE.UU., España y América Latina. Playwright E2E, Pest/PHPUnit, rescate de proyectos y auditorías de arquitectura."
   },
   "workES": {
     "path": "/es/work/",
     "src": "work-es.html",
     "crumb": "Trabajos",
-    "title": "Casos de estudio — Juan Manuel Zaragoza",
-    "description": "18+ proyectos de software en ticketing, real estate, pharma, gobierno, fintech: plataformas full-stack, automatización QA, plataformas de datos y chatbots."
+    "title": "Trabajos — Casos de estudio por Juan Manuel Zaragoza",
+    "description": "Proyectos reales: automatización QA para una plataforma de ticketing, plataforma de datos multi-tenant, sistemas del sector público, rescate de marketplace inmobiliario, y más."
   },
   "servicesES": {
     "path": "/es/services/",
     "src": "services-es.html",
     "crumb": "Servicios",
-    "title": "Desarrollo de Software, Automatización QA, Rescate de Proyectos & CTO Fraccionado",
-    "description": "Desarrollo de software personalizado, automatización QA con Pest y Playwright, rescate de proyectos para plataformas rotas, auditorías de deuda técnica, y liderazgo de CTO fraccionado para empresas en crecimiento."
+    "title": "Servicios — Desarrollo Full-Stack & Automatización QA",
+    "description": "Desarrollo de software personalizado, automatización QA, tests E2E con Playwright, suites Pest PHP, auditorías de arquitectura y rescate de proyectos. Engagements de alcance fijo."
   },
   "aboutES": {
     "path": "/es/about/",
     "src": "about-es.html",
     "crumb": "Acerca de",
-    "title": "Juan Manuel Zaragoza — CTO Fraccionado & Ingeniero Full-Stack para Contratar",
-    "description": "Construyo software personalizado, automatizo QA y actúo como CTO Fraccionado para startups y agencias. Basado en Ecuador, horario US-friendly. Conversemos."
+    "title": "Acerca de Juan Manuel Zaragoza — Ingeniero Full-Stack & QA",
+    "description": "Ingeniero en Informática de Buenos Aires, basado en Ecuador (UTC-5). 10+ años construyendo software de punta a punta: automatización QA, desarrollo full-stack, rescate de proyectos para empresas en EE.UU. y LatAm."
   },
   "contactES": {
     "path": "/es/contact/",
