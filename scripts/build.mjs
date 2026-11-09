@@ -499,9 +499,53 @@ for (const [key, page] of Object.entries(pages)) {
 
   if (key === 'home' || key === 'homeES') {
     const inLanguage = isES ? 'es' : 'en';
-    jsonLd.push({ '@context': 'https://schema.org', '@graph': [PERSON, {
-      '@type': 'WebSite', '@id': `${SITE}/#website`, url: `${SITE}${page.path}`, name: 'Juan Manuel Zaragoza',
-      inLanguage, publisher: { '@id': `${SITE}/#person` } }] });
+    // Separate Organization (in addition to PERSON) for AI citability / contact discovery
+    jsonLd.push({ '@context': 'https://schema.org', '@graph': [
+      PERSON,
+      {
+        '@type': 'Organization',
+        '@id': `${SITE}/#org`,
+        name: 'Juan Manuel Zaragoza',
+        url: `${SITE}/`,
+        email: `mailto:${EMAIL}`,
+        description: 'Full-Stack Engineer & QA Automation. Playwright E2E, architecture audits, project rescue for US and LatAm teams.',
+        founder: { '@id': `${SITE}/#person` },
+        areaServed: ['US', 'Spain', 'Latin America'],
+        knowsAbout: [
+          'QA automation',
+          'Playwright E2E testing',
+          'Pest PHP testing',
+          'CI/CD quality gates',
+          'Software architecture audit',
+          'Project rescue',
+          'Custom software development',
+        ],
+        sameAs: [
+          'https://www.linkedin.com/in/juanmzaragoza/',
+          'https://github.com/juanmzaragoza',
+          'https://www.upwork.com/freelancers/~018d17cfb4fda29566',
+        ],
+      },
+      {
+        '@type': 'WebSite',
+        '@id': `${SITE}/#website`,
+        url: `${SITE}${page.path}`,
+        name: 'Juan Manuel Zaragoza',
+        inLanguage,
+        publisher: { '@id': `${SITE}/#person` },
+      },
+      {
+        '@type': 'Review',
+        author: {
+          '@type': 'Person',
+          name: 'Julio César Pérez',
+        },
+        reviewBody: 'Juan Manuel helped us overhaul our entire platform — from design to security to subscriptions. He not only resolved the existing issues but positioned the platform for future growth. We now have full control of a system that genuinely works.',
+        itemReviewed: {
+          '@id': `${SITE}/#person`,
+        },
+      },
+    ] });
   } else if (key === 'about' || key === 'aboutES') {
     jsonLd.push({ '@context': 'https://schema.org', '@type': 'ProfilePage', url: `${SITE}${page.path}`, mainEntity: PERSON });
   } else if (key === 'serviceRescue') {
