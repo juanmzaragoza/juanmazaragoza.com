@@ -711,30 +711,6 @@ for (const pES of Array.isArray(projectsES) ? projectsES : Object.keys(projectsE
   write(urlPath, layout({ urlPath, title: seoTitle(pES), description: pageDescription, body, active: 'work', jsonLd, lang: 'es', ogType: 'article', ogImage }));
 }
 
-const DEPRECATED_REDIRECTS = {
-  '/services/fractional-cto/': '/services/project-rescue/',
-  '/es/services/fractional-cto/': '/es/services/project-rescue/',
-};
-
-function writeRedirect(fromPath, toPath) {
-  const html = `<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="refresh" content="0; url=${toPath}">
-  <meta name="robots" content="noindex">
-  <link rel="canonical" href="${SITE}${toPath}">
-  <title>Redirecting…</title>
-</head>
-<body><p><a href="${toPath}">Continue</a></p></body>
-</html>`;
-  write(fromPath, html, { sitemap: false });
-}
-
-for (const [from, to] of Object.entries(DEPRECATED_REDIRECTS)) {
-  writeRedirect(from, to);
-}
-
 // Sitemap
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
