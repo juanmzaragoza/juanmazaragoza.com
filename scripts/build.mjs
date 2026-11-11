@@ -499,7 +499,10 @@ for (const [key, page] of Object.entries(pages)) {
 
   if (key === 'home' || key === 'homeES') {
     const inLanguage = isES ? 'es' : 'en';
-    // Separate Organization (in addition to PERSON) for AI citability / contact discovery
+    const reviewBody = isES
+      ? 'Juan Manuel nos ayudó a renovar completamente nuestra plataforma — desde el diseño hasta la seguridad y suscripciones. No solo resolvió los problemas existentes sino que posicionó la plataforma para crecer en el futuro. Ahora tenemos control completo de un sistema que realmente funciona.'
+      : 'Juan Manuel helped us overhaul our entire platform — from design to security to subscriptions. He not only resolved the existing issues but positioned the platform for future growth. We now have full control of a system that genuinely works.';
+    // Organization + Review (itemReviewed must be Organization, not Person — Google rich-result rule).
     jsonLd.push({ '@context': 'https://schema.org', '@graph': [
       PERSON,
       {
@@ -540,9 +543,11 @@ for (const [key, page] of Object.entries(pages)) {
           '@type': 'Person',
           name: 'Julio César Pérez',
         },
-        reviewBody: 'Juan Manuel helped us overhaul our entire platform — from design to security to subscriptions. He not only resolved the existing issues but positioned the platform for future growth. We now have full control of a system that genuinely works.',
+        reviewBody,
         itemReviewed: {
-          '@id': `${SITE}/#person`,
+          '@type': 'Organization',
+          '@id': `${SITE}/#org`,
+          name: 'Juan Manuel Zaragoza',
         },
       },
     ] });
