@@ -1,30 +1,29 @@
 [
   {
     "slug": "qa-automation-for-laravel",
-    "title": "Plataforma de Ticketing: Automatización E2E QA",
-    "subtitle": "Tests E2E con Playwright, tests de integración con Pest, y dashboards de Superset — eliminando regresiones manuales, mejorando estabilidad y escalabilidad",
-    "seoTitle": "Construyendo automatización E2E QA para una plataforma de ticketing",
-    "seoDescription": "Arquitecto y propietario de la suite E2E con Playwright para flujos de checkout con 3 puertas de pago, más tests de integración con Pest e integración de Superset.",
+    "title": "Automatización de QA para una plataforma de venta de entradas",
+    "subtitle": "Automatización de QA para proyectos Laravel",
+    "seoTitle": "Automatización de QA para proyectos Laravel | Juan Manuel Zaragoza",
+    "seoDescription": "Tests end-to-end con Playwright y Pest para una plataforma Laravel de alto volumen. 20→91 tests E2E, 616 casos de integración, 3 pasarelas de pago. Releases en minutos.",
     "client": "Plataforma Premium de Ticketing",
     "sector": "Ticketing & Eventos",
     "country": "España, América Latina",
     "role": "Ingeniero QA",
     "duration": "Ene 2025 – Presente",
     "results": [
-      "Suite E2E integral cubriendo flujos críticos de checkout",
-      "600+ casos de test de integración en backend en flujos críticos",
-      "3 navegadores cubiertos (Chromium, Firefox, WebKit)",
-      "3 puertas de pago testeadas end-to-end incluyendo flujos 3D Secure",
-      "Aproximadamente 15–20 horas de regresión manual por release eliminadas"
+      "20 → 101 tests end-to-end",
+      "616 casos de tests de integración de backend",
+      "3 pasarelas de pago probadas end-to-end (3DS incluido)",
+      "Releases validados en minutos, no días"
     ],
-    "body": "<h2>El Desafío</h2>\n      <p>Una plataforma de ticketing y gestión de eventos white-label (monolito Laravel desde 2017) manejando flujos de checkout de alto volumen en España y América Latina. Flujos de ingresos — creación de eventos, entrega de tickets, pagos a través de 3 puertas de pago — no tenían cobertura end-to-end. Los releases dependían completamente de testing manual.</p>\n      <ul>\n        <li>Sin suite E2E existente; testing manual era insostenible</li>\n        <li>Flujos críticos (checkout, códigos de descuento, reenvío de tickets vía email/WhatsApp) carecían de automatización</li>\n        <li>Múltiples puertas de pago incluyendo flujos 3D Secure sin testear</li>\n        <li>Stakeholders de negocio carecían de visibilidad en tiempo real del rendimiento de la plataforma</li>\n      </ul>\n      <h2>Lo Que Construí</h2>\n      <h3>Suite E2E con Playwright</h3>\n      <p>Diseñé la estrategia completa de testing desde cero como propietario de la suite E2E. Construí una suite integral de <strong>Playwright + TypeScript</strong> que corre después de cada deploy en sandbox y staging: una puerta crítica de tests @critical primero, luego cobertura completa en Chromium, Firefox y WebKit. Testeé checkout end-to-end con todas las 3 puertas de pago incluyendo flujos 3D Secure. Usé test users pre-creados en lugar de registro vía email para garantizar tests determinísticos y rápidos.</p>\n      <h3>Tests de Integración con Pest</h3>\n      <p>Escribí tests de integración robustos cubriendo endpoints de API y lógica de negocio crítica: endpoints <code>/check</code>, <code>/resend</code>, <code>/me</code>, <code>/sessions</code>; validaciones de permisos basados en roles (seller, admin, whitebrand); validación de códigos de descuento y gestión de cupones.</p>\n      <h3>Fork de Superset & Embedding</h3>\n      <p>Introduje <strong>Apache Superset</strong> (fork) dentro de Docker; integré Google OAuth e integración segura basada en tokens en Laravel con filtrado de nivel de fila por organizador. Habilité dashboards en tiempo real en ventas de tickets, actividad de sesión, y comportamiento de usuarios.</p>\n      <h3>Observabilidad de Tests & CI/CD</h3>\n      <p>Construí una herramienta interna de métricas (Node, Prisma, PostgreSQL, Chart.js) para rastrear tests flaky y duración de tests por commit. Mejoré pipelines de GitLab CI; estandaricé templates de PR y documentación interna.</p>\n      <h2>Stack</h2>\n      <p>Laravel 12, PHP 8.4, Playwright, TypeScript, Pest, React 19, Apache Superset, GitLab CI, PostgreSQL.</p>"
+    "body": "<h2>Automatización de QA para proyectos Laravel</h2>\n      <p>Una plataforma de venta de entradas que procesa miles de transacciones por mes no tenía tests automatizados. Cada release requería horas de validación manual — y aun así los bugs llegaban a los clientes en flujos críticos: compras, cupones y check-in.</p>\n      <h2>Qué hice</h2>\n      <p>Diseñé una estrategia de testing desde cero, en dos capas:</p>\n      <ul>\n        <li><strong>Tests de integración backend:</strong> 616 casos con Pest/PHPUnit, cubriendo la lógica de negocio central de la plataforma: órdenes, inventario, control de acceso y estado de pagos.</li>\n        <li><strong>Tests end-to-end con Playwright:</strong> 91 tests (antes eran 20), cubriendo el recorrido completo del usuario en 3 navegadores y viewports móviles.</li>\n        <li><strong>Tests de pasarelas de pago:</strong> 3 proveedores probados end-to-end, incluyendo flujos con 3D Secure.</li>\n        <li><strong>Control post-deploy:</strong> los flujos críticos corren automáticamente después de cada release; un test que falla bloquea el deploy antes de llegar a los clientes.</li>\n      </ul>\n      <h2>Resultado</h2>\n      <p>La validación de releases pasó de días a minutos. Los bugs se detectan antes de llegar a los clientes — no por ingenieros de QA haciendo clic en pantallas, sino por tests que corren en cada push.</p>\n      <h2>Tecnologías</h2>\n      <p>Laravel · Pest/PHPUnit · Playwright · React · pipeline CI/CD</p>\n      <h2>Métricas</h2>\n      <ul>\n        <li>20 → 91 tests end-to-end</li>\n        <li>616 casos de tests de integración de backend</li>\n        <li>3 pasarelas de pago probadas end-to-end (3DS incluido)</li>\n        <li>Releases validados en minutos, no días</li>\n      </ul>\n      <p>¿Tenés un proyecto Laravel donde cada release es una apuesta?\n<a href=\"/es/contact/\">Hablemos de tu estrategia de testing.</a></p>"
   },
   {
     "slug": "real-estate-chatbot-development-casa-domo-peru",
     "title": "Chatbot Inmobiliario — Casa Domo Peru",
     "subtitle": "Interacciones automatizadas con clientes, agendamiento de visitas, y gestión de leads usando Manychat y Google Sheets",
-    "seoTitle": "Chatbot Inmobiliario Agendando Visitas vía Manychat",
-    "seoDescription": "Agendamiento automatizado de leads y seguimiento para una agencia inmobiliaria peruana usando Manychat, Google Sheets, y flujos de conversación determinísticos.",
+    "seoTitle": "Chatbot Inmobiliario Casa Domo (Perú) — Leads en WhatsApp con Manychat | Juan Manuel Zaragoza",
+    "seoDescription": "Chatbot inmobiliario en WhatsApp con Manychat y Google Sheets: agenda visitas automáticamente y reduce el trabajo manual del equipo de ventas.",
     "client": "Casa Domo",
     "sector": "Bienes Raíces",
     "country": "Perú",

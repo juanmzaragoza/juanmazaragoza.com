@@ -73,15 +73,15 @@
     "path": "/services/qa-automation/",
     "src": "service-qa-automation-en.html",
     "crumb": "QA Automation",
-    "title": "QA Automation Services — Playwright & Pest Testing",
-    "description": "Build a QA automation suite from zero: Playwright E2E tests, Pest/PHPUnit integration tests, CI/CD quality gates. 600+ tests in production. Fixed scope."
+    "title": "QA Automation & Release Confidence | Juan Manuel Zaragoza",
+    "description": "I build Playwright and Pest test suites for Laravel and SaaS products. Post-deploy quality gates, payment gateway tests, and E2E coverage. Ship without anxiety."
   },
   "serviceRescateProyectosES": {
     "path": "/es/services/project-rescue/",
     "src": "service-rescate-proyectos.html",
     "crumb": "Rescate de Proyectos",
     "title": "Rescate de Proyectos de Software — Recupera Tu Proyecto del Caos Técnico",
-    "description": "Diagnosticamos, refactorizamos, y entregamos un producto que funciona. Sin empezar de cero. 4-8 semanas."
+    "description": "Rescate de plataformas rotas o sin dueño técnico: diagnóstico, estabilización y handoff en 4–8 semanas. Sin reescribir desde cero."
   },
   "serviceAuditoriaTecnicaES": {
     "path": "/es/services/technical-audit/",
@@ -94,15 +94,15 @@
     "path": "/es/services/qa-automation/",
     "src": "service-automatizacion-qa-laravel.html",
     "crumb": "Automatización QA",
-    "title": "Automatización QA para Laravel — 600+ Tests, Cero Regresiones Manuales",
-    "description": "Migrá de PHPUnit a Pest. Cobertura completa. Deploys seguros. Tu equipo shipea 2x más rápido. 4-8 semanas."
+    "title": "Automatización de QA y seguridad en releases | Juan Manuel Zaragoza",
+    "description": "Suites de tests con Playwright y Pest para Laravel y SaaS. Gates post-deploy, tests de pasarelas de pago y cobertura E2E. Publicá sin ansiedad."
   },
   "about": {
     "path": "/about/",
     "src": "about.html",
     "crumb": "About",
-    "title": "About Juan Manuel Zaragoza — Full-Stack Engineer & QA",
-    "description": "Computer Engineer from Buenos Aires, based in Ecuador (UTC-5). 10+ years building software end to end: QA automation, full-stack development, project rescue for US and LatAm companies."
+    "title": "Juan Manuel Zaragoza — Software Engineer & QA Automation",
+    "description": "Full-stack engineer from Buenos Aires, based in Ecuador. 10+ years in QA automation, Laravel, Playwright & project rescue for US and LatAm teams."
   },
   "contact": {
     "path": "/contact/",
@@ -129,15 +129,15 @@
     "path": "/es/services/",
     "src": "services-es.html",
     "crumb": "Servicios",
-    "title": "Servicios — Desarrollo Full-Stack & Automatización QA",
-    "description": "Desarrollo de software personalizado, automatización QA, tests E2E con Playwright, suites Pest PHP, auditorías de arquitectura y rescate de proyectos. Engagements de alcance fijo."
+    "title": "Servicios de desarrollo software y QA — Laravel, Playwright, rescate de proyectos | Juan Manuel Zaragoza",
+    "description": "Desarrollo a medida, automatización QA con Playwright y Pest, auditorías técnicas y rescate de proyectos. Alcance fijo desde Ecuador (UTC-5)."
   },
   "aboutES": {
     "path": "/es/about/",
     "src": "about-es.html",
     "crumb": "Acerca de",
-    "title": "Acerca de Juan Manuel Zaragoza — Ingeniero Full-Stack & QA",
-    "description": "Ingeniero en Informática de Buenos Aires, basado en Ecuador (UTC-5). 10+ años construyendo software de punta a punta: automatización QA, desarrollo full-stack, rescate de proyectos para empresas en EE.UU. y LatAm."
+    "title": "Juan Manuel Zaragoza — Ingeniero de Software y QA Automation",
+    "description": "Ingeniero full-stack (UBA), basado en Ecuador. 10+ años en automatización QA, Laravel, Playwright y rescate de proyectos para empresas en EE.UU. y LatAm."
   },
   "contactES": {
     "path": "/es/contact/",
